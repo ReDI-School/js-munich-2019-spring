@@ -8,3 +8,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Intro on Javascript
 - variables
 - `alert` and `prompt`
+
+## [Lesson 1](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson1)
+- variables
+- function
