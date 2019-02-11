@@ -1,0 +1,436 @@
+<html>
+
+<head>
+	<title>ReDI.js 2</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+				margin: 0;
+		}
+
+		.monospace {
+				font-family: monospace !important;
+		}
+
+		.illustration {
+				border: 0px
+		}
+
+		.reveal li {
+				margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+				width: 100%;
+		}
+
+		.reveal pre code {
+				cursor: pointer;
+		}
+
+		.reveal li pre {
+				width: fit-content;
+		}
+
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
+		}
+
+		.logo {
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 2 🚀</h3>
+			</section>
+
+			<section>
+				Let's introduce ourselves
+			</section>
+
+			<section>
+				Quick repeat!
+			</section>
+
+			<section>
+				<h1>Quiz!</h1>
+			</section>
+			<section>
+				<ul>
+					<li>Where is the client?</li>
+					<li class="fragment">Where is the server?</li>
+					<li class="fragment">Which one can be programmed by JS?</li>
+					<li class="fragment">On which are we focussing for now?</li>
+				</ul>
+			</section>
+			<section>
+				<h4>What does the following code do?</h4>
+				<ul>
+					<li class="fragment">
+						<pre><code>alert("Yo yo yo!");</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(age);</code></pre>
+					</li>
+				</ul>
+				<p class="fragment">What happened? 🤔</p>
+			</section>
+			<section>
+				<h4>We forgot to define the age!</h4>
+				<ul>
+					<li class="fragment">How to tell Javascript that 'age' is a variable?</li>
+					<li class="fragment">
+						<pre><code>let age;</code></pre>
+					</li>
+					<li class="fragment">How to print out "You are (age) years old"?</li>
+					<li class="fragment">
+						<pre><code>let age = 99;
+alert("You are " + age + " years old");</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>What's a variable again?</li>
+					<li class="fragment">What do you store in a variable?</li>
+				</ul>
+			</section>
+			<section>
+				<h3>How many did you get right?</h3>
+				<h3>🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊</h3>
+			</section>
+
+			<section>
+				<h3>Bonus Round: HTML & CSS</h3>
+			</section>
+			<section>
+				<ul>
+					<li>What are the two components of the &lt;html&gt; tag?</li>
+					<li class="fragment">→ &lt;head&gt; and &lt;body&gt;</li>
+					<li class="fragment">What goes into the &lt;head&gt; tag?</li>
+					<li class="fragment">What goes into the &lt;body&gt; tag?</li>
+					<li class="fragment">How do you add a paragraph in HTML?</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>How do you add a CSS style to all paragraphs on your page?</li>
+					<li class="fragment">→ <code>p { ... }</code></li>
+					<li class="fragment">How do you change the font-size of paragraphs?</li>
+					<li class="fragment">→ <code>p { font-size: 24px; }</code></li>
+					<li class="fragment">What's the padding of an element? What's the margin?</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Name 3 types of CSS selectors</li>
+					<li class="fragment">→ e.g. class, ID, type</li>
+					<li class="fragment">Fill in the ... part:
+						<pre><code>&lt;link ...="stylesheet" ...="text/css" ...="theme.css"&gt;</code></pre>
+					</li>
+					<li class="fragment">→
+						<pre><code>&lt;link rel="stylesheet" type="text/css" href="theme.css"&gt;</code></pre>
+					</li>
+					<li class="fragment">Where do you usually put the link tag?</li>
+					<li class="fragment">→
+						<pre><code data-trim>
+&lt;head&gt;
+	&lt;link rel="stylesheet" type="text/css" href="theme.css"&gt;
+&lt;/head&gt;
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Exercise</h3>
+				<ul>
+					<li><b>Ask the user</b> about their hobbies, home country, etc.</li>
+					<li>At the end, give the user a summary of <b>everything you have learnt about them</b>!</li>
+					<li>"Hi Max! You are 29 years old and from Germany! You like hiking, programming and cooking! etc"</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Lesson 2: Variables and Functions</h1>
+			</section>
+			<section>
+				<h3>A few words on:</h3>
+				<ul>
+					<li class="fragment">
+						<pre><code>alert("Hello world!");</code></pre>
+					</li>
+					<li class="fragment">This is called a statement. Many many statements in a Javascript file.</li>
+					<li class="fragment">Usually we can tell it is a statement by the ";"</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code>alert("Hello world!");</code></pre>
+				<br>
+				<br>
+				<ul>
+					<li class="fragment">The weird JS jargon "alert" is a special kind of what?</li>
+					<li class="fragment">It is a <span class="emphasis">function</span></li>
+					<li class="fragment">You will use functions ALL THE TIME</li>
+					<li class="fragment">A reusable chunk of code that does <i>something</i></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Who and what defines a function?</h2>
+				<ul>
+					<li class="fragment">Javascript framework itself 💻</li>
+					<li class="fragment">You 👩🏻 👨🏻</li>
+					<li class="fragment">3rd party libraries you are using 📚</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code>alert("Hello world!");</code></pre>
+				<ul>
+					<li class="fragment">What do you call the text inside the quotation marks ""?</li>
+					<li class="fragment">It is a <span class="emphasis">string</span></li>
+					<li class="fragment">Always wrap a <span class="emphasis">string</span> in single or double quotes</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code>let myText = "hello, world!";</code></pre>
+				<br>
+				<br>
+				<br>
+				<ul>
+					<li class="fragment">Remember variables? 📦</li>
+					<li class="fragment">How do we name a variable? There are a few rules.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Naming variables</h3>
+				<pre><code>let myText = "hello, world!";</code></pre>
+				<ul>
+					<li class="fragment">Length:</li>
+					<li class="fragment">1 to few thousands</li>
+					<li class="fragment">Restriction:</li>
+					<li class="fragment">Can start with "_" or "$" but no number</li>
+					<li class="fragment">What else?</li>
+					<li class="fragment">That's it! Other than the first character, any combination of lower case or upper case letters,
+						number, "_" or "$"</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Possible variable name examples:</h3>
+				<pre><code>let myText;</code></pre>
+				<pre><code>let $;</code></pre>
+				<pre><code>let r8;</code></pre>
+				<pre><code>let _counter;</code></pre>
+				<pre><code>let thisIsALongVariableName_butItCanBeLonger;</code></pre>
+				<pre><code>let __$abc;</code></pre>
+				<pre><code>let oldSchoolName;</code></pre>
+			</section>
+			<section>
+				<h3>What makes a good variable name?</h3>
+				<ul>
+					<li class="fragment">Is <code>xxx</code> a good variable name?</li>
+					<li class="fragment">Is <code>myVariable</code> a good variable name?</li>
+					<li class="fragment">Is <code>age</code> a good variable name?</li>
+					<li class="fragment">→ Name should describe what is stored in the variable!</li>
+					<li class="fragment">→ Otherwise code will be hard to read and understand</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>In JavaScipt, it is common to use camelCase 🐫</li>
+					<li class="fragment">"blog post title" becomes "blogPostTitle"</li>
+					<li class="fragment">"number of users" becomes ...?</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Good! Variable name examples:</h3>
+				<pre><code>let userCount;</code></pre>
+				<pre><code>let guestName;</code></pre>
+				<pre><code>let pageTitle;</code></pre>
+				<pre><code>let pageViewsPerDay;</code></pre>
+			</section>
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+	let myText;
+	let yourText;
+	myText = "hello world";
+	myText = 4 * 45;
+	myText = true;
+	myText = undefined;
+	alert(myText);
+				</code></pre>
+			</section>
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+	let myText;
+	let yourText = "Mr. Pickleworth";
+	myText = 3.45 + 40 * 7;
+	myText = "Hi there, " ;
+	alert(myText + yourText);
+	myText = "Nice of you to show up, ";
+	yourText = "fool!";
+	alert(myText + "my friend.");
+					</code></pre>
+			</section>
+			<section>
+					<h4>What does this do?</h4>
+					<pre><code data-trim>
+	let myText;
+	let yourText = "Mr. Pickleworth";
+	myText = yourText;
+	yourText = "Mrs. Treetrunk";
+	alert("You look nice today, " + myText);
+						</code></pre>
+				</section>
+			<section>
+				<h1>Functions</h1>
+			</section>
+			<section>
+				<ul>
+					<li>Let's say you want to ask the user about the weather from time to time 🌤</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let weather;
+							weather = prompt("How's the weather right now?");
+							alert("Oh, so it's " + weather + ", eh?");
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code data-trim>
+					let weather1;
+					weather1 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather1 + ", eh?");
+
+					...
+
+					let weather2;
+					weather2 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather2 + ", eh?");
+
+					...
+
+					let weather3;
+					weather3 = prompt("How's the weather right now?");
+					alert("Oh, so it's " + weather3 + ", eh?");
+				</code></pre>
+				<p>Do we have to write that every time?</p>
+			</section>
+			<section>
+				<ul>
+					<li>Functions are blocks of code that you can define</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							function askForWeather() {
+								let weather;
+								weather = prompt("How's the weather right now?");
+								alert("Oh, so it's " + weather + ", eh?");
+							}
+						</code></pre>
+					</li>
+					<li class="fragment">They can be "called" at any time!</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							askForWeather();
+
+							...
+
+							askForWeather();
+
+							...
+
+							askForWeather();
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section class="smaller">
+				<h3>Homework</h3>
+				<ul>
+					<li>Write a function "helloWorld" that says hello</li>
+					<li>Call it twice after you defined it!</li>
+					<li class="emphasis smaller">BONUS 1: Also add a function "goodbyeWorld" that says bye. Call both</li>
+					<li class="emphasis smaller">BONUS 2: Add a function "greetUser". Asks for the name first and then greets the user by that name</li>
+					<li>HINT 1:Define a function like this:
+						<pre><code data-trim>
+							function functionName() {
+								code ...
+							}
+						</code></pre>
+					</li>
+					<li>HINT 2: Call a function like this:
+						<pre><code data-trim>
+							functionName();
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
