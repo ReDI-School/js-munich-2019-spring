@@ -1,0 +1,258 @@
+<html>
+
+<head>
+	<title>ReDI.js 2</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.emphasis {
+			color: orange;
+			font-weight: bold;
+		}
+
+		.logo {
+			position: fixed; /* Sit on top of the page content */
+			z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 2 🚀</h3>
+			</section>
+
+			<section>
+				<h1>Quiz!</h1>
+			</section>
+			<section>
+					<!--- Add QUIZ Questions-->
+				</section>
+			<section>
+				<h3>How many did you get right?</h3>
+				<h3>🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊</h3>
+			</section>
+
+			<section>
+				<h3>Bonus Round: HTML & CSS</h3>
+			</section>
+			<section>
+				<!--- Add HTML QUIZ Questions-->
+			</section>
+	
+			<section>
+				<h1>Lesson 2: More Functions</h1>
+			</section>
+
+			<section>
+				<h1>Functions</h1>
+			</section>
+			<section>
+				<p>So there is nothing wrong with</p>
+				<p><pre><code>alert("Hello world!");</code></pre></p>
+				<br>
+				<p class="fragment">BUT you will never have 1 line of JS 😁</p>
+			</section>
+			<section>
+				<p>Let's say I want to find the distance a space ship travels</p>
+				<h1>------------&gt; 🚀</h1>
+				<ul>
+					<li class="fragment"><span class="emphasis">distance </span>= speed * time</li>
+					<li class="fragment">In JavaScript:</li>
+					<li class="fragment">
+						<pre><code>let speed = 10;
+let time = 5;
+alert(speed * time);</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p>And if I have more values?</p>
+				<pre class="fragment"><code>let speed1 = 56;
+let time1 = 7;
+alert(speed1 * time1);
+
+let speed2 = 12;
+let time2 = 3;
+alert(speed2 * time2);
+
+let speed3 = 9;
+let time3 = 88;
+alert(speed3 * time3);
+
+let speed4 = 64;
+let time4 = 90;
+alert(speed4 * time4);</code></pre>
+				</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Awful! 😫</h2>
+				<p>So much repeated code!</p>
+			</section>
+			<section>
+				<h2>Solve it by Function!</h2>
+				<pre class="fragment"><code>function showDistance (speed, time) {
+  alert(speed * time);
+}
+
+showDistance(56, 7);
+showDistance(12, 3);
+showDistance(9, 88);
+showDistance(64, 90);</code></pre>
+			</section>
+			<section>
+				<p>Definition of a function</p>
+				<ul>
+					<li class="fragment">Group statements together</li>
+					<li class="fragment">Make your code reuseable</li>
+				</ul>
+			</section>
+			<section>
+				<p>Dive in: Create a simple function to say hello with alert</p>
+				<pre class="fragment"><code data-trim>
+function sayHello() {
+  alert("hello!");
+}
+sayHello();
+				</code></pre>
+			</section>
+			<section>
+				<p>What is an argument?</p>
+				<p class="fragment">Remember alert("Hello!") ?</p>
+				<p class="fragment">Or showDistance(speed,time) ?</p>
+				<p class="fragment"><span class="emphasis">arguments</span> are between the () separated by ,</p>
+				<pre class="fragment"><code data-trim>
+function showDistance(speed, time) {
+  alert(speed * time);
+}
+showDistance(56,7);
+					</code></pre>
+			</section>
+			<section>
+				<p>Function call: order matters</p>
+				<img src="assets/function-call.png">
+			</section>
+			<section>
+				<p>Function arguments are treated like variables inside the function</p>
+				<img src="assets/function-arguments.png">
+			</section>
+			<section>
+				<h3>Dive in:</h3>
+				<ul>
+					<li>Code a function named <span class="emphasis">askName</span></li>
+					<li>Prompts the user to <span class="emphasis">"Enter name"</span></li>
+					<li>Then assigns the answer to <span class="emphasis">userName</span>, which hasn't been declared beforehand</li>
+					<li>Then use alert to show the name.</li>
+					<li>Don't forget to make the function call.</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+function askName() {
+  let userName = prompt("Enter name");
+  alert(userName);
+}
+askName();
+					</code></pre>
+			</section>
+			<section>
+				<h3>Dive in:</h3>
+				<ul>
+					<li>Code a function named <span class="emphasis">addStrings</span></li>
+					<li>Takes 2 arguments</li>
+					<li>Combine the 2 strings and store it</li>
+					<li>Then show the the stored Variable in an alert box</li>
+					<li>Don't forget to make the function call.</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+function addStrings(string1, string2) {
+  let combine = string1 + string2;
+  alert(combine);
+}
+addStrings("One", "Apple");
+				</code></pre>
+			</section>
+			<section>
+				<h3>Dive in:</h3>
+				<ul>
+					<li>Code a function named <span class="emphasis">addNumbers</span></li>
+					<li>Asks the user for two numbers</li>
+					<li>Add them together and print them in an alert</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+function addNumbers() {
+  let number1 = prompt("Please enter your first number:");
+  let number2 = prompt("Please enter your second number:");
+  let sum = number1 + number2;
+  alert(sum);
+}
+addNumbers();
+				</code></pre>
+				<p class="fragment">
+					What happened?!? 😱
+				</p>
+			</section>
+
+			<section>
+				<h3>Homework</h3>
+				<p>Think about what went wrong in the last exercise!</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
