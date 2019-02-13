@@ -9,41 +9,69 @@
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
 	<style>
 		.reveal pre {
-			margin: 0;
+				margin: 0;
 		}
 
 		.monospace {
-			font-family: monospace !important;
+				font-family: monospace !important;
 		}
 
 		.illustration {
-			border: 0px
+				border: 0px
 		}
 
 		.reveal li {
-			margin-bottom: 0.5em;
+				margin-bottom: 0.5em;
 		}
 
 		.reveal pre {
-			width: 100%;
+				width: 100%;
 		}
 
 		.reveal pre code {
-			cursor: pointer;
+				cursor: pointer;
 		}
 
 		.reveal li pre {
-			width: fit-content;
+				width: fit-content;
 		}
 
-		.emphasis {
-			color: orange;
-			font-weight: bold;
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
 		}
 
 		.logo {
-			position: fixed; /* Sit on top of the page content */
-			z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
 		}
 	</style>
 </head>
@@ -61,108 +89,246 @@
 				<h1>Quiz!</h1>
 			</section>
 			<section>
-					<!--- Add QUIZ Questions-->
-				</section>
+				<ul>
+					<li class="">What's a statement?</li>
+					<li class="fragment answer">→ A single line of JS code, ending in <code>;</code></li>
+					<li class="fragment">What's a string?</li>
+					<li class="fragment answer">→ A piece of text data! 📝</li>
+					<li class="fragment">What's a variable?</li>
+					<li class="fragment answer">→ A place to store data! 📦</li>
+					<li class="fragment">What's a function?</li>
+					<li class="fragment answer">→ A reuseable block of code! ⚙️</li>
+				</ul>
+			</section>
 			<section>
-				<h3>How many did you get right?</h3>
-				<h3>🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊</h3>
+				<p>
+					How would you write<br>
+					"number of tweets"<br>
+					in camel case? 🐫<br>
+				</p>
+				<div class="answer fragment">
+					<code data-trim>
+						<b>n</b>umber<b>O</b>f<b>T</b>weets
+					</code>
+				</div>
+			</section>
+			<section>
+				<pre><code data-trim>
+					let string1 = 'Guten';
+					let string2 = ' ';
+					let string3 = 'Tag';
+				</code></pre>
+				<p>
+					How do you combine these three to form<br>
+					<code>"Guten Tag"</code>?
+				</p>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						string1 + string2 + string3;
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<p>
+					How do you define a function?<br>
+					<small>(on the white board please)</small>
+				</p>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						function myFunction() {
+							code here...
+						}
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<p>
+					How do you call / run a function?<br>
+					<small>(also on the white board please)</small>
+				</p>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						myFunction();
+					</code></pre>
+				</div>
+			</section>
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+					let userName = 'mary99';
+					userName = 'anthony77';
+					alert(userName);
+				</code></pre>
+				<br><br>
+				<div class="answer fragment">
+					Remember:<br>
+					A variable only stores one thing!<br>
+					It forgets everything from before
+				</div>
+			</section>
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+					let myUserName = 'mary99';
+					let yourUserName = 'anthony77';
+					myUserName = yourUserName;
+					yourUserName = myUserName;
+					alert(yourUserName);
+				</code></pre>
+			</section>
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+					let s = "";
+
+					function f() {
+						s = s + "?";
+					}
+
+					f();
+					f();
+					f();
+					alert(s);
+				</code></pre>
 			</section>
 
 			<section>
-				<h3>Bonus Round: HTML & CSS</h3>
-			</section>
-			<section>
-				<!--- Add HTML QUIZ Questions-->
-			</section>
-	
-			<section>
-				<h1>Lesson 2: More Functions</h1>
+				<h4>Find the 5 errors:</h4>
+				<pre><code data-trim>
+					let my Variable = "hehe;
+
+					function myFunction {
+						my Variable = "haha";
+					}
+
+					myFunction;
+					alert((my Variable)));
+				</code></pre>
 			</section>
 
 			<section>
-				<h1>Functions</h1>
+				<h2>Comments</h2>
 			</section>
+
 			<section>
-				<p>So there is nothing wrong with</p>
-				<p><pre><code>alert("Hello world!");</code></pre></p>
-				<br>
-				<p class="fragment">BUT you will never have 1 line of JS 😁</p>
+				<ul>
+					<li>It is important that future-you and other people can understand your code</li>
+					<li class="fragment">This is not easy, even with great variable and function names!</li>
+					<li class="fragment">Thankfully, you can add comments!</li>
+				</ul>
 			</section>
+
 			<section>
-				<p>Let's say I want to find the distance a space ship travels</p>
+				<pre><code data-trim>
+					// Define the variables we need:
+					let x = 10;
+					let y = 2;
+
+					// Divide them to get z:
+					let z = x / (y + 0.1); // Note that I add 0.1 stability!
+
+					// Ask the user if they want to ...
+					let answer = prompt("...");
+				</code></pre>
+				<p class="answer fragment">Everything after <code>//</code> is ignored!</p>
+			</section>
+
+			<section>
+				<img src="assets/comment.jpg">
+			</section>
+
+			<section>
+				<h2>Even better functions!</h2>
+			</section>
+
+			<section>
+				<p>Right now, our functions are just reuseable code blocks:<br>They always do the same thing!</p>
+			</section>
+
+			<section>
+				<p>Let's say you want to find the distance a space ship travels</p>
 				<h1>------------&gt; 🚀</h1>
 				<ul>
 					<li class="fragment"><span class="emphasis">distance </span>= speed * time</li>
 					<li class="fragment">In JavaScript:</li>
 					<li class="fragment">
-						<pre><code>let speed = 10;
-let time = 5;
-alert(speed * time);</code></pre>
+						<pre><code data-trim>
+							let speed = 10;
+							let time = 5;
+							let distance = speed * time;
+							alert(distance);
+						</code></pre>
 					</li>
 				</ul>
 			</section>
 			<section>
 				<p>And if I have more values?</p>
-				<pre class="fragment"><code>let speed1 = 56;
-let time1 = 7;
-alert(speed1 * time1);
+				<pre class="fragment"><code data-trim>
+					let speed1 = 56;
+					let time1 = 7;
+					let distance1 = speed1 * time1;
+					alert(distance1);
 
-let speed2 = 12;
-let time2 = 3;
-alert(speed2 * time2);
+					let speed2 = 12;
+					let time2 = 3;
+					let distance2 = speed2 * time2;
+					alert(distance2);
 
-let speed3 = 9;
-let time3 = 88;
-alert(speed3 * time3);
-
-let speed4 = 64;
-let time4 = 90;
-alert(speed4 * time4);</code></pre>
-				</li>
-				</ul>
+					let speed3 = 9;
+					let time3 = 88;
+					let distance3 = speed3 * time3;
+					alert(distance3);
+				</code></pre>
 			</section>
 			<section>
 				<h2>Awful! 😫</h2>
 				<p>So much repeated code!</p>
 			</section>
 			<section>
-				<h2>Solve it by Function!</h2>
-				<pre class="fragment"><code>function showDistance (speed, time) {
-  alert(speed * time);
-}
-
-showDistance(56, 7);
-showDistance(12, 3);
-showDistance(9, 88);
-showDistance(64, 90);</code></pre>
-			</section>
-			<section>
-				<p>Definition of a function</p>
-				<ul>
-					<li class="fragment">Group statements together</li>
-					<li class="fragment">Make your code reuseable</li>
-				</ul>
-			</section>
-			<section>
-				<p>Dive in: Create a simple function to say hello with alert</p>
+				<p>Can we use a function?</p>
 				<pre class="fragment"><code data-trim>
-function sayHello() {
-  alert("hello!");
-}
-sayHello();
+					function showDistance() {
+						let speed = 50;
+						let time = 3;
+						let distance = speed * time;
+						alert(distance)
+					}
+					</code></pre>
+					<p class="fragment">This function will always print out 150! 😓</p>
+					<p class="fragment">The <b>calculation of distance</b> depends on<br><b>speed</b> and <b>time</b>!!</p>
+			</section>
+			<section>
+				<h2>Arguments to the rescue!</h2>
+				<p class="fragment">Functions can take so-called arguments</p>
+				<p class="fragment">They are like boxes that can be filled-in later</p>
+				<p class="fragment">Inside the function, you use them like variables</p>
+				<pre class="fragment"><code data-trim>
+					function showDistance(speed, time) {
+						let distance = speed * time;
+						alert(distance);
+					}
+
+					showDistance(56, 7);
+					showDistance(12, 3);
+					showDistance(9, 88);
+					showDistance(64, 90);
 				</code></pre>
 			</section>
 			<section>
-				<p>What is an argument?</p>
-				<p class="fragment">Remember alert("Hello!") ?</p>
-				<p class="fragment">Or showDistance(speed,time) ?</p>
-				<p class="fragment"><span class="emphasis">arguments</span> are between the () separated by ,</p>
+				<p>Remember <br><code>alert("blabla");</code> <br>and<br> <code>prompt("blabla");</code><br>?</p>
+				<br>
+				<p class="answer fragment"><code>"blabla"</code> are arguments to the functions!!</p>
+			</section>
+			<section>
+				<h3>Exercise</h3>
+				<p>Create a function that takes a name as an argument<br> and then alerts <code>"Hi " + name</code>.</p>
 				<pre class="fragment"><code data-trim>
-function showDistance(speed, time) {
-  alert(speed * time);
-}
-showDistance(56,7);
-					</code></pre>
+					function sayHello(name) {
+						alert("Hi " + name);
+					}
+					sayHello("Grace");
+					sayHello("Eduardo");
+				</code></pre>
 			</section>
 			<section>
 				<p>Function call: order matters</p>
@@ -173,64 +339,52 @@ showDistance(56,7);
 				<img src="assets/function-arguments.png">
 			</section>
 			<section>
-				<h3>Dive in:</h3>
+				<h3>Exercise</h3>
 				<ul>
-					<li>Code a function named <span class="emphasis">askName</span></li>
-					<li>Prompts the user to <span class="emphasis">"Enter name"</span></li>
-					<li>Then assigns the answer to <span class="emphasis">userName</span>, which hasn't been declared beforehand</li>
-					<li>Then use alert to show the name.</li>
-					<li>Don't forget to make the function call.</li>
+					<li>Improve our previous <code>sayHello</code> function!</li>
+					<li>Add another argument called <code>title</code></li>
+					<li>Then greet the user with "Hello (title) (name)"</li>
 				</ul>
 				<pre class="fragment"><code data-trim>
-function askName() {
-  let userName = prompt("Enter name");
-  alert(userName);
-}
-askName();
-					</code></pre>
+					function sayHello(name, title) {
+						alert("Hello " + title + " " + name);
+					}
+					sayHello("Grace", "Lady");
+					sayHello("Eduardo", "Lord");
+				</code></pre>
 			</section>
 			<section>
-				<h3>Dive in:</h3>
-				<ul>
+				<h3>Exercise:</h3>
+				<ul class="smaller">
 					<li>Code a function named <span class="emphasis">addStrings</span></li>
 					<li>Takes 2 arguments</li>
-					<li>Combine the 2 strings and store it</li>
-					<li>Then show the the stored Variable in an alert box</li>
+					<li>Combine the 2 strings and store it in another variable</li>
+					<li>Then show the the stored variable in an alert box</li>
 					<li>Don't forget to make the function call.</li>
+					<li class="emphasis">BONUS: Add a third string argument</li>
 				</ul>
 				<pre class="fragment"><code data-trim>
-function addStrings(string1, string2) {
-  let combine = string1 + string2;
-  alert(combine);
-}
-addStrings("One", "Apple");
+					function addStrings(string1, string2) {
+						let combine = string1 + string2;
+						alert(combine);
+					}
+					addStrings("One", "Apple");
+					addStrings("Two", "Apples");
 				</code></pre>
-			</section>
-			<section>
-				<h3>Dive in:</h3>
-				<ul>
-					<li>Code a function named <span class="emphasis">addNumbers</span></li>
-					<li>Asks the user for two numbers</li>
-					<li>Add them together and print them in an alert</li>
-				</ul>
-				<pre class="fragment"><code data-trim>
-function addNumbers() {
-  let number1 = prompt("Please enter your first number:");
-  let number2 = prompt("Please enter your second number:");
-  let sum = number1 + number2;
-  alert(sum);
-}
-addNumbers();
-				</code></pre>
-				<p class="fragment">
-					What happened?!? 😱
-				</p>
 			</section>
 
 			<section>
-				<h3>Homework</h3>
-				<p>Think about what went wrong in the last exercise!</p>
-			</section>
+					<h3>Homework:</h3>
+					<ul class="smaller">
+						<li>Code a function named <span class="emphasis">showUserInfo</span></li>
+						<li>Takes at least 3 arguments: name, age, country, etc.</li>
+						<li>Combines the arguments to one greeting string</li>
+						<li>Then shows alert with the stored greeting</li>
+						<li>Call it with at least 2 different people</li>
+						<li>Don't forget to add comments!</li>
+						<li class="emphasis">BONUS: Before calling, ask for each value with prompts</li>
+					</ul>
+				</section>
 		</div>
 	</div>
 
