@@ -210,6 +210,24 @@
 			<section>
 				<p>Instead of packing our own (labeled) box<br>we have the mailman at our door! 🚚</p>
 			</section>
+
+			<section>
+				<p>Let's write another function:</p>
+				<pre><code data-trim>
+					function velocity(distance, time) {
+						let result = distance / time;
+						return result;
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<p>Using our function is simple:</p>
+				<pre><code data-trim>
+					let mySpeed = velocity(60, 0.5);
+					alert("On average I was driving " + mySpeed + " km/h!");
+				</code></pre>
+			</section>
 			
 			<section>
 				<h3>Exercise:</h3>
@@ -265,13 +283,13 @@
 			<section>
 					<h3>Homework:</h3>
 					<ul class="smaller">
-						<li>Code a function named <span class="emphasis">getDog</span></li>
-						<li>Takes one argument: <code>favoriteDog</code>.</li>
+						<li>Code a function named <span class="emphasis">getFavoriteDog</span></li>
 						<li>Wants the user to input his/her favorite dog</li>
-						<li>Show the favorite dog argument in the prompt message</li>
+						<li>Takes one argument: <code>hotDog</code></li>
+						<li>Show the <code>hotDog</code> argument in the prompt message</li>
 						<li>Returns the user's provided value (his/her favorite dog)</li>
 						<li>Don't forget to add comments!</li>
-						<li class="emphasis">BONUS: If the user's favorite dog matches output 🐶</li>
+						<li class="emphasis">BONUS: If the user's favorite dog equals <code>hotDog</code> show an alert with "🐶"</li>
 					</ul>
 				</section>
 		</div>
