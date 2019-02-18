@@ -1,14 +1,26 @@
-# ReDI School Munich Javascript course 2019 Spring
-This repo contains teaching material and assignments for ReDI School in Munich Javascript course for 2019 Spring semester.
+# ReDI School Munich JavaScript course 2019 Spring
 
+This repo contains teaching material and assignments for ReDI School in Munich JavaScript course for 2019 Spring semester.
 
 ## [Kick off](https://redi-school.github.io/js-munich-2019-spring/lessons/kickoff)
-- Kick off 
+
+- Kick off
 - Rules and logistics
-- Intro on Javascript
-- variables
+- Intro on JavaScript
+- Variables
 - `alert` and `prompt`
 
 ## [Lesson 1](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson1)
-- variables
-- function
+
+- Variables
+- Functions
+
+## [Lesson 2](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson2)
+
+- Function arguments
+- (Single-line) comments (`//`)
+
+## [Lesson 3](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson3)
+
+- Return values
+- `if` statements

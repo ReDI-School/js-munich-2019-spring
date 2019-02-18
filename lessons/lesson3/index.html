@@ -1,0 +1,301 @@
+<html>
+
+<head>
+	<title>ReDI.js 3</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+				margin: 0;
+		}
+
+		.monospace {
+				font-family: monospace !important;
+		}
+
+		.illustration {
+				border: 0px
+		}
+
+		.reveal li {
+				margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+				width: 100%;
+		}
+
+		.reveal pre code {
+				cursor: pointer;
+		}
+
+		.reveal li pre {
+				width: fit-content;
+		}
+
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
+		}
+
+		.logo {
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 3 🚀</h3>
+			</section>
+
+			<section>
+				<h1>Homework Recap!</h1>
+			</section>
+
+			<section>
+				<h3>Step by step:</h3>
+				<ul class="smaller">
+					<li>Code a function named <span class="emphasis">showUserInfo</span></li>
+					<li>Takes at least 3 arguments: name, age, country, etc.</li>
+					<li>Combines the arguments to one greeting string</li>
+					<li>Then shows alert with the stored greeting</li>
+					<li>Call it with at least 2 different people</li>
+					<li>Don't forget to add comments!</li>
+					<li class="emphasis">BONUS: Before calling, ask for each value with prompts</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Quiz!</h1>
+			</section>
+
+			<section>
+				<ul>
+					<li class="">What's an (expression) statement?</li>
+					<li class="fragment answer">→ A single line of JS code, ending in <code>;</code></li>
+					<li class="fragment">What's a function?</li>
+					<li class="fragment answer">→ A reuseable block of code! ⚙️</li>
+					<li class="fragment">What's the purpose of arguments?</li>
+					<li class="fragment answer">→ Transport variables into a function! 🚚</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>How do you define a function (incl. 1 argument)?</h3>
+				<small>(on the white board please)</small>
+				<br><br>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						function myFunction(arg) {
+							//code here...
+						}
+					</code></pre>
+				</div>
+			</section>
+
+			<section>
+				<h3>How do you call / run a function (with 1 parameter)?</h3>
+				<small>(also on the white board please)</small>
+				<br><br>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						myFunction("foo");
+					</code></pre>
+				</div>
+			</section>
+
+			<section>
+				<p>
+					Is the following variable<br>
+					name valid?<br>
+					<code>let 3_numbers;</code><br>
+				</p>
+				<div class="answer fragment">no! (do not start with numbers)</div>
+				<p>
+					Would this be a good name?
+				</p>
+				<div class="answer fragment">not really ...</div>
+			</section>
+
+			<section>
+				<h4>What does this do?</h4>
+				<pre><code data-trim>
+					let name = prompt("Your name?");
+
+					function f(name) {
+						alert("Your name is " + name + "!");
+					}
+
+					name = "'" + name + "'";
+					alert(f(name));
+				</code></pre>
+			</section>
+
+			<section>
+				<h4>Find the 4 errors:</h4>
+				<pre><code data-trim>
+					let myResult;
+
+					this function combines two strings with a space
+					function combine(a, b {
+						myResult = a + " " + b;
+					}
+
+					combine("hi" "there") alert(myResult);
+				</code></pre>
+			</section>
+
+			<section>
+				<p>Right now, our functions can only take inputs, but what about outputs?</p>
+				<p class="fragment">Having a variable outside transporting the result seems odd!</p>
+			</section>
+
+			<section>
+				<h2>Oh the pain! 😫</h2>
+				<p>How should I name the outside variable?</p>
+			</section>
+
+			<section>
+				<p>In JavaScript this is solved with<br>a <code>return</code> statement:</p>
+				<pre><code data-trim>
+					function combine(a, b) {
+						let result = a + " " + b;
+						return result;
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<p>Think of<br><code>return ...</code><br>like<br><code>let result = ...</code></p>
+				<p class="fragment">The <code>...</code> is where the expression (such as <code>a + b</code>) is placed</p>
+			</section>
+
+			<section>
+				<p>Instead of packing our own (labeled) box<br>we have the mailman at our door! 🚚</p>
+			</section>
+			
+			<section>
+				<h3>Exercise:</h3>
+				<ul class="smaller">
+					<li>Code a function named <span class="emphasis">answerFrom</span></li>
+					<li>Takes 2 arguments (<code>name</code>, <code>message</code>)</li>
+					<li>Combine the 2 strings with a colon and space ": " in the middle</li>
+					<li>Then return the combined string</li>
+					<li>Test your function by calling it!</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+					function answerFrom(name, message) {
+						return name + ": " + message;
+					}
+					let yourMessage = prompt("Your message?");
+					let result = answerFrom("You", yourMessage);
+					alert(result);
+				</code></pre>
+			</section>
+
+            <section>
+                <h3><code>if</code> Statements</h3>
+                <ul>
+					<li>So far our programs are rather uninteresting...</li>
+					<li class="fragment"><code>if</code> we want we can change this 🤪</li>
+                    <li class="fragment">It runs code only under certain <b>conditions</b></li>
+                    <li class="fragment">For conditions, you can e.g. compare two variables</li>
+                </ul>
+			</section>
+			
+			<section>
+				<h3>How do you define an <code>if</code> statement?</h3>
+				<br><br>
+				<div class="answer fragment">
+					<pre><code data-trim>
+						if (condition) {
+							//conditional code here...
+						}
+					</code></pre>
+				</div>
+			</section>
+
+            <section>
+                <h3>Conditions: Equals</h3>
+                <ul>
+					<li>The <code>=</code> is assignment ...</li>
+					<li class="fragment">For equality we use <code>===</code> (yes, triple! 👀)</li>
+                    <li class="fragment">Compares two things, e.g., two variables, a variable and a value, ...</li>
+                    <li class="fragment">Example: <code>dog === "chihuahua"</code></li>
+                </ul>
+			</section>
+
+			<section>
+					<h3>Homework:</h3>
+					<ul class="smaller">
+						<li>Code a function named <span class="emphasis">getDog</span></li>
+						<li>Takes one argument: <code>favoriteDog</code>.</li>
+						<li>Wants the user to input his/her favorite dog</li>
+						<li>Show the favorite dog argument in the prompt message</li>
+						<li>Returns the user's provided value (his/her favorite dog)</li>
+						<li>Don't forget to add comments!</li>
+						<li class="emphasis">BONUS: If the user's favorite dog matches output 🐶</li>
+					</ul>
+				</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
