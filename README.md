@@ -24,3 +24,9 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 - Return values
 - `if` statements
+
+## [Lesson 4](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson4)
+
+- `if-else` statements
+- Comparisons ===, <, >, <=. >=, !==
+- document.writeln
