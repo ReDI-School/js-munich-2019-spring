@@ -150,8 +150,25 @@
 				</code></pre>
 				<br>
 				<ul>
-					<li class="fragment">What will happen?</li>
+					<li class="">What will happen?</li>
 					<li class="fragment answer">→ "You chose one" twice</li>
+				</ul>
+			</section>
+
+			<section>
+				<pre><code data-trim>
+					function awesome(myString) {
+						myString = myString + "?";
+						return myString;
+						myString = myString + "!";
+					}
+					alert(awesome("Yo yo"));
+				</code></pre>
+				<br>
+				<ul>
+					<li>What will happen?</li>
+					<li class="fragment answer">→ "Yo yo?"</li>
+					<li class="fragment answer">→ After the return, functions stop!</li>
 				</ul>
 			</section>
 
