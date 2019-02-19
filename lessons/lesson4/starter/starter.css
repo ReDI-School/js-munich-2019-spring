@@ -1,13 +1,3 @@
-.isPermitted {
-    font-size: 21px;
-    color: green;
-  }
-
-.isDenied {
-    font-size: 200px;
-    color: red;
-}
-
 .allowedText {
     font-size: 100px;
     color: purple;
