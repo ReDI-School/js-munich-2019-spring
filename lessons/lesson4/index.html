@@ -9,69 +9,70 @@
 	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
 	<style>
 		.reveal pre {
-				margin: 0;
+			margin: 0;
 		}
 
 		.monospace {
-				font-family: monospace !important;
+			font-family: monospace !important;
 		}
 
 		.illustration {
-				border: 0px
+			border: 0px
 		}
 
 		.reveal li {
-				margin-bottom: 0.5em;
+			margin-bottom: 0.5em;
 		}
 
 		.reveal pre {
-				width: 100%;
+			width: 100%;
 		}
 
 		.reveal pre code {
-				cursor: pointer;
+			cursor: pointer;
 		}
 
 		.reveal li pre {
-				width: fit-content;
+			width: fit-content;
 		}
 
-		.emphasis, .answer {
-				color: orange;
-				font-weight: bold;
+		.emphasis,
+		.answer {
+			color: orange;
+			font-weight: bold;
 		}
 
 		.logo {
-				position: fixed;
-				/* Sit on top of the page content */
-				z-index: 2;
-				/* Specify a stack order in case you're using a different order for other elements */
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
 		}
 
 		.reveal table td {
-				padding: 0.1em 0.25em 0.1em 0.25em;
-				font-size: 0.8em;
+			padding: 0.1em 0.25em 0.1em 0.25em;
+			font-size: 0.8em;
 		}
 
 		.reveal table td pre code {
-				max-height: none;
+			max-height: none;
 		}
 
 		.reveal .slides section.smaller {
-				font-size: 90%;
+			font-size: 90%;
 		}
 
 		.reveal .slides section.even.smaller {
-				font-size: 80%;
+			font-size: 80%;
 		}
 
 		.reveal .slides section.smaller ul li {
-				font-size: 90%;
-				margin-bottom: 0.5em;
+			font-size: 90%;
+			margin-bottom: 0.5em;
 		}
 
 		.reveal .slides section .smaller {
-				font-size: 80% !important;
+			font-size: 80% !important;
 		}
 	</style>
 </head>
@@ -257,7 +258,6 @@
 					<li class="fragment">Covers all other cases</li>
 				</ul>
 			</section>
-
 			<section class="smaller">
 				<h3>Exercise</h3>
 				<ul>
@@ -275,11 +275,50 @@
 									return "denied";
 								}
 							}
+							alert(checkName(prompt("What's your name?")));
 						</code></pre>
 						<br>
 					</span>
 					<li class="fragment">Comes after if</li>
 					<li class="fragment">Covers all other cases</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Introducing:</h2>
+				<p><code>document.writeln()</code></p>
+				<ul>
+					<li class="fragment">Another method to quickly test something </li>
+					<li class="fragment">Takes whatever you want to print</li>
+					<li class="fragment">Replaces everything in the page with the content you passed in</li>
+				</ul>
+			</section>
+			<section>
+				<p>Demo with starter.html and starter.js</p>
+			</section>
+			<section>
+				<h2>Try putting html code in the writeln function</h2>
+				<span class="fragment">
+					<pre><code data-trim>
+						document.writeln("&lt;h2 class=bigLetters&gt;permit&lt;h2&gt;")
+					</code></pre>
+					<br>
+				</span>
+			</section>
+			<section>
+				<h3>Exercise</h3>
+				<ul>
+					<li>Build on the login you just created.</li>
+					<li>Using if-else statements, give the result text "deny" and "permit" text a different font.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Challenge</h3>
+				<ul>
+					<li>Challenge 1: give the result page a different text AND image</li>
+					<li class="answer"> Hint: You need to escape the quotations. What does that mean? Look it up!</li>
+					<li>Challenge 2: Now Oliver wants to invite his friends to the page too. Let Max, and Grace in too.
+						Modify the checkName function to show "permitted" for Oliver, Grace and Max</li>
+					<li class="answer">Hint: If you are stuck, ask us.</li>
 				</ul>
 			</section>
 		</div>
