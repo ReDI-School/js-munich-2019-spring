@@ -183,6 +183,105 @@
 					<li>Call the function with your favorite color</li>
 				</ul>
 			</section>
+
+			<section>
+				<h3>Age check</h3>
+				<ul>
+					<li>Imagine you want to make sure the user is 18 or older</li>
+					<li class="fragment">For kids, you want to show a cool web page</li>
+					<li class="fragment">Grownups just get a boring page because they suck</li>
+					<li class="fragment">How can you do it with if?</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Number comparisons</h3>
+				<p class="fragment">So far, we can only check for equality, e.g.</p>
+				<span class="fragment">
+					<pre><code data-trim>
+						let age = prompt("What's your age?");
+
+						if (age === 19) {
+							// Old enough! But what about 20? 21?
+						}
+					</code></pre>
+				</span>
+			</section>
+
+			<section>
+				<h3>Number comparisons</h3>
+				<ul>
+					<li>How to check for "older than 18?"</li>
+					<li class="fragment"><code>age &gt; 18</code></li>
+					<li class="fragment">The opposite: <code>age &lt; 18</code></li>
+					<li class="fragment">
+						Exercise:
+						<ul class="smaller">
+							<li>Write a function "checkAge(age)"</li>
+							<li>If older than 18, return "adult"</li>
+							<li>If younger than 18, return "child"</li>
+							<li>Try it out with some different ages!</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Number comparisons</h3>
+				<ul>
+					<li>Problem: What about age 18? Should count as adult!</li>
+					<li class="fragment">We need a check "greater than or equal"</li>
+					<li class="fragment">Try: <code>age &gt;= 18</code></li>
+					<li class="fragment">Opposite: <code>age &lt;= 18</code></li>
+					<li class="fragment">Update your function with the correct comparisons!</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>else</h3>
+				<ul>
+					<li>There's a way to simplify our code: else!</li>
+					<span class="fragment">
+						<pre><code data-trim>
+							function checkAge(age) {
+								if (age >= 18) {
+									return "adult";
+								} else {
+									return "child";
+								}
+							}
+						</code></pre>
+						<br>
+					</span>
+					<li class="fragment">Comes after if</li>
+					<li class="fragment">Covers all other cases</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Exercise</h3>
+				<ul>
+					<li>You want to have a secret login to your website that only you can use</li>
+					<li>Write a function checkName(name)</li>
+					<li>It checks whether the name argument is the same as your name! (e.g. "Oliver")</li>
+					<li>If it is, return "permitted"</li>
+					<li>If not, return "denied"</li>
+					<span class="fragment">
+						<pre><code data-trim>
+							function checkName(name) {
+								if (name === "Oliver") {
+									return "permitted";
+								} else {
+									return "denied";
+								}
+							}
+						</code></pre>
+						<br>
+					</span>
+					<li class="fragment">Comes after if</li>
+					<li class="fragment">Covers all other cases</li>
+				</ul>
+			</section>
 		</div>
 	</div>
 
