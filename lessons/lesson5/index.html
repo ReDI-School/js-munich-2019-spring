@@ -1,0 +1,522 @@
+<html>
+
+<head>
+	<title>ReDI.js 5</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+				margin: 0;
+		}
+
+		.monospace {
+				font-family: monospace !important;
+		}
+
+		.illustration {
+				border: 0px
+		}
+
+		.reveal li {
+				margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+				width: 100%;
+		}
+
+		.reveal pre code {
+				cursor: pointer;
+		}
+
+		.reveal li pre {
+				width: fit-content;
+		}
+
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
+		}
+
+		.logo {
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 5 🚀</h3>
+			</section>
+
+			<section>
+				<h2>Homework Recap!</h2>
+			</section>
+
+			<section class="smaller">
+				<h3>Guessing Game - Basic</h3>
+				<ul>
+					<li>Write a guessing game where you prompt the player to guess the number you predefined from 0
+						to 10. For example <code>let correctNumber = 7;</code></li>
+					<li>If the guessed number is correct, write the output to the browser using document.writeln(): <b>YOU
+						WIN!</b></li>
+					<li>If the guessed number is too high, write the output to the browser document.writeln():<b>YOU
+						LOST! TOO HIGH!</b>
+					</li>
+					<li>If the guessed number is too low, write the output to the browser document.writeln(): <b>YOU
+						LOST! TOO LOW!</b>
+					</li>
+					<li>Don't forget to write the css, and give the outcome a nice look.</li>
+					<li>Lastly don't forget to put in some helpful COMMENTS! </li>
+				</ul>
+			</section>
+			<section class="smaller">
+				<h3>Guessing Game - Advance</h3>
+				<ul>
+					<li><span class="emphasis">BONUS 1:</span> Using <b>nested if-else statements</b>, allow the player to have 3
+						tries.</li>
+					<li><span class="emphasis">BONUS 2:</span> When the user retries, each guess give them a hint with an
+						alert(), was the number too higher or too lower?</li>
+					<li><span class="emphasis">BONUS 3:</span> Add some pictures to the resulting page.</li>
+					<li><span class="emphasis">BONUS 4:</span> Instead of using a predefined number, make the number
+						random. You will need a build-in JS function. Look it up! Make sure you calculate the range correctly.
+						The number generated should be 0 to 10 inclusive</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Step by step:</h3>
+				<ul class="smaller">
+					<li>Code a function named <span class="emphasis">showUserInfo</span></li>
+					<li>Takes at least 3 arguments: name, age, country, etc.</li>
+					<li>Combines the arguments to one greeting string</li>
+					<li>Then shows alert with the stored greeting</li>
+					<li>Call it with at least 2 different people</li>
+					<li>Don't forget to add comments!</li>
+					<li class="emphasis">BONUS: Before calling, ask for each value with prompts</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Quiz!</h1>
+			</section>
+
+			<section>
+				<h3>Vocab</h3>
+				<ul>
+					<li class="">How to execute conditional code?</li>
+					<li class="fragment answer">→ if</li>
+					<li class="fragment">How to handle cases not in the condition?</li>
+					<li class="fragment answer">→ else</li>
+					<li class="fragment">Which comparison operators are there?</li>
+					<li class="fragment answer">→ 
+						<code>===, !==, &lt;, &gt;, &lt;=, &gt;=</code>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				more quiz
+			</section>
+
+
+
+
+
+
+
+
+			<section>
+					<h2>Data types</h2>
+			</section>
+
+			<section>
+				<ul>
+					<h3>Example</h3>
+					<li>Asks the user for two numbers</li>
+					<li>Add them together and print them in an alert</li>
+				</ul>
+				<pre><code data-trim>
+					function addNumbers() {
+						let number1 = prompt("Please enter your first number:");
+						let number2 = prompt("Please enter your second number:");
+						let sum = number1 + number2;
+						alert(sum);
+					}
+					addNumbers();
+				</code></pre>
+				<p>
+					What happened?!? 😱
+				</p>
+			</section>
+
+			<section>
+				<ul>
+					<li>Each variable has a <span class="emphasis">type</span></li>
+					<li class="fragment">We've seen <span class="emphasis">strings</span> and <span class="emphasis">numbers</span>!</li>
+					<li class="fragment">You can find out the type of a variable using <code>typeof()</code></li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+					let someText = "blabla";
+					alert(someText);
+				</code></pre>
+				<br>
+				<pre class="fragment"><code data-trim>
+					alert(typeof("blabla"));
+				</code></pre>
+				<br>
+				<pre class="fragment"><code data-trim>
+					alert(typeof(10));
+				</code></pre>
+				<br>
+				<pre class="fragment"><code data-trim>
+					alert(typeof("10"));
+				</code></pre>
+			</section>
+			<section>
+				<ul>
+					<li>JS sometimes converts types automatically, sometimes it does not!</li>
+					<li class="fragment">This can cause confusion and bugs 😵</li>
+					<li class="fragment">Make sure you know what's happening!</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Adding two numbers, you get another number (the sum!):</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+					let x = 2;
+					let y = 3;
+					let z = x + y;
+					alert("z is a " + typeof(z) + " and contains " + z);
+				</code></pre>
+			</section>
+			<section>
+				<ul>
+					<li>Adding two strings, you get another string (the concatenation!):</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+					let x = "2";
+					let y = "3";
+					let z = x + y;
+					alert("z is a " + typeof(z) + " and contains " + z);
+				</code></pre>
+			</section>
+			<section>
+				<ul>
+					<li>What if you add a string and a number?</li>
+					<pre class="fragment"><code data-trim>
+						let x = "2"; // A string!
+						let y = 3;   // A number!
+						let z = x + y;
+						alert("z is a " + typeof(z) + " and contains " + z);
+					</code></pre>
+					<br>
+					<li class="fragment">And the other way round?</li>
+					<pre class="fragment"><code data-trim>
+						let x = 2;   // A number!
+						let y = "3"; // A string!
+						let z = x + y;
+						alert("z is a " + typeof(z) + " and contains " + z);
+					</code></pre>
+				</ul>
+			</section>
+			<section>
+				<p>So what was the problem? 🤔</p>
+				<pre class="fragment"><code data-trim>
+					let number1 = prompt("Please enter your first number:");
+					let number2 = prompt("Please enter your second number:");
+					let sum = number1 + number2;
+					alert(sum);
+				</code></pre>
+				<br>
+				<p class="fragment">prompt() always returns strings! 💡</li>
+				<pre class="fragment"><code data-trim>
+					let x = prompt("Please enter a number");
+					alert("x is a " + typeof(x) + " and contains " + x);
+				</code></pre>
+			</section>
+			<section>
+				<p>How do we explicitly convert between types?</p>
+				<p class="fragment">→ With Number() or String()!</li>
+				<pre class="fragment"><code data-trim>
+					let x = "23";
+					alert(typeof(x) + ": " + x);
+
+					// Convert to number:
+					x = Number(x);
+					alert(typeof(x) + ": " + x);
+
+					// Convert back to string:
+					x = String(x);
+					alert(typeof(x) + ": " + x);
+				</code></pre>
+			</section>
+			<section>
+				<p>Question: What will happen? 🤔</p>
+				<pre><code data-trim>
+					let x = "blabla";
+					let y = Number(x);
+					alert(y);
+				</code></pre>
+				<p class="fragment">→ <code>NaN</code> (not a number) !</p>
+			</section>
+
+			<section>
+				<h3>Exercise</h3>
+				<h4>Fix the code! 🔧</h4>
+				<ul>
+					<li>Take two numbers from the user and show an alert with the sum.</li>
+				</ul>
+				<pre><code data-trim>
+					function addNumbers() {
+						let number1 = prompt("Please enter your first number:");
+						let number2 = prompt("Please enter your second number:");
+						let sum = number1 + number2;
+						alert(sum);
+					}
+					addNumbers();
+				</code></pre>
+			</section>
+
+			<section>
+				<h1>More logic!</h1>
+			</section>
+
+			<section>
+				<h3>A quick recap:</h3>
+				<ul>
+					<li class="fragment">
+						In Boolean logic, a statement can be either <i>true</i> or <i>false</i>
+					</li>
+					<li class="fragment">
+						For example: "It rains today".
+					</li>
+					<li class="fragment">
+						In JS:
+						<pre><code data-trim>
+							if (x === 4) {
+								doSomething();
+							}
+						</code></pre>
+					</li>
+					<li class="fragment">
+						Not surprising but we can do more
+					</li>
+
+				</ul>
+			</section>
+			<section>
+				<h3>Logical operators</h3>
+				<ul>
+					<li class="fragment">It rains today AND my feet are getting wet</li>
+					<li class="fragment">It rains today OR my feet are getting wet</li>
+					<li class="fragment">
+						In JS:
+						<pre><code data-trim>
+							if (x === 4 || y > 0) {
+								doSomething();
+							}
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Often we need to express more complex logic than <br> x > y</li>
+					<li class="fragment">We need to combine conditions together</li>
+					<li class="fragment">AND: &&
+						<ul>
+							<li>Example: (x === 4 && y >= 1)</li>
+						</ul>
+					</li>
+
+					<li class="fragment">OR: ||
+						<ul>
+							<li>Example: (x === 4 || y >= 1)</li>
+						</ul>
+					</li>
+					<li class="fragment">NOT: !
+						<ul>
+							<li>Example: (x === 4 && !(y >= 1))</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>&&</h3>
+				<ul>
+					<li>When the first expression AND the second expression both evaluate to <span class="emphasis">true</span></li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 && y === 1);
+							alert(x === 3 && y === 1);
+							alert(x === 1 && y === 0);
+							</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>||</h3>
+				<ul>
+					<li>When either the first expression OR the second expression both evaluate to <span class="emphasis">true</span></li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 || y === 1);
+							alert(x === 3 || y === 1);
+							alert(x === 1 || y === 0);
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>!</h3>
+				<ul>
+					<li>
+						When the containing expression is false then it is <span class="emphasis">true</span>. In other word it negates the result.</li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 && !(y === 1));
+							alert(x === 3 && !(y === 1));
+							alert(x === 1 && !(y === 0));
+							alert(x === 4 && !(y === 0));
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Guess the results:</h3>
+				<ul>
+					<li>
+						<pre><code>alert(2 > 1 && 2 < 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 && 2 > 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 || 2 > 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 && !(2 > 1));</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>You can build it up</h3>
+				<ul>
+					<li class="fragment">
+						<pre><code data-trim>
+							if (x === 4 && (!(y === 1) || z === 0)) {
+								doSomething();
+							}
+						</code></pre>
+					</li>
+					<li class="fragment">
+						What is the result?
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert(y >= x || (x === y && y > z));
+						</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert((y >= x && y < z) && !(x === y && y > z));
+						</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert((y === x || y === z) && !(x === y && y > z));
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+			<section>
+				<h3>Homework:</h3>
+				<ul class="smaller">
+					<li>TODO</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
