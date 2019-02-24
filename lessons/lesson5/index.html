@@ -121,24 +121,11 @@
 			</section>
 
 			<section>
-				<h3>Step by step:</h3>
-				<ul class="smaller">
-					<li>Code a function named <span class="emphasis">showUserInfo</span></li>
-					<li>Takes at least 3 arguments: name, age, country, etc.</li>
-					<li>Combines the arguments to one greeting string</li>
-					<li>Then shows alert with the stored greeting</li>
-					<li>Call it with at least 2 different people</li>
-					<li>Don't forget to add comments!</li>
-					<li class="emphasis">BONUS: Before calling, ask for each value with prompts</li>
-				</ul>
-			</section>
-
-			<section>
 				<h1>Quiz!</h1>
 			</section>
 
 			<section>
-				<h3>Vocab</h3>
+				<h3>Vocabulary</h3>
 				<ul>
 					<li class="">How to execute conditional code?</li>
 					<li class="fragment answer">→ if</li>
@@ -148,14 +135,39 @@
 					<li class="fragment answer">→ 
 						<code>===, !==, &lt;, &gt;, &lt;=, &gt;=</code>
 					</li>
+					<li class="fragment">What's the keyword for a function to give an output?</li>
+					<li class="fragment answer">→ return</li>
 				</ul>
 			</section>
 
 			<section>
-				more quiz
+				<h3>What does this do?</h3>
+				<pre class="fragment"><code data-trim>
+						function foo(a) {
+							if(a < 0) {
+								return 1;
+							} else {
+								return 2;
+							}
+						
+							return 3;
+						}
+				</code></pre>
 			</section>
 
-
+			<section>
+				<h3>What does this do?</h3>
+				<pre class="fragment"><code data-trim>
+						function foo(a) {
+							let b = -2;
+							if(b < 0) {
+								return 1;
+							} else {
+								return 2;
+							}
+						}
+				</code></pre>
+			</section>
 
 
 
@@ -320,7 +332,7 @@
 			</section>
 
 			<section>
-				<h3>A quick recap:</h3>
+				<h3>Another datatype: <code>boolean</code></h3>
 				<ul>
 					<li class="fragment">
 						In Boolean logic, a statement can be either <i>true</i> or <i>false</i>
@@ -329,18 +341,34 @@
 						For example: "It rains today".
 					</li>
 					<li class="fragment">
-						In JS:
+						Used in comparisons:
 						<pre><code data-trim>
 							if (x === 4) {
 								doSomething();
 							}
+							if (x >= 7) {
+								doSomethingElse();
+							}
 						</code></pre>
 					</li>
-					<li class="fragment">
-						Not surprising but we can do more
-					</li>
-
 				</ul>
+			</section>
+			<section>
+				<h3>Another datatype: <code>boolean</code></h3>
+				<p>Logical expressions are <code>boolean</code> values!</p>
+				<pre><code data-trim>
+					alert(typeof(true));
+					alert(typeof(7 !== 8));
+				</code></pre>
+				<p class="fragment">You can also assign them to variables</p>
+				<pre class="fragment"><code data-trim>
+					let b = 3 < 7;
+					alert(typeof(b))
+				</code></pre>
+				<p class="fragment">... and get even more crazy:</p>
+				<pre class="fragment"><code data-trim>
+					let fiveIsANumber = (typeof(5) === "number")
+				</code></pre>
 			</section>
 			<section>
 				<h3>Logical operators</h3>

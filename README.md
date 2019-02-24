@@ -30,3 +30,8 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - `if-else` statements
 - Comparisons ===, <, >, <=. >=, !==
 - document.writeln
+
+## [Lesson 5](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson5)
+
+- data types
+- complex conditions with `&&`, `||`
