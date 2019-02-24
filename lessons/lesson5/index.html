@@ -142,7 +142,7 @@
 
 			<section>
 				<h3>What does this do?</h3>
-				<pre class="fragment"><code data-trim>
+				<pre><code data-trim>
 						function foo(a) {
 							if(a < 0) {
 								return 1;
@@ -157,10 +157,10 @@
 
 			<section>
 				<h3>What does this do?</h3>
-				<pre class="fragment"><code data-trim>
+				<pre><code data-trim>
 						function foo(a) {
-							let b = -2;
-							if(b < 0) {
+							a = -2;
+							if(a < 0) {
 								return 1;
 							} else {
 								return 2;
@@ -476,6 +476,14 @@
 				</ul>
 			</section>
 			<section>
+				<h3>Exercise</h3>
+				<ul>
+					<li>Write a function <code>addPositiveNumbers</code> that takes two positive numbers and returns the sum.</li>
+					<li>If any of the two numbers is less than 0, return -1.</li>
+					<li>Call your function and display the result or an error message (if it returned -1) in the <code>document</code></li>
+				</ul>
+			</section>
+			<section>
 				<h3>You can build it up</h3>
 				<ul>
 					<li class="fragment">
@@ -507,20 +515,14 @@
 				</ul>
 			</section>
 
-
-
-
-
-
-
-
-
-
-
-			<section>
+			<section class="smaller">
 				<h3>Homework:</h3>
-				<ul class="smaller">
-					<li>TODO</li>
+				<ul>
+					<li>Get two numbers from the user with a prompt.</li>
+					<li>REMEMBER: You have to convert the type of the result returned by the prompt.</li>
+					<li>Write a function that returns <code>true</code> if both numbers have the same sign (meaning they are both positive or both negative).</li>
+					<li>Use a complex logical expression with <code>&&</code> / <code>||</code>.</li>
+					<li>Call the function and write the result to the document.</li>
 				</ul>
 			</section>
 		</div>
