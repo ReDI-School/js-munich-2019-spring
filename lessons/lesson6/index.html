@@ -1,0 +1,310 @@
+<html>
+
+<head>
+	<title>ReDI.js 6</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+				margin: 0;
+		}
+
+		.monospace {
+				font-family: monospace !important;
+		}
+
+		.illustration {
+				border: 0px
+		}
+
+		.reveal li {
+				margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+				width: 100%;
+		}
+
+		.reveal pre code {
+				cursor: pointer;
+		}
+
+		.reveal li pre {
+				width: fit-content;
+		}
+
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
+		}
+
+		.logo {
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 6 🚀</h3>
+			</section>
+
+			<section>
+				<h1>More logic!</h1>
+			</section>
+
+			<section>
+				<h3>Another datatype: <code>boolean</code></h3>
+				<ul>
+					<li class="fragment">
+						In Boolean logic, a statement can be either <i>true</i> or <i>false</i>
+					</li>
+					<li class="fragment">
+						For example: "It rains today".
+					</li>
+					<li class="fragment">
+						Used in comparisons:
+						<pre><code data-trim>
+							if (x === 4) {
+								doSomething();
+							}
+							if (x >= 7) {
+								doSomethingElse();
+							}
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Another datatype: <code>boolean</code></h3>
+				<p>Logical expressions are <code>boolean</code> values!</p>
+				<pre><code data-trim>
+					alert(typeof(true));
+					alert(typeof(7 !== 8));
+				</code></pre>
+				<p class="fragment">You can also assign them to variables</p>
+				<pre class="fragment"><code data-trim>
+					let b = 3 < 7;
+					alert(typeof(b))
+				</code></pre>
+				<p class="fragment">... and get even more crazy:</p>
+				<pre class="fragment"><code data-trim>
+					let fiveIsANumber = (typeof(5) === "number")
+				</code></pre>
+			</section>
+			<section>
+				<h3>Logical operators</h3>
+				<ul>
+					<li class="fragment">It rains today AND my feet are getting wet</li>
+					<li class="fragment">It rains today OR my feet are getting wet</li>
+					<li class="fragment">
+						In JS:
+						<pre><code data-trim>
+							if (x === 4 || y > 0) {
+								doSomething();
+							}
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Often we need to express more complex logic than <br> x > y</li>
+					<li class="fragment">We need to combine conditions together</li>
+					<li class="fragment">AND: &&
+						<ul>
+							<li>Example: (x === 4 && y >= 1)</li>
+						</ul>
+					</li>
+
+					<li class="fragment">OR: ||
+						<ul>
+							<li>Example: (x === 4 || y >= 1)</li>
+						</ul>
+					</li>
+					<li class="fragment">NOT: !
+						<ul>
+							<li>Example: (x === 4 && !(y >= 1))</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>&&</h3>
+				<ul>
+					<li>When the first expression AND the second expression both evaluate to <span class="emphasis">true</span></li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 && y === 1);
+							alert(x === 3 && y === 1);
+							alert(x === 1 && y === 0);
+							</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>||</h3>
+				<ul>
+					<li>When either the first expression OR the second expression both evaluate to <span class="emphasis">true</span></li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 || y === 1);
+							alert(x === 3 || y === 1);
+							alert(x === 1 || y === 0);
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>!</h3>
+				<ul>
+					<li>
+						When the containing expression is false then it is <span class="emphasis">true</span>. In other word it negates the result.</li>
+					<li class="fragment">Example:
+						<pre><code data-trim>
+							let x = 4;
+							let y = 1;
+
+							alert(x === 4 && !(y === 1));
+							alert(x === 3 && !(y === 1));
+							alert(x === 1 && !(y === 0));
+							alert(x === 4 && !(y === 0));
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Guess the results:</h3>
+				<ul>
+					<li>
+						<pre><code>alert(2 > 1 && 2 < 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 && 2 > 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 || 2 > 3);</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code>alert(2 > 1 && !(2 > 1));</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Exercise</h3>
+				<ul>
+					<li>Write a function <code>addPositiveNumbers</code> that takes two positive numbers and returns the sum.</li>
+					<li>If any of the two numbers is less than 0, return -1.</li>
+					<li>Call your function and display the result or an error message (if it returned -1) in the <code>document</code></li>
+				</ul>
+			</section>
+			<section>
+				<h3>You can build it up</h3>
+				<ul>
+					<li class="fragment">
+						<pre><code data-trim>
+							if (x === 4 && (!(y === 1) || z === 0)) {
+								doSomething();
+							}
+						</code></pre>
+					</li>
+					<li class="fragment">
+						What is the result?
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert(y >= x || (x === y && y > z));
+						</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert((y >= x && y < z) && !(x === y && y > z));
+						</code></pre>
+					</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let x = 3; let y = 9; let z = 9
+							alert((y === x || y === z) && !(x === y && y > z));
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Homework:</h3>
+				<ul>
+					<li>Get two numbers from the user with a prompt.</li>
+					<li>REMEMBER: You have to convert the type of the result returned by the prompt.</li>
+					<li>Write a function that returns <code>true</code> if both numbers have the same sign (meaning they are both positive or both negative).</li>
+					<li>Use a complex logical expression with <code>&&</code> / <code>||</code>.</li>
+					<li>Call the function and write the result to the document.</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>

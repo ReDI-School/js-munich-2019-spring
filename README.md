@@ -29,9 +29,14 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 - `if-else` statements
 - Comparisons ===, <, >, <=. >=, !==
-- document.writeln
+- `document.writeln`
 
 ## [Lesson 5](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson5)
 
-- data types
-- complex conditions with `&&`, `||`
+- Nested conditions
+- Data types (`number` and `string`)
+
+## [Lesson 6](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson6)
+
+- Data types (`boolean`)
+- Complex conditions with `&&`, `||`
