@@ -41,6 +41,10 @@
 				font-weight: bold;
 		}
 
+		.error {
+			color: red;
+		}
+
 		.logo {
 				position: fixed;
 				/* Sit on top of the page content */
@@ -85,6 +89,278 @@
 				<h3>🚀 Lesson 6 🚀</h3>
 			</section>
 
+			<section class="smaller">
+				<h3>Homework:</h3>
+				<ul>
+					<li>Get the JavaScript from <a href="hw.js">here</a> (click the link)</li>
+					<li>Change it to
+						<ul>
+							<li>check the input (result of <code>prompt</code>) of the user</li>
+							<li>if the input is not a valid (whole) number let the user retry without decreasing <code>lives</code></li>
+							<li><b>Hint</b> The type of the input is always a <code>string</code>, so you need to think about how to test that this string correctly represents a whole number (example: <code>"23"</code> is valid while <code>"2e"</code> is not)</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Solution</h3>
+				<pre><code data-trim>
+					let correctNumber = Math.floor(Math.random() * (10 + 1));
+
+					function playRounds(lives) {
+						if(lives === 0) {
+							document.writeln('<h2 class="lose">You lose!</h2>');
+							return;
+						}
+
+						let number = Number(prompt("Enter a value between 1 and 10"));
+						if(isNaN(number)) {
+							alert('Please enter a valid number!');
+							playRounds(lives);
+							return;
+						}
+
+						if (correctNumber === number) {
+							document.writeln('<h2 class="win">You win!</h2>');
+							return true;
+						} else if (number > correctNumber) {
+							alert("Sorry, too high.");
+							playRounds(lives - 1);
+						} else {
+							alert("Sorry, too low.");
+							playRounds(lives - 1);
+						}
+					}
+
+					playRounds(3);
+				</code></pre>
+			</section>
+
+			<section>
+                <h2>Recap 🤓 📖</h2>
+            </section>
+
+            <section>
+                <h3>Comments 🗯</h3>
+                <ul>
+                    <li class="fragment">Are <b>text</b> that you can add to your code to make it <b>easier to read</b></li>
+                    <li class="fragment">They <b>do not do anything!</b> The browser ignores them completely.</li>
+                    <li class="fragment">Examples:</li>
+                    <pre class="fragment"><code data-trim>
+                        // This is a single-line comment
+                        someCode();
+                        /* This is a
+                        multiline comment! */
+                        moreCode();
+                        evenMoreCode(); // This a comment at the end of a normal line
+                    </code></pre>
+                </ul>
+            </section>
+            <section>
+                <p>What does this do?</p>
+                <pre><code data-trim>
+                    alert("Hehe"); // This shows "Hehe"
+                </code></pre>
+            </section>
+            <section>
+                <p>What does this do?</p>
+                <pre><code data-trim>
+                    /*
+                    alert("Hehe"); // This shows "Hehe"
+                    */
+                </code></pre>
+			</section>
+			
+            <section>
+                <h3>Functions</h3>
+                <ul>
+                    <li class="fragment">Are like <b>factories</b> 🏭</li>
+                    <li class="fragment">You can <b>put in some stuff</b> <i>(arguments)</i> 📦</li>
+                    <li class="fragment">The factory <b>does something</b> <i>(function body)</i> ⚙️</li>
+                    <li class="fragment">Then <b>outputs something else</b> <i>(return value)</i> ️⛵️</li>
+                </ul>
+            </section>
+            <section>
+                <h3>📦  ➡ ️️🏭 ⚙  ➡ ⛵️</h3>
+                <pre><code data-trim>
+                    function buildShip(planks, sails) {
+                        let ship = ...;
+
+                        return ship;
+                    }
+                </code></pre>
+                <p class="fragment">To call it:</p>
+                <pre class="fragment"><code data-trim>
+                    let myPlanks = ...;
+                    let mySails = ...;
+                    let myFirstShip = buildShip(myPlanks, mySails);
+                </code></pre>
+			</section>
+
+			<section>
+				<p>What does this do?</p>
+				<pre><code data-trim>
+					function myFunction(myArg) {
+						alert("You ran myFunction with argument " + myArg);
+					}
+					let myArg = 'whoops';
+				</code></pre>
+			</section>
+			<section>
+				<p>What does this do?</p>
+				<pre><code data-trim>
+					function myFunction(myArg1, myArg2) {
+						let myVar = (myArg1 + myArg2) / 2;
+						// myVar = (myArg1 - myArg2) * 2;
+						return myVar;
+					}
+
+					let x = myFunction(100, 150);
+
+					alert("The answer is " + x);
+				</code></pre>
+			</section>
+			
+			<section>
+				<h2>Scopes</h2>
+				<ul>
+					<li>between { and }, e.g. functions</li>
+					<li>variables are only visible in scope</li>
+				</ul>
+				<pre class="fragment"><code data-trim>
+					function f() {
+						let inside = 2; // FUNCTION scope
+					}
+					f();
+					alert(inside);
+                </code></pre>
+			</section>
+			
+			<section>
+				<h2>Scopes</h2>
+				<p>Global variables (not in scope) are visible in the <b>whole script</b>!</p>
+				<pre><code data-trim>
+					let global = 1;
+					function f() {
+						global = 2;
+					}
+					f();
+					alert(global);
+                </code></pre>
+			</section>
+			
+			<section>
+				<h2>Scopes</h2>
+				<p>Arguments are in the function scope</p>
+				<pre><code data-trim>
+					function f(argument) {
+						argument = 3;
+					}
+					f();
+					alert(argument);
+                </code></pre>
+			</section>
+			
+			<section>
+				<h2>Scopes</h2>
+				<p>Arguments are in the function scope</p>
+				<pre><code data-trim>
+					let outside = 0;
+					function f(argument) {
+						argument = 1;
+					}
+					f(outside);
+					alert(outside);
+                </code></pre>
+			</section>
+
+			<section>
+					<h2>Scopes</h2>
+					<p>Arguments are in the function scope</p>
+					<pre><code data-trim>
+						let outside = 0;
+						function f(argument) {
+							argument = 1;
+						}
+						f(outside); // f(0)
+						alert(outside);
+					</code></pre>
+				</section>
+
+			<section>
+				<h2>Scopes</h2>
+				<p>Use the arguments!</p>
+				<pre><code data-trim>
+					// do something
+					function printSum(a, b) {
+						let sum = a + b;
+						document.writeln('<h2>The sum of ' + a + ' and ' + b + ' is ' + sum + '</h2>');
+					}
+					printSum(2, 7);
+					
+					// produce something
+					function sum(a, b) {
+						return a + b
+					}
+					alert(sum(2, 7));
+				</code></pre>
+			</section>
+
+			<section>
+				<h2>Scopes</h2>
+				<p>Different scopes!</p>
+				<pre><code data-trim>
+					let whatAmI = 0;
+					function f(whatAmI) {
+						whatAmI = 1;
+					}
+					f(whatAmI);
+					alert(whatAmI);
+				</code></pre>
+			</section>
+
+			<section>
+				<h2>Scopes</h2>
+				<p>Different scopes!</p>
+				<pre><code data-trim>
+					let whatAmI = 0;      // GLOBAL
+					
+					function f(whatAmI) { // FUNCTION SCOPE
+						whatAmI = 1;  // FUNCTION SCOPE
+					}
+					f(whatAmI);           // GLOBAL
+					alert(whatAmI);       // GLOBAL
+				</code></pre>
+			</section>
+
+			<section>
+                <h2>Exercise</h2>
+                <p>The user should guess which animal you are thinking about!</p>
+                <ul>
+                    <li>Define a string variable with your favorite animal, e.g. "cat"</li>
+                    <li>Ask the user to guess the animal via prompt()</li>
+                    <li>Tell the user whether they guessed correctly or not!</li>
+                    <li>Use 1-2 comments to describe your code</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Solution</h2>
+                <pre><code data-trim>
+                    let favoriteAnimal = "Cat";
+
+                    // Ask the user to guess my favorite color:
+                    let guessedAnimal = prompt('Which animal is my favorite?');
+
+                    // Check whether the user guessed correctly:
+                    if (guessedAnimal === favoriteAnimal) {
+                        alert("Wow! That's correct :)");
+                    } else {
+                        alert("Sorry! That's not my favorite animal... :(")
+                    }
+                </code></pre>
+            </section>
+			
 			<section>
 				<h1>More logic!</h1>
 			</section>
@@ -272,6 +548,120 @@
 					</li>
 				</ul>
 			</section>
+
+			<section>
+				<h1>When things don't work</h1>
+				<ul>
+					<li class="fragment">Code very seldom works on first run</li>
+					<li class="fragment">Must learn to deal with bugs</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Debugging</h1>
+				<p class="fragment">Admiral Grace Hopper, 1940s</p>
+				<img class="fragment illustration" style="max-height: 300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/1200px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg" />
+			</section>
+
+			<section>
+				<h3>Debugging</h3>
+				<ul>
+					<li>Mark II computer at Harvard University (for US Navy)</li>
+					<li class="fragment">A moth stuck in a switch</li>
+					<li class="fragment">Fixed the problem by "de-bugging"</li>
+				</ul>
+			</section>
+
+			<section>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg" class="illustration">
+			</section>
+
+			<section>
+				<h3>Catching bugs</h3>
+				<ul>
+					<li class="fragment">Syntax highlighting</li>
+					<li class="fragment">Console</li>
+					<li class="fragment">Another pair of eyes (pair programming)</li>
+					<li class="fragment">Take a break</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>DEBUG!</h3>
+				<pre><code data-trim>
+					let favoriteColor = 'blue';
+					let color = prompt("Guess my favourite color:");
+					if (color === favouriteColor) {
+						alert("Correct!")
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<h3>DEBUG!</h3>
+				<pre><code data-trim>
+					let favoriteColor = 'blue';
+					let color = prompt("Guess my favorite color:");
+					if (color === "favoriteColor") {
+						alert("Correct!")
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<h3>Common bugs</h3>
+				<ul>
+					<li class="fragment error">Uncaught ReferenceError: favouriteColor is not defined</li>
+					<li class="fragment error">Syntax error</li>
+					<li class="fragment error">Expected ( or Missing (</li>
+					<li class="fragment error">...</li>					
+				</ul>
+				<h4 class="fragment">Many are obvious in the syntax highlighting in VS Code!</h4>
+			</section>
+
+			<section>
+                <h3>console.log()</h3>
+                <ul>
+                    <li class="fragment">Prints something to the console in the browser</li>
+                    <li class="fragment">Normal users of your website do not see it, unless they open the console</li>
+                    <li class="fragment">Ideal to find out what's going on 😅</li>
+                </ul>
+			</section>
+			
+			<section>
+				<h3>Where am I???</h3>
+				<pre><code data-trim>
+					function doComplicatedLogic(a, b) {
+						let result = 5
+						if(a < 7 && (b === 0 || b > 7)) {
+							result += 2;
+						} else {
+							result += 3;
+						}
+						return result
+					}
+					alert(doComplicatedLogic(7, 8));
+				</code></pre>
+			</section>
+
+			<section>
+					<h3>Where am I???</h3>
+					<p>Console outputs can help!</p>
+					<pre><code data-trim>
+						function doComplicatedLogic(a, b) {
+							let result = 5
+							if(a < 7 && (b === 0 || b > 7)) {
+								console.log("I'm inside if!");
+								result += 2;
+							} else {
+								console.log("I'm inside else!");
+								result += 3;
+							}
+							return result
+						}
+						alert(doComplicatedLogic(7, 8));
+					</code></pre>
+				</section>
 
 			<section class="smaller">
 				<h3>Homework:</h3>
