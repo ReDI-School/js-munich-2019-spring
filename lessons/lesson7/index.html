@@ -97,20 +97,25 @@
 					<h3>Review</h3>
 					<ul>
 							<li class="fragment">
-									Can you name all the comparison operators?
+									What is a comparison operator?
 							</li>
 							<li class="fragment">
-									What is the result of an comparison?
+									<pre><code data-trim>
+										let z = 1 === 2;
+										alert(typeof(z));
+									</code></pre>
 							</li>
 							<li class="fragment">
-									Hint: B??????
+									<pre><code data-trim>
+										let x = 1;
+										if (x < 1) {
+										  alert('🐔');
+										} else {
+										  alert('🦊');
+										}
+									</code></pre>
 							</li>
-							<li class="fragment">
-									<pre><code>let z = x === y</code></pre>
-							</li>
-							<li class="fragment">
-									What is the type of z?
-							</li>
+
 					</ul>
 			</section>
 
@@ -309,7 +314,7 @@
 				<ul>
 					<li class="fragment">In JS, you have full access to the web page</li>
 					<li class="fragment">You can store HTML elements in variables...</li>
-					<li class="fragment">...and then use change, delete, duplicate, etc. them</li>
+					<li class="fragment">...and then change, delete, duplicate, etc. them</li>
 				</ul>
 			</section>
 
@@ -367,7 +372,7 @@
 				</ul>
 			</section>
 
-			<section>
+			<section class="smaller">
 				<h2>Exercise</h2>
 				<ul>
 					<li>Create a HTML page with a paragraph containing "Hello World"</li>
@@ -383,29 +388,56 @@
 				</ul>
 			</section>
 
-			<section>
-				<h4>2. How do you read / change the text inside a HTML element?</h4>
+			<section class="smaller">
+				<h2>Exercise</h2>
 				<ul>
-					<li class="fragment">To change: <code>element.textContent = "bla";</code></li>
+					<li>Write a function <code>setText(elementId, text)</code></li>
+					<li>It receives a string with an HTML element id and a string with some text</li>
+					<li>Sets the element with the id to contain the text</li>
+					<li>Call it from your Chrome console with different values</li>
+					<li class="emphasis">Bonus: If the element with that id doesn't exist, alert with an error message</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h2>Homework</h2>
+				<ul>
+					<li>Write a function <code>swapText(elementId1, elementId2)</code></li>
+					<li>It takes two element id strings as arguments</li>
+					<li>Swaps the two's text content! Afterwards, they should have exchanged their texts!</li>
+					<li>Add a simple site to try it out. Call the function inside the Chrome console.</li>
+					<li class="emphasis">Bonus: If one element doesn't exist, set the other's text to ":P"</li>
+					<li class="emphasis">Bonus: Add another function that takes three element ids</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h4>1. How do you run code when a button is clicked?</h4>
+				<ul>
+					<li class="fragment">You need to tell the browser: Whenever someone clicks on this, run this function</li>
+					<li class="fragment">Functions that react to events are called <span class="emphasis">event handlers</span></li>
 					<li class="fragment">
 						Example:
+						<button id="button">Click me</button>
 						<pre><code data-trim>
-							&lt;p id="paragraph2"&gt;Blabla&lt;/p&gt;
-						</code></pre>
-						<p id="paragraph2">Blabla</p>
-						<pre class="fragment"><code data-trim>
-							let pElement = document.getElementById("paragraph2");
-							pElement.textContent = "Blublu";
+							let buttonElement = document.getElementById("button");
+
+							function onClick() {
+								alert("Click!");
+							}
+
+							buttonElement.addEventListener("click", onClick)
 						</code></pre>
 					</li>
 				</ul>
 			</section>
 
-			<section>
+			<section class="smaller">
 				<h2>Exercise</h2>
 				<ul>
-					<li>Extend your last exercise</li>
-					<li>After alerting the text content inside the paragraph, change it to "Just kidding"</li>
+					<li>Create a button in HTML with <code>&lt;button&gt;</code>. Its text should be "don't click me"</li>
+					<li>Add an event handler. When clicked, the button's text should change to "what did I say?"</li>
+					<li class="even smaller emphasis">Hint:<br>Use <code>element.addEventListener("click", onClick);</code></li>
 				</ul>
 			</section>
 		</div>
