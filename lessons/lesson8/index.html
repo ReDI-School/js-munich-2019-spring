@@ -1,0 +1,274 @@
+<html>
+
+<head>
+	<title>ReDI.js 8</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+				margin: 0;
+		}
+
+		.monospace {
+				font-family: monospace !important;
+		}
+
+		.illustration {
+				border: 0px
+		}
+
+		.reveal li {
+				margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+				width: 100%;
+		}
+
+		.reveal pre code {
+				cursor: pointer;
+		}
+
+		.reveal li pre {
+				width: fit-content;
+		}
+
+		.emphasis, .answer {
+				color: orange;
+				font-weight: bold;
+		}
+
+		.error {
+			color: red;
+		}
+
+		.logo {
+				position: fixed;
+				/* Sit on top of the page content */
+				z-index: 2;
+				/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+				padding: 0.1em 0.25em 0.1em 0.25em;
+				font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+				max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+				font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+				font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+				font-size: 90%;
+				margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+				font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 8 🚀</h3>
+			</section>
+
+			<section>
+				<h2>Recap! 🍫🍬</h2>
+			</section>
+
+			<section>
+				<h2>Quiz:</h2>
+				<ul>
+					<li>How do you get access an HTML element in JS?</li>
+					<li class="smaller answer fragment">getElementById</li>
+					<li class="fragment">How do you change the text of an HTML element in JS?</li>
+					<li class="smaller answer fragment">textContent</li>
+					<li class="fragment">Which logical operators do you know?</li>
+					<li class="smaller answer fragment">AND: &&</li>
+					<li class="smaller answer fragment">OR: ||</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Quiz:</h2>
+				<pre><code data-trim>
+					&lt;h2 id="list-header"&gt;My hobbies:&lt;/h2&gt;
+					&lt;ul id="hobby-list"&gt;
+					  &lt;li id="hobby-reading"&gt;Reading&lt;/li&gt;
+					  &lt;li id="hobby-movies"&gt;Watch movies&lt;/li&gt;
+					&lt;/ul&gt;
+				</code></pre>
+				<br>
+				<ul>
+					<li class="fragment">How do you get the "watch movies" list element?</li>
+					<li class="smaller answer fragment"><code>document.getElementById("hobby-movies");</code></li>
+					<li class="fragment">How do you get the list itself?</li>
+					<li class="smaller answer fragment"><code>document.getElementById("hobby-list");</code></li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h2>Homework</h2>
+				<ul>
+					<li>Write a function <code>swapText(elementId1, elementId2)</code></li>
+					<li>It takes two element id strings as arguments</li>
+					<li>Swaps the two's text content! Afterwards, they should have exchanged their texts!</li>
+					<li>Add a simple site to try it out. Call the function inside the Chrome console.</li>
+					<li class="emphasis">Bonus: If one element doesn't exist, set the other's text to ":P"</li>
+					<li class="emphasis">Bonus: Add another function that takes three element ids</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Questions 🤔</h2>
+				<h4>In JS, how do you ...</h4>
+				<ol>
+					<li class="fragment">run code when a HTML button is clicked?</li>
+					<li class="fragment">change the text inside HTML elements from JS?</li>
+					<li class="fragment">find and use HTML elements (like buttons or paragraphs)?</li>
+				</ol>
+			</section>
+
+			<section class="smaller">
+				<h4>1. How do you run code when a button is clicked?</h4>
+				<ul>
+					<li class="fragment">You need to tell the browser: Whenever someone clicks on this, run this function</li>
+					<li class="fragment">Functions that react to events are called <span class="emphasis">event handlers</span></li>
+					<li class="fragment">Add an event handler by setting the <code>onclick</code> <b>attribute</b> to a function in you JS</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h4>Example</h4>
+					<ul>
+						<li>HTML:
+							<pre><code data-trim>
+								<button id="button" onclick="buttonClicked()">Click me</button>
+							</code></pre>
+						</li>
+						<li class="fragment">JS:
+							<pre><code data-trim>			
+								function buttonClicked() {
+									alert("Click!");
+								}
+							</code></pre>
+						</li>
+						<li class="fragment">
+							<button id="button" onclick="buttonClicked()">Click me</button>
+						</li>
+					</ul>
+
+			</section>
+
+			<section class="smaller">
+				<h2>Text swapping 2.0</h2>
+				<ul>
+					<li class="fragment">Now we'll improve the text swapping exercise by using a button to swap!</li>
+					<li class="fragment">In the HTML, we add a button with onClick handler <code>swapClicked</code></li>
+					<li class="fragment">In JS we'll create a function that implements the event handler and swaps the paragraphs</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h2>Exercise</h2>
+				<ul>
+					<li>Create a button in HTML with <code>&lt;button&gt;</code>. Its text should be "don't click me"</li>
+					<li>Add an event handler. When clicked, the button's text should change to "what did I say?"</li>
+					<li class="even smaller emphasis">Hint:<br>Use the <code>onclick</code> attribute and to call a function you define in JS</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>You're first little app!</h2>
+				<p>How are you?</p>
+				<button id="b1">Good 👍</button><button id="b2">Bad 👎</button>
+				<p id="answer"></p>
+				<style>
+					#b1, #b2 {
+						margin: 0.5em;
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						cursor: pointer;
+					}
+					#b1 {
+						background-color: lightgreen;
+					}
+					#b2 {
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						background-color: lightcoral;
+					}
+				</style>
+				<script>
+					let b1 = document.getElementById("b1");
+					let b2 = document.getElementById("b2");
+					let a = document.getElementById("answer");
+	
+					function b1Click(event) {
+						a.textContent = "That's great 😊";
+					}
+	
+					function b2Click(event) {
+						a.textContent = "Oh that sucks 😥";
+					}
+	
+					b1.addEventListener("click", b1Click);
+					b2.addEventListener("click", b2Click);
+				</script>
+			</section>
+
+			<section class="smaller">
+				<h2>Exercise</h3>
+				<ul>
+					<li class="fragment">Implement the "How are you?" app!</li>
+					<li class="fragment">Create a HTML paragraph with the question <b>How are you?</b> and another paragraph answer.</li>
+					<li class="smaller answer fragment">You'll need to change the answer when a button was clicked, so add an ID!</li>
+					<li class="fragment">Create two buttons with content <b>Good</b> and <b>Bad</b></li>
+					<li class="fragment">Add <code>onClick</code> event handlers</li>
+					<li class="fragment">In the JS file create two functions that implement the event handlers</li>
+					<li class="fragment">Find the answer paragraph and set its text content</li>
+					<li class="smaller answer fragment">REMEMBER: <code>getElementById</code>, <code>textContent</code>!</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
