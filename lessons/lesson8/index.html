@@ -97,9 +97,9 @@
 				<h2>Quiz:</h2>
 				<ul>
 					<li>How do you get access an HTML element in JS?</li>
-					<li class="smaller answer fragment">getElementById</li>
+					<li class="smaller answer fragment">document.getElementById(...)</li>
 					<li class="fragment">How do you change the text of an HTML element in JS?</li>
-					<li class="smaller answer fragment">textContent</li>
+					<li class="smaller answer fragment">element.textContent</li>
 					<li class="fragment">Which logical operators do you know?</li>
 					<li class="smaller answer fragment">AND: &&</li>
 					<li class="smaller answer fragment">OR: ||</li>
@@ -151,7 +151,8 @@
 				<ul>
 					<li class="fragment">You need to tell the browser: Whenever someone clicks on this, run this function</li>
 					<li class="fragment">Functions that react to events are called <span class="emphasis">event handlers</span></li>
-					<li class="fragment">Add an event handler by setting the <code>onclick</code> <b>attribute</b> to a function in you JS</li>
+					<li class="fragment">Add a click event handler by setting the <code>onclick</code> <b>attribute</b> to a function in you JS</li>
+					<li class="fragment">Many more events! (click, mousedown, mousemove, keydown, change, resize, ...)</li>
 				</ul>
 			</section>
 
@@ -170,9 +171,6 @@
 								}
 							</code></pre>
 						</li>
-						<li class="fragment">
-							<button id="button" onclick="buttonClicked()">Click me</button>
-						</li>
 					</ul>
 
 			</section>
@@ -181,7 +179,7 @@
 				<h2>Text swapping 2.0</h2>
 				<ul>
 					<li class="fragment">Now we'll improve the text swapping exercise by using a button to swap!</li>
-					<li class="fragment">In the HTML, we add a button with onClick handler <code>swapClicked</code></li>
+					<li class="fragment">In the HTML, we add a button with onclick handler</li>
 					<li class="fragment">In JS we'll create a function that implements the event handler and swaps the paragraphs</li>
 				</ul>
 			</section>
@@ -235,7 +233,7 @@
 			</section>
 
 			<section class="smaller">
-				<h2>Exercise</h3>
+				<h3>Exercise</h3>
 				<ul>
 					<li class="fragment">Implement the "How are you?" app!</li>
 					<li class="fragment">Create a HTML paragraph with the question <b>How are you?</b> and another paragraph answer.</li>
@@ -245,6 +243,25 @@
 					<li class="fragment">In the JS file create two functions that implement the event handlers</li>
 					<li class="fragment">Find the answer paragraph and set its text content</li>
 					<li class="smaller answer fragment">REMEMBER: <code>getElementById</code>, <code>textContent</code>!</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Homework</h3>
+				<ul>
+					<li>Finish the "How are you" app.</li>
+					<li>Use CSS to style the <i>good</i> and <i>bad</i> buttons.</li>
+					<li>
+						At the start of your script ask the user for her or his name with a prompt.
+						Change the question to include the name of the user, e.g. "Hi Max, how are you?".
+					</li>
+					<li>
+						BONUS: When the user has clicked one of the buttons, hide the question paragraph.
+						(Hint: set the <i>hidden</i> property of the element)</li>
+					<li>
+						BONUS: Change the background color of the answer paragraph, e.g. green for good and
+						red for bad. (Hint: look for the <code>className</code> property to set a class that you style with CSS)
+					</li>
 				</ul>
 			</section>
 		</div>
