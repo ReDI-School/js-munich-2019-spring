@@ -40,3 +40,12 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 - Data types (`boolean`)
 - Complex conditions with `&&`, `||`
+
+## [Lesson 7](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson7)
+
+- getElementById
+- textContent
+
+## [Lesson 8](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson8)
+
+- onclick
