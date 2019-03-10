@@ -1,0 +1,37 @@
+#b1,
+#b2 {
+    margin: 0.5em;
+    padding: 0.5em 2em;
+    font-size: 20pt;
+    cursor: pointer;
+}
+
+#b1 {
+    background-color: lightgreen;
+}
+
+#b2 {
+    padding: 0.5em 2em;
+    font-size: 20pt;
+    background-color: lightcoral;
+}
+ h2 {
+    margin: 0 0 20px 0;
+    color: #222;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: none;
+    word-wrap: break-word; 
+    font-size: 30pt;
+}
+p {
+    font-size: 20pt;
+}
+
+body{
+    text-align: center;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}

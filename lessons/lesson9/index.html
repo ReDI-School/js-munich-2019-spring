@@ -1,0 +1,588 @@
+<html>
+
+<head>
+	<title>ReDI.js 9</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.emphasis,
+		.answer {
+			color: orange;
+			font-weight: bold;
+		}
+
+		.error {
+			color: red;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.reveal table td {
+			padding: 0.1em 0.25em 0.1em 0.25em;
+			font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+			max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+			font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+			font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+			font-size: 90%;
+			margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+			font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 9 🚀</h3>
+			</section>
+
+			<section>
+				<h2>Recap! 🍫🍬</h2>
+			</section>
+
+			<section>
+				<h2>Quiz:</h2>
+				<ul>
+					<li>What is the two basic JavaScript scope you hav learned so far?</li>
+					<li class="smaller answer fragment">Global</li>
+					<li class="smaller answer fragment">Local</li>
+				</ul>
+			</section>
+			<section>
+				<p>Question 1.</p>
+				<pre><code data-trim>
+						let cat = 'Mr. Picklesworth';
+						function printLog(){
+						  // 1. What will be printed here?
+						  console.log("printLog() -> " + cat); 
+						}
+
+						// 2. What will be printed here?
+						console.log(cat); 
+				</code></pre>
+				<p class="fragment">Variable "cat" is defined in the GLOBAL scope</p>
+			</section>
+			<section>
+				<p>Question 2.</p>
+				<pre><code data-trim>
+				function printLog(){
+					let dog = 'Mr. Maximillian';
+
+					// 1. What will happen here?
+					console.log("printLog() -> " + dog); 
+				}
+
+				printLog()
+				</code></pre>
+				<p class="fragment">Variable "dog" is defined in the LOCAL scope</p>
+			</section>
+			<section>
+				<p>Question 3.</p>
+				<pre><code data-trim>
+					let dog = 'Mr. Maximillian';
+					function printLog(){
+						dog = 'Mr. Honeybun';
+
+						// 1. What will happen here?
+						console.log("printLog() -> " + dog); 
+					}
+
+					// 2. What will happen here?
+					console.log(dog); 
+					printLog()
+					</code></pre>
+				<p class="fragment">Variable "dog" is defined in the GLOCAL scope and it is changed in printLog.</p>
+			</section>
+			<section>
+				<p>Question 4.</p>
+				<pre><code data-trim>
+					let dog = 'Mr. Maximillian';
+					function printLog(){
+						dog = 'Mr. Honeybun';
+
+						// 1. What will happen here?
+						console.log("printLog() -> " + dog); 
+					}
+
+					// 2. What will happen here?
+					printLog()
+					console.log(dog); 
+					</code></pre>
+				<p class="fragment">Variable "dog" is defined in the GLOCAL scope and it is changed in printLog and
+					changed the output of the second console.log.</p>
+			</section>
+			<section>
+				<p>Question 5.</p>
+				<pre><code data-trim>
+					let dog = 'Mr. Maximillian';
+
+					// 1. What will happen here?
+					console.log("1 ->" + dog); 
+					printLog()
+					console.log("2 ->" +dog); 
+
+					function printLog(){
+						dog = 'Mr. Honeybun';
+
+						// 2. What will happen here?
+						console.log("printLog() -> " + dog); 
+					}
+					</code></pre>
+				<p class="fragment">
+					Function printLog() is INVOKED before the function DEFINTITION. It is OK!!!!! The function
+					definition has been HOISTED up to the top.
+				</p>
+			</section>
+			<section>
+				<p>Question 6.</p>
+				<pre><code data-trim>
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					printLog("Miss Fabulous")
+
+					function printLog(cat){
+						// 2. What will happen here?
+						console.log("printLog() -> " + cat); 
+					}
+					</code></pre>
+				<p class="fragment">
+					The simple case. :)
+				</p>
+			</section>
+			<section>
+				<p>Question 6.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					printLog(dog)
+
+					function printLog(cat){
+						// 2. What will happen here?
+						console.log("printLog() -> " + cat); 
+					}
+					</code></pre>
+				<p class="fragment">
+					The content of the variable "dog" is passed into the function printLog() and printed.
+				</p>
+			</section>
+			<section>
+				<p>Question 6.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					printLog("Miss Fabulous")
+
+					function printLog(dog){
+						// 2. What will happen here?
+						console.log("printLog() -> " + dog); 
+					}
+
+					// 3. What will happen here?
+					console.log("3 ->" + dog); 
+					</code></pre>
+				<p class="fragment">
+					The text "Miss Fabulous" is passed into the function printLog() and printed. Variable "dog" remains
+					unchanged.
+				</p>
+			</section>
+			<section>
+				<p>Question 7.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					printLog("Miss Fabulous")
+
+					function printLog(dog){
+						let dog = "Mr. Baxington"  
+						console.log("printLog() -> " + dog); 
+					}
+					
+					console.log("3 ->" + dog); 
+					</code></pre>
+				<p class="fragment">
+					Syntax Error from JavasScript! Variable dog has ALREADY been defined in the global scope.
+				</p>
+			</section>
+			<section>
+				<p>Question 8.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					printLog("Miss Fabulous")
+
+					function printLog(dog){
+						dog = "Mr. Baxington"
+						// 2. What will happen here?
+						console.log("printLog() -> " + dog); 
+					}
+					
+					// 3. What will happen here?
+					console.log("3 ->" + dog); 
+					</code></pre>
+				<p class="fragment">
+					Bad bad bad! printlLog is overwriting its own argument! Rendering the argument USELESS!
+					Within printlog(), variable "dog" has been SHADOWED !
+				</p>
+			</section>
+
+			<section>
+				<p>Question 9.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+				
+					function printLog(dog){
+						console.log("printLog() -> " + dog); 
+					}
+					
+					</code></pre>
+				<p class="fragment">
+					We forgot to INVOKE the function! We need to call printLog("Something") to actually print the log.
+				</p>
+			</section>
+			<section>
+				<p>Question 10.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					function printLog(cat){
+						console.log("printLog() 2-> " + cat); 
+					}
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					
+					</code></pre>
+				<p class="fragment">
+					We forgot to INVOKE the function AGAIN!
+				</p>
+			</section>
+			<section>
+				<p>Question 11.</p>
+				<pre><code data-trim>
+					// 1. What will happen here?
+					let dog = 'Mr. Maximillian';
+					console.log("1 ->" + dog); 
+					printLog()
+
+					function printLog(dog){
+						console.log("printLog() 2-> " + dog); 
+					}
+					</code></pre>
+				<p class="fragment">
+					We forgot to put in the argument for printLog(). It should be printLog("Miss Fabulous"). The
+					argument "dog" in the fucntion is empty.
+				</p>
+			</section>
+			<section class="smaller">
+				<h2>Review: Events!</h2>
+			</section>
+			<section class="smaller">
+				<ul>
+					<li>What are the functions that react to events called?</li>
+					<li class="answer fragment">event handlers</li>
+					<li class="fragment">How do you add a click event handler?</li>
+					<li class="answer fragment">Add a click event handler by setting the <code>onclick</code>
+						<b>attribute</b>
+						to a function in you JS</li>
+					<li class="fragment">Can you name some other events?</li>
+					<li class="answer fragment">Many more events! (click, mousedown, mousemove, keydown, change, resize,
+						...)
+					</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h4>Example</h4>
+				<ul>
+					<li>HTML:
+						<pre><code data-trim>
+								<button id="button" onclick="buttonClicked()">Click me</button>
+							</code></pre>
+					</li>
+					<li class="fragment">JS:
+						<pre><code data-trim>			
+								function buttonClicked() {
+									alert("Click!");
+								}
+							</code></pre>
+					</li>
+				</ul>
+
+			</section>
+
+			<section>
+				<h2>You're first little app!</h2>
+				<p>How are you?</p>
+				<button id="b1">Good 👍</button><button id="b2">Bad 👎</button>
+				<p id="answer"></p>
+				<style>
+					#b1,
+					#b2 {
+						margin: 0.5em;
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						cursor: pointer;
+					}
+
+					#b1 {
+						background-color: lightgreen;
+					}
+
+					#b2 {
+						padding: 0.5em 2em;
+						font-size: 20pt;
+						background-color: lightcoral;
+					}
+				</style>
+				<script>
+					let b1 = document.getElementById("b1");
+					let b2 = document.getElementById("b2");
+					let a = document.getElementById("answer");
+
+					function b1Click(event) {
+						a.textContent = "That's great 😊";
+					}
+
+					function b2Click(event) {
+						a.textContent = "Oh that sucks 😥";
+					}
+
+					b1.addEventListener("click", b1Click);
+					b2.addEventListener("click", b2Click);
+				</script>
+			</section>
+
+			<section class="smaller">
+				<h3>Solution for Exercise - Lesson 8</h3>
+				<ul>
+					<li class="fragment">Implement the "How are you?" app!</li>
+					<li class="fragment">Create a HTML paragraph with the question <b>How are you?</b> and another
+						paragraph answer.</li>
+					<li class="smaller answer fragment">You'll need to change the answer when a button was clicked, so
+						add an ID!</li>
+					<li class="fragment">Create two buttons with content <b>Good</b> and <b>Bad</b></li>
+					<li class="fragment">Add <code>onClick</code> event handlers</li>
+					<li class="fragment">In the JS file create two functions that implement the event handlers</li>
+					<li class="fragment">Find the answer paragraph and set its text content</li>
+					<li class="smaller answer fragment">REMEMBER: <code>getElementById</code>, <code>textContent</code>!
+					</li>
+				</ul>
+			</section>
+
+			<section class="smaller">
+				<h3>Solution for Homework - Lesson 8</h3>
+				<ul>
+					<li>Finish the "How are you" app.</li>
+					<li>Use CSS to style the <i>good</i> and <i>bad</i> buttons.</li>
+					<li>
+						At the start of your script ask the user for her or his name with a prompt.
+						Change the question to include the name of the user, e.g. "Hi Max, how are you?".
+					</li>
+					<li>
+						BONUS: When the user has clicked one of the buttons, hide the question paragraph.
+						(Hint: set the <i>hidden</i> property of the element)</li>
+					<li>
+						BONUS: Change the background color of the answer paragraph, e.g. green for good and
+						red for bad. (Hint: look for the <code>className</code> property to set a class that you style
+						with CSS)
+					</li>
+				</ul>
+			</section>
+			<section class="smaller">
+				<h3>Key Points from the homework</h3>
+				<ul>
+					<li class="fragment">You created interaction by finding and changing DOM elements</li>
+					<li class="fragment">You can call other functions within a function</li>
+					<li class="fragment">You can hide an element by <code>element.hidden = true/false</code></li>
+					<li class="fragment">You can change an element's class by <code
+							class="emphasis">element.classList</code></li>
+					<ul>
+						<li class="fragment"><code class="emphasis">element.classList.add("...")</code></li>
+						<li class="fragment"><code class="emphasis">element.classList.remove("...")</code></li>
+						<li class="fragment"><code class="emphasis">element.classList.contains("...")</code></li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h3>Let's make a clock</h3>
+			</section>
+			<section>
+				<h3>In Class Exercise: Preparing to build a clock. Preview</h3>
+				<ul>
+					<li>Display the current time as text on the page</li>
+					<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Remember Number and Boolean?</h3>
+				<ul>
+					<li class="fragment">They are called Types</li>
+					<li class="fragment">We learn a new one: <span class="emphasis">Date</span></li>
+				</ul>
+			</section>
+			<section>
+				<h3>Date</h3>
+				<ul>
+					<li class="fragment">Let's try it out!</li>
+					<li class="fragment">
+						<pre><code data-trim>
+										let date = new Date();
+										alert(date);
+							</code></pre>
+					</li>
+					<li class="fragment">What do you see?</li>
+					<li class="fragment">A LOT of info about the current time and date.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Date</h3>
+				<ul>
+					<li class="fragment">How do we get just part of the info? Just the time?</li>
+					<li class="fragment">Let's look it up...</li>
+					<li class="fragment">
+						<pre><code data-trim>
+											let date = new Date();
+											let hours = date.getHours();
+											alert("It is now the hour of " + hours + ".");
+						</code></pre>
+					</li>
+					<li class="fragment">Humm.. it is in 24 hour clock. What do we do?</li>
+					<li class="fragment">A LOT of info about the current time and date.</li>
+				</ul>
+			</section>
+			<section>
+					<h3>Date</h3>
+					<ul>
+						<li>Humm, that was in 24 hour clock. How do we make it a 12 hour clock?</li>
+						<li class="fragment">Try it!</li>
+						<li class="fragment">
+							<pre><code data-trim>
+									let date = new Date();
+									let hours = date.getHours();
+									if(hours>=12) {
+										hours = hours - 12;
+									}
+									alert("It is now the hour of " + hours + ".");
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+			<section>
+				<pre>
+						<code data-trim>
+								function time(){
+									let date = new Date();
+									let hours = date.getHours();
+									let minutes = date.getMinutes();
+									let seconds = date.getSeconds();
+
+									return hours + ":" + minutes + ":" + seconds;
+								}
+								alert(time());
+						</code>
+					</pre>
+			</section>
+			<section class="smaller">
+					<h3>In Class Exercise: Preparing to build a clock.</h3>
+					<ul>
+						<li>Display the current time as text on the page</li>
+						<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening with "PM". Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5 minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
+						<li>More Examples: "12:39:03 am"  "9:03:06 pm"  </li>
+						<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+					</ul>
+				</section>
+			<section>
+				<h3>You have every thing you need to build a clock. What are you steps?</h3>
+				<ul>
+					<li class="fragment">Analyze the problem.</li>
+					<li class="fragment">Break it down and list each requirement.</li>
+					<li class="fragment">Write an outline in plain English.</li>
+					<li class="fragment">Write HTML.</li>
+					<li class="fragment">Write the skeleton functions.</li>
+					<li class="fragment">Fill in the functions and CSS</li>
+					<li class="fragment">Test</li>
+				</ul>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>
