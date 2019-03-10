@@ -49,3 +49,11 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 ## [Lesson 8](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson8)
 
 - onclick
+
+## [Lesson 8](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson9)
+
+- review onclick
+- review function scope
+- review function
+- Date object
+- How to break down a problem?
