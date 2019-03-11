@@ -53,6 +53,10 @@
 			/* Specify a stack order in case you're using a different order for other elements */
 		}
 
+		.figure {
+			border: 1px solid white
+		}
+
 		.reveal table td {
 			padding: 0.1em 0.25em 0.1em 0.25em;
 			font-size: 0.8em;
@@ -461,6 +465,108 @@
 				</ul>
 			</section>
 			<section>
+				<h3>It's an Object-Oriented World</h3>
+			</section>
+			<section>
+				<h3>Of Pizza, Types, Primitives and Objects</h3>
+				<ul>
+					<li class="fragment">Remember Strings, Number and Boolean?</li>
+					<li class="fragment">
+						<pre><code data-trim>
+							let someText = "hello. world!";
+							let count = 50;
+							let isActive = true;
+						</code></pre>
+					</li>
+					<li class="fragment">JS has a lot of "build-in" things. A lot details are hidden from you.</li>
+					<li class="fragment">But the "details" of how things work underneath are IMPORTANT.</li>
+					<li class="fragment">Strings, Number and Boolean are formally called <span
+							class="emphasis">Types</span></li>
+				</ul>
+			</section>
+			<section>
+				<h3>Let's look at a Pizza</h3>
+				<img src="assets/pizza.png" class="figure" style="width:500px">
+			</section>
+			<section>
+				<h3>Pizza is made out of simple ingredients</h3>
+				<img src="assets/ingredients.png" class="figure" style="width:700px">
+			</section>
+			<section>
+				<h3>Simple ingredients</h3>
+				<img src="assets/simple.png" class="figure" style="width:700px">
+				<p>The reason why these ingredients are simple is because we can't break them down any more.</p>
+			</section>
+			<section>
+				<h3>Complex ingredients</h3>
+				<img src="assets/complex.png" class="figure" style="width:500px">
+				<li class="fragment">The reason why these ingredients are complex is because they are made out of other
+					simple ingredients.</li>
+				<li class="fragment">Complex ingredients can be made from other complex ingredients!</li>
+			</section>
+			<section>
+				<h3>What does pizza has to do with JavaScript? </h3>
+				<ul>
+					<li class="fragment">Descrption of ingredients neatly apply to <span class="emphasis">types</span>
+						in JavaScript</li>
+					<img class="fragment" src="assets/ingredientsToTypes.png" class="figure" style="width:700px">
+				</ul>
+			</section>
+			<section>
+				<p>Just like cheese, sauce, mushroom and bacon in our pizza, the basic TYPES of javascript are Number,
+					Boolean, String etc. </p>
+				<ul>
+					<li class="fragment">Descrption of ingredients neatly apply to <span class="emphasis">types</span>
+						in JavaScript</li>
+					<img class="fragment" src="assets/simpleTable.png" class="figure" style="width:900px">
+					<li class="fragment">Some might be familia?</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Simple vs. Complex</h3>
+				<ul>
+					<img class="fragment" src="assets/simpleTable.png" class="figure" style="width:900px">
+				</ul>
+			</section>
+			<section>
+				<h3>Simple vs. Complex</h3>
+				<ul>
+					<li class="fragment">Simple : Number, Boolean, Object... also known as PRIMITIVES TYPES</li>
+				</ul>
+			</section>
+			<section>
+				<h3>What is an Object in JavaScript</h3>
+				<ul>
+					<li class="fragment">The concept of objects in programming language maps nicely onto real world
+						object.</li>
+					<li class="fragment">Your computer, a potato, your alarm clock ...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Some object don't do much</h3>
+				<img class="fragment" src="assets/rock.png" class="figure" style="width:900px">
+			</section>
+			<section>
+				<h3>Some like a TV</h3>
+				<img class="fragment" src="assets/tv.png" class="figure" style="width:500px">
+				<ul>
+					<li class="fragment">You can turn on or off</li>
+					<li class="fragment">Your can change channel</li>
+					<li class="fragment">Your can turn down volumn</li>
+				</ul>
+			</section>
+			<section>
+					<h3>Object in JS provides <span class="emphasis">ABSTRACTION</span></h3>
+					<ul>
+						<li class="fragment">Easy way to use them without thinking about the inside</li>
+						<li class="fragment">Hide complexity</li>
+					</ul>
+			</section>
+			<section>
+					<p>Some predefinied objects</p>
+					<img class="fragment" src="assets/objectTable.png" class="figure" style="width:900px">
+				</section>
+			<section>
 				<h3>Let's make a clock</h3>
 			</section>
 			<section>
@@ -508,12 +614,12 @@
 				</ul>
 			</section>
 			<section>
-					<h3>Date</h3>
-					<ul>
-						<li>Humm, that was in 24 hour clock. How do we make it a 12 hour clock?</li>
-						<li class="fragment">Try it!</li>
-						<li class="fragment">
-							<pre><code data-trim>
+				<h3>Date</h3>
+				<ul>
+					<li>Humm, that was in 24 hour clock. How do we make it a 12 hour clock?</li>
+					<li class="fragment">Try it!</li>
+					<li class="fragment">
+						<pre><code data-trim>
 									let date = new Date();
 									let hours = date.getHours();
 									if(hours>=12) {
@@ -521,9 +627,9 @@
 									}
 									alert("It is now the hour of " + hours + ".");
 							</code></pre>
-						</li>
-					</ul>
-				</section>
+					</li>
+				</ul>
+			</section>
 			<section>
 				<pre>
 						<code data-trim>
@@ -540,14 +646,18 @@
 					</pre>
 			</section>
 			<section class="smaller">
-					<h3>In Class Exercise: Preparing to build a clock.</h3>
-					<ul>
-						<li>Display the current time as text on the page</li>
-						<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening with "PM". Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5 minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
-						<li>More Examples: "12:39:03 am"  "9:03:06 pm"  </li>
-						<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
-					</ul>
-				</section>
+				<h3>In Class Exercise: Preparing to build a clock.</h3>
+				<ul>
+					<li>Display the current time as text on the page</li>
+					<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
+						with
+						"PM". Each minute and second should be in 2 digits format. For example if it is 7 o'clock
+						and 5
+						minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
+					<li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
+					<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+				</ul>
+			</section>
 			<section>
 				<h3>You have every thing you need to build a clock. What are you steps?</h3>
 				<ul>
