@@ -1,15 +1,13 @@
-let b1 = document.getElementById("b1");
-let b2 = document.getElementById("b2");
-let a = document.getElementById("answer");
+let answerEl = document.getElementById("answer");
 
 function onGoodBtnClick(event) {
-    a.textContent = "That's great 😊";
+    answerEl.textContent = "That's great 😊";
     removeGreeting();
     changeAnswerBackground(true);
 }
 
 function onBadBtnClick(event) {
-    a.textContent = "Oh that sucks 😥";
+    answerEl.textContent = "Oh that sucks 😥";
     removeGreeting();
     changeAnswerBackground(false);
 }
@@ -20,7 +18,6 @@ function removeGreeting() {
 }
 
 function changeAnswerBackground(isGood) {
-    let answerEl = document.getElementById("answer");
     if (isGood) {
         className = "good";
     } else {
