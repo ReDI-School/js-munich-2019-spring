@@ -50,10 +50,12 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 - onclick
 
-## [Lesson 8](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson9)
+## [Lesson 9](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson9)
 
-- review onclick
-- review function scope
-- review function
+- reviewed onclick
+- reviewed function scope
+- reviewed function
+- Object oriented concept
 - Date object
-- How to break down a problem?
+
+## [Lesson 10](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson10)
