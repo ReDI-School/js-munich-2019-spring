@@ -107,15 +107,15 @@
 			</section>
 			<section>
 				<pre><code data-trim>
-								function time() {
-									let date = new Date();
-									let hours = date.getHours();
-									let minutes = date.getMinutes();
-									let seconds = date.getSeconds();
+					function time() {
+						let date = new Date();
+						let hours = date.getHours();
+						let minutes = date.getMinutes();
+						let seconds = date.getSeconds();
 
-									return hours + ":" + minutes + ":" + seconds;
-								}
-								alert(time());
+						return hours + ":" + minutes + ":" + seconds;
+					}
+					alert(time());
 						</code>
 					</pre>
 			</section>
@@ -153,17 +153,17 @@
 				</ul>
 			</section>
 			<section>
-				<h3>Repeat calling a function with: setInterval</h3>
-				<li class="fragment">setInterval calls a function in a specific amount of time repeatedly.</li>
-				<li class="fragment">
+				<p>Repeat calling a function with: <code class="emphasis">setInterval</code></p>
+				<li class="fragment"><code class="emphasis">setInterval</code> calls a function in a specific amount of
+					time repeatedly
 					<pre><code data-trim>
 						let intervalId = setInterval(someFunction, delayInMilliSeconds);
 					</code></pre>
 				</li>
 				<li class=fragment>
-					You can use the intervalId to stop the calls later.
+					You can use the <code class="emphasis">intervalId</code> to stop the calls later.
 					<pre><code data-trim>
-							clearInterval(intervalId);;
+							cancelInterval(intervalId);
 					</code></pre>
 				</li>
 			</section>
@@ -189,18 +189,18 @@
 				</ul>
 			</section>
 			<section>
-					<h3>In-Class Exercise 4</h3>
-					<ul>
-						<li>Continue with the counter. But now we have to count backward from 10.</li>
-						<li>When it reach 0, the page goes BOOOOM !!! </li>
-						<li>Use cancelInterval </li>
-						<li> html:
-								<pre><code data-trim>
+				<h3>In-Class Exercise 4</h3>
+				<ul>
+					<li>Continue with the counter. But now we have to count backward from 10.</li>
+					<li>When it reach 0, the page goes BOOOOM !!! </li>
+					<li>Use cancelInterval </li>
+					<li> html:
+						<pre><code data-trim>
 										<p id="counter">10</p>
 								</code></pre>
-						</li>
-						<li> hint js:
-								<pre><code data-trim>
+					</li>
+					<li> hint js:
+						<pre><code data-trim>
 											let counterEl = document.getElementById("counter");
 											let intervalId = setInterval(subtractCountUntilZero, 1000);
 									
@@ -208,9 +208,9 @@
 												...
 											}
 								</code></pre>
-							</li>
-					</ul>
-				</section>
+					</li>
+				</ul>
+			</section>
 			<section class="smaller">
 				<h3>In-Class Exercise 5</h3>
 				<p>Building a clock.</p>
@@ -221,6 +221,21 @@
 					<li>Hint: see setInterval's usage</li>
 				</ul>
 			</section>
+			<section class="smaller">
+					<h3>Bonus Exercise 6</h3>
+					<p>Add date and florishes to the clock.</p>
+					<ul>
+						<li>Add day of the week to your clock.</li>
+						<li>Style you clock using a digital font. Ex: https://www.1001fonts.com/digital+clock-fonts.html</li>
+						<pre><code data-trim="">
+								@font-face{
+									font-family:'digital-7';
+									src: url('../fonts/digital-7.ttf');
+								   }
+						</code></pre>
+						<img src="assets/clock.png">
+					</ul>
+				</section>
 
 		</div>
 	</div>
