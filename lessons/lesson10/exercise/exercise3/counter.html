@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+
+<body>
+    <p id="counter">0</p>
+    <script>
+        let counterEl = document.getElementById("counter");
+        setInterval(incrementCount, 1000);
+
+        function incrementCount() {
+            counterEl.textContent = Number(counterEl.textContent) + 1;
+        }
+    </script>
+</body>
+
+<style>
+    body {
+        text-align: center;
+    }
+    #counter {
+        font-size: 50px;
+    }
+</style>
+
+</html>

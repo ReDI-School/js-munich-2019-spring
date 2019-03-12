@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>ReDI.js 9</title>
+	<title>ReDI.js 10</title>
 	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
 	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
 	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
@@ -119,6 +119,25 @@
 						</code>
 					</pre>
 			</section>
+			<section>
+				<h3>Now that we are ready to do some bigger project. Lets talk about Best Practices.</h3>
+			</section>
+			<section>
+				<p>Thinking like a developer</p>
+				<h2 class="fragment">Divide and Conquer</h2>
+			</section>
+			<section>
+				<h3>Let's think about the clock problem. What are your steps?</h3>
+				<ul>
+					<li class="fragment">Analyze the problem.</li>
+					<li class="fragment">Break it down and list each requirement.</li>
+					<li class="fragment">Write an outline in plain English.</li>
+					<li class="fragment">Write HTML.</li>
+					<li class="fragment">Write the skeleton functions.</li>
+					<li class="fragment">Fill in the functions and CSS</li>
+					<li class="fragment">Test</li>
+				</ul>
+			</section>
 			<section class="smaller">
 				<h3>In-Class Exercise 2</h3>
 				<p>Preparing to build a clock.</p>
@@ -134,15 +153,72 @@
 				</ul>
 			</section>
 			<section>
-				<h3>You have every thing you need to build a clock. What are your steps?</h3>
+				<h3>Repeat calling a function with: setInterval</h3>
+				<li class="fragment">setInterval calls a function in a specific amount of time repeatedly.</li>
+				<li class="fragment">
+					<pre><code data-trim>
+						let intervalId = setInterval(someFunction, delayInMilliSeconds);
+					</code></pre>
+				</li>
+				<li class=fragment>
+					You can use the intervalId to stop the calls later.
+					<pre><code data-trim>
+							clearInterval(intervalId);;
+					</code></pre>
+				</li>
+			</section>
+			<section>
+				<h3>In-Class Exercise 3</h3>
 				<ul>
-					<li class="fragment">Analyze the problem.</li>
-					<li class="fragment">Break it down and list each requirement.</li>
-					<li class="fragment">Write an outline in plain English.</li>
-					<li class="fragment">Write HTML.</li>
-					<li class="fragment">Write the skeleton functions.</li>
-					<li class="fragment">Fill in the functions and CSS</li>
-					<li class="fragment">Test</li>
+					<li>Let's try it together</li>
+					<li> html:
+						<pre><code data-trim>
+								<p id="counter">0</p>
+						</code></pre>
+					</li>
+					<li> js:
+						<pre><code data-trim>
+									let counterEl = document.getElementById("counter");
+									let intervalId = setInterval(incrementCount, 1000);
+							
+									function incrementCount() {
+										counterEl.textContent = Number(counterEl.textContent) + 1;
+									}
+						</code></pre>
+					</li>
+				</ul>
+			</section>
+			<section>
+					<h3>In-Class Exercise 4</h3>
+					<ul>
+						<li>Continue with the counter. But now we have to count backward from 10.</li>
+						<li>When it reach 0, the page goes BOOOOM !!! </li>
+						<li>Use cancelInterval </li>
+						<li> html:
+								<pre><code data-trim>
+										<p id="counter">10</p>
+								</code></pre>
+						</li>
+						<li> hint js:
+								<pre><code data-trim>
+											let counterEl = document.getElementById("counter");
+											let intervalId = setInterval(subtractCountUntilZero, 1000);
+									
+											function subtractCountUntilZero() {
+												...
+											}
+								</code></pre>
+							</li>
+					</ul>
+				</section>
+			<section class="smaller">
+				<h3>In-Class Exercise 5</h3>
+				<p>Building a clock.</p>
+				<ul>
+					<li>Continue from Ex 2 and 3 but instead of using a button to refresh update the the time
+						automatically
+					</li>
+					<li>Hint: see setInterval's usage</li>
 				</ul>
 			</section>
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+
+<body>
+    <p id="counter">10</p>
+    
+    <img id="surprised" src="https://media.giphy.com/media/4tRr2ULBwiIA8/giphy.gif" hidden>
+    <p id="boom"></p>
+
+    <script>
+        let counterEl = document.getElementById("counter");
+        let intervalId = setInterval(subtractCountUntilZero, 1000);
+
+        function subtractCountUntilZero() {
+            let currentCount = Number(counterEl.textContent);
+            if(currentCount > 0) {
+                counterEl.textContent = Number(counterEl.textContent) - 1;
+            } else {
+                let boomEl = document.getElementById("boom");
+                boomEl.textContent = "BOOM !!!!";
+                
+                let surprisedEl = document.getElementById("surprised");
+                surprisedEl.hidden = false;
+
+                cancelInterval(intervalId);
+            }
+        }
+    </script>
+</body>
+
+<style>
+    body {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+    } 
+
+    #counter {
+        font-size: 50px;
+    }
+
+    #boom {
+        font-size: 200px;
+        color:tomato;
+    }
+
+    #surprised {
+        width: 800px
+    }
+</style>
+
+</html>
