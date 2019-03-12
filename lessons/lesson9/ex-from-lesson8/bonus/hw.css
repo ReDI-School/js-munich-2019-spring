@@ -1,16 +1,16 @@
-#b1,
-#b2 {
+#goodBtn,
+#badBtn {
     margin: 0.5em;
     padding: 0.5em 2em;
     font-size: 20pt;
     cursor: pointer;
 }
 
-#b1 {
+#goodBtn {
     background-color: lightgreen;
 }
 
-#b2 {
+#badBtn {
     padding: 0.5em 2em;
     font-size: 20pt;
     background-color: lightcoral;

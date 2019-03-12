@@ -1,0 +1,173 @@
+<html>
+
+<head>
+	<title>ReDI.js 9</title>
+	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+	<style>
+		.reveal pre {
+			margin: 0;
+		}
+
+		.monospace {
+			font-family: monospace !important;
+		}
+
+		.illustration {
+			border: 0px
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+		}
+
+		.reveal pre {
+			width: 100%;
+		}
+
+		.reveal pre code {
+			cursor: pointer;
+		}
+
+		.reveal li pre {
+			width: fit-content;
+		}
+
+		.emphasis,
+		.answer {
+			color: orange;
+			font-weight: bold;
+		}
+
+		.error {
+			color: red;
+		}
+
+		.logo {
+			position: fixed;
+			/* Sit on top of the page content */
+			z-index: 2;
+			/* Specify a stack order in case you're using a different order for other elements */
+		}
+
+		.figure {
+			border: 1px solid white
+		}
+
+		.reveal table td {
+			padding: 0.1em 0.25em 0.1em 0.25em;
+			font-size: 0.8em;
+		}
+
+		.reveal table td pre code {
+			max-height: none;
+		}
+
+		.reveal .slides section.smaller {
+			font-size: 90%;
+		}
+
+		.reveal .slides section.even.smaller {
+			font-size: 80%;
+		}
+
+		.reveal .slides section.smaller ul li {
+			font-size: 90%;
+			margin-bottom: 0.5em;
+		}
+
+		.reveal .slides section .smaller {
+			font-size: 80% !important;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Intro to JavaScript</h1>
+				<h3>🚀 Lesson 10 🚀</h3>
+			</section>
+
+			<section>
+				<h2>Recap! 🍫🍬</h2>
+			</section>
+			<section>
+				<h3>In-Class Exercise 1</h3>
+				<p>Use Date object to alert the current time.</p>
+				<ul>
+					<li>Use the Date object to get the hour minute and second in the following format: HH:MM:SS</li>
+					<li>Alert the time.</li>
+				</ul>
+			</section>
+			<section>
+				<pre><code data-trim>
+								function time() {
+									let date = new Date();
+									let hours = date.getHours();
+									let minutes = date.getMinutes();
+									let seconds = date.getSeconds();
+
+									return hours + ":" + minutes + ":" + seconds;
+								}
+								alert(time());
+						</code>
+					</pre>
+			</section>
+			<section class="smaller">
+				<h3>In-Class Exercise 2</h3>
+				<p>Preparing to build a clock.</p>
+				<ul>
+					<li>Display the current time as text on the page</li>
+					<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
+						with
+						"PM".
+					<li>Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5
+						minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
+					<li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
+					<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>You have every thing you need to build a clock. What are your steps?</h3>
+				<ul>
+					<li class="fragment">Analyze the problem.</li>
+					<li class="fragment">Break it down and list each requirement.</li>
+					<li class="fragment">Write an outline in plain English.</li>
+					<li class="fragment">Write HTML.</li>
+					<li class="fragment">Write the skeleton functions.</li>
+					<li class="fragment">Fill in the functions and CSS</li>
+					<li class="fragment">Test</li>
+				</ul>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="../../jquery-3.3.1.slim.min.js"></script>
+	<script src="../../reveal.js/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+			]
+		});
+
+		// Make each code example executable by clicking it:
+		$(document).ready(function () {
+			$('code').click(function (event) {
+				console.info('Click!', $(this).text());
+				eval($(this).text());
+			});
+		});
+	</script>
+</body>
+
+</html>

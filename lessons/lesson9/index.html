@@ -111,12 +111,13 @@
 				<pre><code data-trim>
 						let cat = 'Mr. Picklesworth';
 						function printLog() {
-						  // 1. What will be printed here?
 						  console.log("printLog() -> " + cat);
 						}
 
-						// 2. What will be printed here?
+						// 1. What will be printed here?
 						console.log(cat);
+						// 2. What will happen here?
+						printLog()
 				</code></pre>
 				<p class="fragment">Variable "cat" is defined in the GLOBAL scope</p>
 			</section>
@@ -125,11 +126,10 @@
 				<pre><code data-trim>
 				function printLog() {
 					let dog = 'Mr. Maximillian';
-
-					// 1. What will happen here?
 					console.log("printLog() -> " + dog);
 				}
 
+				// 1. What will happen here?
 				printLog()
 				</code></pre>
 				<p class="fragment">Variable "dog" is defined in the LOCAL scope</p>
@@ -140,13 +140,12 @@
 					let dog = 'Mr. Maximillian';
 					function printLog() {
 						dog = 'Mr. Honeybun';
-
-						// 1. What will happen here?
 						console.log("printLog() -> " + dog);
 					}
 
-					// 2. What will happen here?
+					// 1. What will happen here?
 					console.log(dog);
+					// 2. What will happen here?
 					printLog()
 					</code></pre>
 				<p class="fragment">Variable "dog" is defined in the GLOCAL scope and changed in printLog.</p>
@@ -157,17 +156,17 @@
 					let dog = 'Mr. Maximillian';
 					function printLog() {
 						dog = 'Mr. Honeybun';
-
-						// 1. What will happen here?
 						console.log("printLog() -> " + dog);
 					}
 
-					// 2. What will happen here?
+					// 1. What will happen here?
 					printLog()
+
+					// 2. What will happen here?
 					console.log(dog);
 					</code></pre>
 				<p class="fragment">Variable "dog" is defined in the GLOCAL scope and it is changed in printLog and
-					changed the output of the second console.log.</p>
+					changed the output of the second console.log at (2)</p>
 			</section>
 			<section>
 				<p>Question 5.</p>
@@ -176,13 +175,13 @@
 
 					// 1. What will happen here?
 					console.log("1 ->" + dog);
+					// 2. What will happen here?
 					printLog()
+					// 3. What will happen here?
 					console.log("2 ->" +dog);
 
 					function printLog() {
 						dog = 'Mr. Honeybun';
-
-						// 2. What will happen here?
 						console.log("printLog() -> " + dog);
 					}
 					</code></pre>
@@ -195,11 +194,12 @@
 				<p>Question 6.</p>
 				<pre><code data-trim>
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
+					// 2. What will happen here?
 					printLog("Miss Fabulous")
 
 					function printLog(cat) {
-						// 2. What will happen here?
 						console.log("printLog() -> " + cat);
 					}
 					</code></pre>
@@ -210,13 +210,14 @@
 			<section>
 				<p>Question 6.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
+			
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
+					// 2. What will happen here?
 					printLog(dog)
 
 					function printLog(cat) {
-						// 2. What will happen here?
 						console.log("printLog() -> " + cat);
 					}
 					</code></pre>
@@ -227,13 +228,13 @@
 			<section>
 				<p>Question 6.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
+					// 2. What will happen here?
 					printLog("Miss Fabulous")
 
 					function printLog(dog) {
-						// 2. What will happen here?
 						console.log("printLog() -> " + dog);
 					}
 
@@ -242,14 +243,14 @@
 					</code></pre>
 				<p class="fragment">
 					The text "Miss Fabulous" is passed into the function printLog() and printed. Variable "dog" remains
-					unchanged.
+					unchanged. The "dog" functional argument SHADOWED the globally defined "dog".
 				</p>
 			</section>
 			<section>
 				<p>Question 7.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					printLog("Miss Fabulous")
 
 					function printLog(dog) {
@@ -257,23 +258,25 @@
 						console.log("printLog() -> " + dog);
 					}
 
+					// 2. What will happen here?
 					console.log("3 ->" + dog);
 					</code></pre>
 				<p class="fragment">
-					Syntax Error from JavasScript! Variable dog has ALREADY been defined in the global scope.
+					Syntax Error from JavasScript! Variable dog has ALREADY been defined in the function's local scope
+					because "dog" is an argument in the function.
 				</p>
 			</section>
 			<section>
 				<p>Question 8.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
+					// 2. What will happen here?
 					printLog("Miss Fabulous")
 
 					function printLog(dog) {
-						dog = "Mr. Baxington"
-						// 2. What will happen here?
+						dog = "Mr. Baxington"	
 						console.log("printLog() -> " + dog);
 					}
 
@@ -289,8 +292,8 @@
 			<section>
 				<p>Question 9.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
 
 					function printLog(dog) {
@@ -320,8 +323,8 @@
 			<section>
 				<p>Question 11.</p>
 				<pre><code data-trim>
-					// 1. What will happen here?
 					let dog = 'Mr. Maximillian';
+					// 1. What will happen here?
 					console.log("1 ->" + dog);
 					printLog()
 
@@ -368,7 +371,6 @@
 							</code></pre>
 					</li>
 				</ul>
-
 			</section>
 
 			<section>
@@ -456,12 +458,7 @@
 					<li class="fragment">You can call other functions within a function</li>
 					<li class="fragment">You can hide an element by <code>element.hidden = true/false</code></li>
 					<li class="fragment">You can change an element's class by <code
-							class="emphasis">element.classList</code></li>
-					<ul>
-						<li class="fragment"><code class="emphasis">element.classList.add("...")</code></li>
-						<li class="fragment"><code class="emphasis">element.classList.remove("...")</code></li>
-						<li class="fragment"><code class="emphasis">element.classList.contains("...")</code></li>
-					</ul>
+							class="emphasis">element.className</code> IF the element has only 1 class.</li>
 				</ul>
 			</section>
 			<section>
@@ -497,12 +494,13 @@
 				<img src="assets/simple.png" class="figure" style="width:700px">
 				<p>The reason why these ingredients are simple is because we can't break them down any more.</p>
 			</section>
-			<section>
+			<section class="smaller">
 				<h3>Complex ingredients</h3>
 				<img src="assets/complex.png" class="figure" style="width:500px">
 				<li class="fragment">The reason why these ingredients are complex is because they are made out of other
 					simple ingredients.</li>
-				<li class="fragment">Complex ingredients can be made from other complex ingredients!</li>
+				<li class="fragment">Complex ingredients can be made from other complex ingredients! (Pepperonis are
+					sausages in the USA)</li>
 			</section>
 			<section>
 				<h3>What does pizza have to do with JavaScript? </h3>
@@ -518,20 +516,33 @@
 				<ul>
 					<li class="fragment">Descrption of ingredients neatly applies to <span class="emphasis">types</span>
 						in JavaScript</li>
-					<img class="fragment" src="assets/simpleTable.png" class="figure" style="width:900px">
+					<img class="fragment" src="assets/simpleTable.png" class="figure" style="width:800px">
 					<li class="fragment">Some might be familiar?</li>
 				</ul>
 			</section>
 			<section>
-				<h3>Simple vs. Complex</h3>
+				<h3>Simple</h3>
 				<ul>
-					<img class="fragment" src="assets/simpleTable.png" class="figure" style="width:900px">
+					<li class="fragment">Simple: Number, Boolean, String etc ... also known as PRIMITIVE TYPES</li>
 				</ul>
 			</section>
 			<section>
 				<h3>Simple vs. Complex</h3>
 				<ul>
-					<li class="fragment">Simple: Number, Boolean, Object... also known as PRIMITIVE TYPES</li>
+					<li class="fragment">Like the pizza ingredients, types can be simple or complex.</li>
+					<li class="fragment">A complex type in JS is formally known as <span class="emphasis">OBJECT
+							TYPES</span></li>
+				</ul>
+			</section>
+			<section>
+				<h3>Summary: Primities vs. Object types</h3>
+				<ul>
+					<li class="fragment">Primitive types are String, Number, Boolean, Null and Undefined. They can't be
+						divided any further.</li>
+					<li class="fragment">Primitive types are the like the mushrrom and jalapeños.</li>
+					<li class="fragment">Anything thats you create and use that is <span class="emphasis">an object or
+							complex type</span>, it is potentially made of other <span class="emphasis">primitive
+							types</span></li>
 				</ul>
 			</section>
 			<section>
@@ -556,16 +567,25 @@
 				</ul>
 			</section>
 			<section>
-					<h3>Object in JS provides <span class="emphasis">ABSTRACTION</span></h3>
-					<ul>
-						<li class="fragment">Easy way to use them without thinking about the inside</li>
-						<li class="fragment">Hide complexity</li>
-					</ul>
+				<h3>Object in JS provides <span class="emphasis">ABSTRACTION</span></h3>
+				<ul>
+					<li class="fragment">Easy way to use them without thinking about the inside</li>
+					<li class="fragment">Hide complexity</li>
+					<li class="fragment">What are some object that we have already used?</li>
+					<li class="fragment">console, document, element
+						<pre><code data-trim>
+							console.log("Hello world");
+							let elem = document.getElementById("myButton");
+							elem.textContent = "OK";
+						</code></pre>
+					</li>
+					
+				</ul>
 			</section>
 			<section>
-					<p>Some predefined objects</p>
-					<img class="fragment" src="assets/objectTable.png" class="figure" style="width:900px">
-				</section>
+				<p>Some predefined objects</p>
+				<img class="fragment" src="assets/objectTable.png" class="figure" style="width:900px">
+			</section>
 			<section>
 				<h3>Let's make a clock</h3>
 			</section>
@@ -579,7 +599,6 @@
 			<section>
 				<h3>Remember Number and Boolean?</h3>
 				<ul>
-					<li class="fragment">They are called types</li>
 					<li class="fragment">We learn a new one: <span class="emphasis">Date</span></li>
 				</ul>
 			</section>
@@ -610,7 +629,6 @@
 						</code></pre>
 					</li>
 					<li class="fragment">Humm.. it is in 24 hour clock. What do we do?</li>
-					<li class="fragment">A LOT of info about the current time and date.</li>
 				</ul>
 			</section>
 			<section>
@@ -630,47 +648,6 @@
 					</li>
 				</ul>
 			</section>
-			<section>
-				<pre>
-						<code data-trim>
-								function time() {
-									let date = new Date();
-									let hours = date.getHours();
-									let minutes = date.getMinutes();
-									let seconds = date.getSeconds();
-
-									return hours + ":" + minutes + ":" + seconds;
-								}
-								alert(time());
-						</code>
-					</pre>
-			</section>
-			<section class="smaller">
-				<h3>In-Class Exercise: Preparing to build a clock.</h3>
-				<ul>
-					<li>Display the current time as text on the page</li>
-					<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
-						with
-						"PM". Each minute and second should be in 2 digits format. For example if it is 7 o'clock
-						and 5
-						minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
-					<li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
-					<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
-				</ul>
-			</section>
-			<section>
-				<h3>You have every thing you need to build a clock. What are your steps?</h3>
-				<ul>
-					<li class="fragment">Analyze the problem.</li>
-					<li class="fragment">Break it down and list each requirement.</li>
-					<li class="fragment">Write an outline in plain English.</li>
-					<li class="fragment">Write HTML.</li>
-					<li class="fragment">Write the skeleton functions.</li>
-					<li class="fragment">Fill in the functions and CSS</li>
-					<li class="fragment">Test</li>
-				</ul>
-			</section>
-
 		</div>
 	</div>
 
