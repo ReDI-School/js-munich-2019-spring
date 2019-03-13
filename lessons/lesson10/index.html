@@ -1,264 +1,369 @@
 <html>
 
 <head>
-	<title>ReDI.js 10</title>
-	<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
-	<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
-	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
-	<link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
-	<style>
-		.reveal pre {
-			margin: 0;
-		}
+  <title>ReDI.js 10</title>
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+  <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+  <style>
+    .reveal pre {
+      margin: 0;
+    }
 
-		.monospace {
-			font-family: monospace !important;
-		}
+    .monospace {
+      font-family: monospace !important;
+    }
 
-		.illustration {
-			border: 0px
-		}
+    .illustration {
+      border: 0px
+    }
 
-		.reveal li {
-			margin-bottom: 0.5em;
-		}
+    .reveal li {
+      margin-bottom: 0.5em;
+    }
 
-		.reveal pre {
-			width: 100%;
-		}
+    .reveal pre {
+      width: 100%;
+    }
 
-		.reveal pre code {
-			cursor: pointer;
-		}
+    .reveal pre code {
+      cursor: pointer;
+    }
 
-		.reveal li pre {
-			width: fit-content;
-		}
+    .reveal li pre {
+      width: fit-content;
+    }
 
-		.emphasis,
-		.answer {
-			color: orange;
-			font-weight: bold;
-		}
+    .emphasis,
+    .answer {
+      color: orange;
+      font-weight: bold;
+    }
 
-		.error {
-			color: red;
-		}
+    .error {
+      color: red;
+    }
 
-		.logo {
-			position: fixed;
-			/* Sit on top of the page content */
-			z-index: 2;
-			/* Specify a stack order in case you're using a different order for other elements */
-		}
+    .logo {
+      position: fixed;
+      /* Sit on top of the page content */
+      z-index: 2;
+      /* Specify a stack order in case you're using a different order for other elements */
+    }
 
-		.figure {
-			border: 1px solid white
-		}
+    .figure {
+      border: 1px solid white
+    }
 
-		.reveal table td {
-			padding: 0.1em 0.25em 0.1em 0.25em;
-			font-size: 0.8em;
-		}
+    .reveal table td {
+      padding: 0.1em 0.25em 0.1em 0.25em;
+      font-size: 0.8em;
+    }
 
-		.reveal table td pre code {
-			max-height: none;
-		}
+    .reveal table td pre code {
+      max-height: none;
+    }
 
-		.reveal .slides section.smaller {
-			font-size: 90%;
-		}
+    .reveal .slides section.smaller {
+      font-size: 90%;
+    }
 
-		.reveal .slides section.even.smaller {
-			font-size: 80%;
-		}
+    .reveal .slides section.even.smaller {
+      font-size: 80%;
+    }
 
-		.reveal .slides section.smaller ul li {
-			font-size: 90%;
-			margin-bottom: 0.5em;
-		}
+    .reveal .slides section.smaller ul li {
+      font-size: 90%;
+      margin-bottom: 0.5em;
+    }
 
-		.reveal .slides section .smaller {
-			font-size: 80% !important;
-		}
-	</style>
+    .reveal .slides section .smaller {
+      font-size: 80% !important;
+    }
+  </style>
 </head>
 
 <body>
-	<a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<h1>Intro to JavaScript</h1>
-				<h3>🚀 Lesson 10 🚀</h3>
-			</section>
+  <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Intro to JavaScript</h1>
+        <h3>🚀 Lesson 10 🚀</h3>
+      </section>
 
-			<section>
-				<h2>Recap! 🍫🍬</h2>
-			</section>
-			<section>
-				<h3>In-Class Exercise 1</h3>
-				<p>Use Date object to alert the current time.</p>
-				<ul>
-					<li>Use the Date object to get the hour minute and second in the following format: HH:MM:SS</li>
-					<li>Alert the time.</li>
-				</ul>
-			</section>
-			<section>
-				<pre><code data-trim>
-					function time() {
-						let date = new Date();
-						let hours = date.getHours();
-						let minutes = date.getMinutes();
-						let seconds = date.getSeconds();
+      <section>
+        <h2>Recap! 🍫🍬</h2>
+      </section>
 
-						return hours + ":" + minutes + ":" + seconds;
-					}
-					alert(time());
-						</code>
-					</pre>
-			</section>
-			<section>
-				<h3>Now that we are ready to do some bigger project. Lets talk about Best Practices.</h3>
-			</section>
-			<section>
-				<p>Thinking like a developer</p>
-				<h2 class="fragment">Divide and Conquer</h2>
-			</section>
-			<section>
-				<h3>Let's think about the clock problem. What are your steps?</h3>
-				<ul>
-					<li class="fragment">Analyze the problem.</li>
-					<li class="fragment">Break it down and list each requirement.</li>
-					<li class="fragment">Write an outline in plain English.</li>
-					<li class="fragment">Write HTML.</li>
-					<li class="fragment">Write the skeleton functions.</li>
-					<li class="fragment">Fill in the functions and CSS</li>
-					<li class="fragment">Test</li>
-				</ul>
-			</section>
-			<section class="smaller">
-				<h3>In-Class Exercise 2</h3>
-				<p>Preparing to build a clock.</p>
-				<ul>
-					<li>Display the current time as text on the page</li>
-					<li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
-						with
-						"PM".
-					<li>Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5
-						minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
-					<li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
-					<li>Have a button that refresh the text to the current time, every time it is pressed.</li>
-				</ul>
-			</section>
-			<section>
-				<p>Repeat calling a function with: <code class="emphasis">setInterval</code></p>
-				<li class="fragment"><code class="emphasis">setInterval</code> calls a function in a specific amount of
-					time repeatedly
-					<pre><code data-trim>
-						let intervalId = setInterval(someFunction, delayInMilliSeconds);
-					</code></pre>
-				</li>
-				<li class=fragment>
-					You can use the <code class="emphasis">intervalId</code> to stop the calls later.
-					<pre><code data-trim>
-							cancelInterval(intervalId);
-					</code></pre>
-				</li>
-			</section>
-			<section>
-				<h3>In-Class Exercise 3</h3>
-				<ul>
-					<li>Let's try it together</li>
-					<li> html:
-						<pre><code data-trim>
-								<p id="counter">0</p>
-						</code></pre>
-					</li>
-					<li> js:
-						<pre><code data-trim>
-									let counterEl = document.getElementById("counter");
-									let intervalId = setInterval(incrementCount, 1000);
-							
-									function incrementCount() {
-										counterEl.textContent = Number(counterEl.textContent) + 1;
-									}
-						</code></pre>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h3>In-Class Exercise 4</h3>
-				<ul>
-					<li>Continue with the counter. But now we have to count backward from 10.</li>
-					<li>When it reach 0, the page goes BOOOOM !!! </li>
-					<li>Use cancelInterval </li>
-					<li> html:
-						<pre><code data-trim>
-										<p id="counter">10</p>
-								</code></pre>
-					</li>
-					<li> hint js:
-						<pre><code data-trim>
-											let counterEl = document.getElementById("counter");
-											let intervalId = setInterval(subtractCountUntilZero, 1000);
-									
-											function subtractCountUntilZero() {
-												...
-											}
-								</code></pre>
-					</li>
-				</ul>
-			</section>
-			<section class="smaller">
-				<h3>In-Class Exercise 5</h3>
-				<p>Building a clock.</p>
-				<ul>
-					<li>Continue from Ex 2 and 3 but instead of using a button to refresh update the the time
-						automatically
-					</li>
-					<li>Hint: see setInterval's usage</li>
-				</ul>
-			</section>
-			<section class="smaller">
-					<h3>Bonus Exercise 6</h3>
-					<p>Add date and florishes to the clock.</p>
-					<ul>
-						<li>Add day of the week to your clock.</li>
-						<li>Style you clock using a digital font. Ex: https://www.1001fonts.com/digital+clock-fonts.html</li>
-						<pre><code data-trim="">
-								@font-face{
-									font-family:'digital-7';
-									src: url('../fonts/digital-7.ttf');
-								   }
-						</code></pre>
-						<img src="assets/clock.png">
-					</ul>
-				</section>
+      <section>
+        <pre><code data-trim>
+          function lol(x, y) {
+            let c = x + y;
+            return c;
+          }
 
-		</div>
-	</div>
+          let x = lol(5, 10);
+          alert(x);
+          alert(x + lol(1, 0));
+        </code></pre>
+      </section>
 
-	<script src="../../jquery-3.3.1.slim.min.js"></script>
-	<script src="../../reveal.js/lib/js/head.min.js"></script>
-	<script src="../../reveal.js/js/reveal.js"></script>
-	<script>
-		Reveal.initialize({
-			history: true,
-			dependencies: [
-				{ src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
-			]
-		});
+      <section>
+        <pre><code data-trim>
+          function lol(x, y) {
+            if (x > y) {
+              return y;
+            } else {
+              return x;
+            }
+            return 2;
+          }
 
-		// Make each code example executable by clicking it:
-		$(document).ready(function () {
-			$('code').click(function (event) {
-				console.info('Click!', $(this).text());
-				eval($(this).text());
-			});
-		});
-	</script>
+          alert(lol(5, 10));
+          alert(lol(10, 10));
+          alert(x);
+        </code></pre>
+      </section>
+
+      <section>
+        <pre><code data-trim>
+          function lol(x, y, z) {
+            if (x > y && x > z) {
+              return x;
+            }
+            if (y > z) {
+              return y;
+            }
+            return z;
+          }
+
+          alert(lol(1, 2, 3));
+          alert(lol(4, 3, 2));
+          alert(lol(3, 5, 4));
+          alert(lol(6, 6, 6));
+        </code></pre>
+      </section>
+
+      <section>
+        <pre><code data-trim>
+          let z = 10;
+          function lol(x, y) {
+            return (x - y) * z;
+          }
+
+          alert(lol(3, 1));
+          z = 2;
+          alert(lol(10, 5));
+        </code></pre>
+      </section>
+
+      <section>
+        <p id="p1" style="border: 1px black solid">7</p>
+        <p id="p2" style="border: 1px black solid">12</p>
+        <br>
+        <pre><code data-trim>
+          function lol(x, y, z) {
+            let one = document.getElementById(y);
+            let two = document.getElementById(x);
+
+            if (z) {
+              return Number(one.textContent) + Number(two.textContent);
+            }
+
+            return one.textContent + two.textContent;
+          }
+
+          alert(lol("p1", "p2", true));
+          alert(lol("p1", "p2", false));
+        </code></pre>
+      </section>
+
+      <section class="smaller">
+          <h3>Which one is better?</h3>
+          <pre><code data-trim>
+              let x = 5, y = 10;
+
+              function sum() {
+                  alert(x + y);
+              }
+
+              sum();
+          </code></pre>
+          <p>or</p>
+          <pre><code data-trim>
+              function sum(x, y) {
+                  return x + y;
+              }
+
+              alert(sum(5, 10));
+          </code></pre>
+      </section>
+
+      <section>
+        <h3>In-Class Exercise 1</h3>
+        <p>Use Date object to alert the current time.</p>
+        <ul>
+          <li>Use the Date object to get the hour minute and second in the following format: HH:MM:SS</li>
+          <li>Alert the time.</li>
+        </ul>
+      </section>
+      <section>
+        <pre><code data-trim>
+          function time() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            return hours + ":" + minutes + ":" + seconds;
+          }
+          alert(time());
+            </code>
+          </pre>
+      </section>
+      <section>
+        <h3>Now that we are ready to do some bigger project. Lets talk about Best Practices.</h3>
+      </section>
+      <section>
+        <p>Thinking like a developer</p>
+        <h2 class="fragment">Divide and Conquer</h2>
+      </section>
+      <section>
+        <h3>Let's think about the clock problem. What are your steps?</h3>
+        <ul>
+          <li class="fragment">Analyze the problem.</li>
+          <li class="fragment">Break it down and list each requirement.</li>
+          <li class="fragment">Write an outline in plain English.</li>
+          <li class="fragment">Write HTML.</li>
+          <li class="fragment">Write the skeleton functions.</li>
+          <li class="fragment">Fill in the functions and CSS</li>
+          <li class="fragment">Test</li>
+        </ul>
+      </section>
+      <section class="smaller">
+        <h3>In-Class Exercise 2</h3>
+        <p>Preparing to build a clock.</p>
+        <ul>
+          <li>Display the current time as text on the page</li>
+          <li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
+            with
+            "PM".
+          <li>Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5
+            minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
+          <li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
+          <li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+        </ul>
+      </section>
+      <section>
+        <p>Repeat calling a function with: <code class="emphasis">setInterval</code></p>
+        <li class="fragment"><code class="emphasis">setInterval</code> calls a function in a specific amount of
+          time repeatedly
+          <pre><code data-trim>
+            let intervalId = setInterval(someFunction, delayInMilliSeconds);
+          </code></pre>
+        </li>
+        <li class=fragment>
+          You can use the <code class="emphasis">intervalId</code> to stop the calls later.
+          <pre><code data-trim>
+              cancelInterval(intervalId);
+          </code></pre>
+        </li>
+      </section>
+      <section>
+        <h3>In-Class Exercise 3</h3>
+        <ul>
+          <li>Let's try it together</li>
+          <li> html:
+            <pre><code data-trim>
+                <p id="counter">0</p>
+            </code></pre>
+          </li>
+          <li> js:
+            <pre><code data-trim>
+                  let counterEl = document.getElementById("counter");
+                  let intervalId = setInterval(incrementCount, 1000);
+
+                  function incrementCount() {
+                    counterEl.textContent = Number(counterEl.textContent) + 1;
+                  }
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>In-Class Exercise 4</h3>
+        <ul>
+          <li>Continue with the counter. But now we have to count backward from 10.</li>
+          <li>When it reach 0, the page goes BOOOOM !!! </li>
+          <li>Use cancelInterval </li>
+          <li> html:
+            <pre><code data-trim>
+                    <p id="counter">10</p>
+                </code></pre>
+          </li>
+          <li> hint js:
+            <pre><code data-trim>
+                      let counterEl = document.getElementById("counter");
+                      let intervalId = setInterval(subtractCountUntilZero, 1000);
+
+                      function subtractCountUntilZero() {
+                        ...
+                      }
+                </code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="smaller">
+        <h3>In-Class Exercise 5</h3>
+        <p>Building a clock.</p>
+        <ul>
+          <li>Continue from Ex 2 and 3 but instead of using a button to refresh update the the time
+            automatically
+          </li>
+          <li>Hint: see setInterval's usage</li>
+        </ul>
+      </section>
+      <section class="smaller">
+          <h3>Bonus Exercise 6</h3>
+          <p>Add date and florishes to the clock.</p>
+          <ul>
+            <li>Add day of the week to your clock.</li>
+            <li>Style you clock using a digital font. Ex: https://www.1001fonts.com/digital+clock-fonts.html</li>
+            <pre><code data-trim="">
+                @font-face{
+                  font-family:'digital-7';
+                  src: url('../fonts/digital-7.ttf');
+                   }
+            </code></pre>
+            <img src="assets/clock.png">
+          </ul>
+        </section>
+
+    </div>
+  </div>
+
+  <script src="../../jquery-3.3.1.slim.min.js"></script>
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      dependencies: [
+        { src: '../../reveal.js/plugin/highlight/highlight.js', async: false, callback: function () { hljs.initHighlightingOnLoad(); } },
+      ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+      $('code').click(function (event) {
+        console.info('Click!', $(this).text());
+        eval($(this).text());
+      });
+    });
+  </script>
 </body>
 
 </html>
