@@ -100,14 +100,30 @@
 
       <section>
         <pre><code data-trim>
+          function lol(a) {
+            return a * 2;
+          }
+
+          let x = 1;
+          x = lol(x);
+          alert(x); // 1
+          alert(lol(x)); // 2
+          alert(lol(lol(x))); // 3
+          x = lol(10);
+          alert(lol(x)); // 4
+        </code></pre>
+      </section>
+
+      <section>
+        <pre><code data-trim>
           function lol(x, y) {
             let c = x + y;
             return c;
           }
 
           let x = lol(5, 10);
-          alert(x);
-          alert(x + lol(1, 0));
+          alert(x); // 1
+          alert(x + lol(1, 0)); // 2
         </code></pre>
       </section>
 
@@ -122,9 +138,9 @@
             return 2;
           }
 
-          alert(lol(5, 10));
-          alert(lol(10, 10));
-          alert(x);
+          alert(lol(5, 10)); // 1
+          alert(lol(10, 10)); // 2
+          alert(x); // 3
         </code></pre>
       </section>
 
@@ -140,10 +156,10 @@
             return z;
           }
 
-          alert(lol(1, 2, 3));
-          alert(lol(4, 3, 2));
-          alert(lol(3, 5, 4));
-          alert(lol(6, 6, 6));
+          alert(lol(1, 2, 3)); // 1
+          alert(lol(4, 3, 2)); // 2
+          alert(lol(3, 5, 4)); // 3
+          alert(lol(6, 6, 6)); // 4
         </code></pre>
       </section>
 
@@ -154,9 +170,9 @@
             return (x - y) * z;
           }
 
-          alert(lol(3, 1));
+          alert(lol(3, 1)); // 1
           z = 2;
-          alert(lol(10, 5));
+          alert(lol(10, 5)); // 2
         </code></pre>
       </section>
 
@@ -176,8 +192,8 @@
             return one.textContent + two.textContent;
           }
 
-          alert(lol("p1", "p2", true));
-          alert(lol("p1", "p2", false));
+          alert(lol("p1", "p2", true)); // 1
+          alert(lol("p1", "p2", false)); // 2
         </code></pre>
       </section>
 
@@ -187,7 +203,7 @@
               let x = 5, y = 10;
 
               function sum() {
-                  alert(x + y);
+                alert(x + y);
               }
 
               sum();
@@ -195,12 +211,64 @@
           <p>or</p>
           <pre><code data-trim>
               function sum(x, y) {
-                  return x + y;
+                return x + y;
               }
 
               alert(sum(5, 10));
           </code></pre>
       </section>
+
+      <section>
+        <style>
+          #b1{
+            margin: 0.5em;
+            padding: 0.5em 2em;
+            font-size: 20pt;
+            cursor: pointer;
+            background-color: lightskyblue;
+            border-radius: 15px;
+          }
+        </style>
+        <script>
+          let x = 0;
+          function lol(c) {
+            x = x + c;
+            alert(x);
+          }
+        </script>
+        <button id="b1" onclick="lol(3)">Increase</button>
+        <br><br>
+        <pre><code data-trim>
+          &lt;button id="b1" onclick="lol(3)"&gt;lol&lt;/button&gt;
+        </code></pre>
+        <br>
+        <pre><code data-trim>
+          let x = 0;
+
+          function lol(c) {
+            x = x + c;
+            alert(x);
+          }
+        </code></pre>
+      </section>
+
+			<section>
+				<ul>
+					<li>How to alert the current date?</li>
+					<li class="answer fragment"><code>alert(new Date());</code></li>
+          <li class="fragment">How to alert the current hour?</code></li>
+          <li class="answer fragment"><code>alert(new Date().getHours());</code></li>
+				</ul>
+			</section>
+
+			<section>
+				<ul>
+					<li>Name one primitive type</li>
+					<li class="answer fragment">boolean, number, etc.</li>
+          <li class="fragment">Name one complex type</code></li>
+          <li class="answer fragment">Date</li>
+				</ul>
+			</section>
 
       <section>
         <h3>In-Class Exercise 1</h3>
@@ -225,7 +293,7 @@
           </pre>
       </section>
       <section>
-        <h3>Now that we are ready to do some bigger project. Lets talk about Best Practices.</h3>
+        <h3>Now we are ready to do some bigger project. Lets talk about Best Practices.</h3>
       </section>
       <section>
         <p>Thinking like a developer</p>
@@ -248,13 +316,11 @@
         <p>Preparing to build a clock.</p>
         <ul>
           <li>Display the current time as text on the page</li>
-          <li>The time should be in 12 hours clock format, with day time desinated with "AM" and evening
-            with
-            "PM".
+          <li>The time should be in 12 hours clock format, with day time designated with "AM" / "PM".
           <li>Each minute and second should be in 2 digits format. For example if it is 7 o'clock and 5
             minutes and 16 secounds then the clock should show "7:05:16 pm"</li>
           <li>More Examples: "12:39:03 am" "9:03:06 pm" </li>
-          <li>Have a button that refresh the text to the current time, every time it is pressed.</li>
+          <li>Have a button that refreshes the text to the current time, every time it is pressed.</li>
         </ul>
       </section>
       <section>
@@ -271,17 +337,20 @@
               cancelInterval(intervalId);
           </code></pre>
         </li>
+        <li class=fragment>
+          Note: 1 second consists of 1000 milliseconds
+        </li>
       </section>
       <section>
         <h3>In-Class Exercise 3</h3>
         <ul>
           <li>Let's try it together</li>
-          <li> html:
+          <li> HTML:
             <pre><code data-trim>
                 <p id="counter">0</p>
             </code></pre>
           </li>
-          <li> js:
+          <li> JS:
             <pre><code data-trim>
                   let counterEl = document.getElementById("counter");
                   let intervalId = setInterval(incrementCount, 1000);
@@ -297,14 +366,14 @@
         <h3>In-Class Exercise 4</h3>
         <ul>
           <li>Continue with the counter. But now we have to count backward from 10.</li>
-          <li>When it reach 0, the page goes BOOOOM !!! </li>
+          <li>When it reaches 0, the page goes BOOOOM !!! </li>
           <li>Use cancelInterval </li>
-          <li> html:
+          <li> HTML:
             <pre><code data-trim>
                     <p id="counter">10</p>
                 </code></pre>
           </li>
-          <li> hint js:
+          <li> Hint JS:
             <pre><code data-trim>
                       let counterEl = document.getElementById("counter");
                       let intervalId = setInterval(subtractCountUntilZero, 1000);
@@ -332,11 +401,11 @@
           <ul>
             <li>Add day of the week to your clock.</li>
             <li>Style you clock using a digital font. Ex: https://www.1001fonts.com/digital+clock-fonts.html</li>
-            <pre><code data-trim="">
-                @font-face{
+            <pre><code data-trim>
+                @font-face {
                   font-family:'digital-7';
                   src: url('../fonts/digital-7.ttf');
-                   }
+                }
             </code></pre>
             <img src="assets/clock.png">
           </ul>
