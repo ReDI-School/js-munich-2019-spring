@@ -59,3 +59,9 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - Date object
 
 ## [Lesson 10](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson10)
+
+- Clock example
+
+## [Lesson 11](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson11)
+
+- Clock example
