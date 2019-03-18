@@ -99,6 +99,14 @@
       </section>
 
       <section>
+        <h2>Final project discussion</h2>
+      </section>
+
+      <section>
+        <h2>Let's continue 😀</h2>
+      </section>
+
+      <section>
         <p>Thinking like a developer</p>
         <h2 class="fragment">Divide and Conquer</h2>
       </section>
@@ -165,7 +173,7 @@
           </li>
         </ul>
       </section>
-      <section>
+      <section class="smaller">
         <h3>In-Class Exercise 4</h3>
         <ul>
           <li>Continue with the counter. But now we have to count backward from 10.</li>
@@ -188,19 +196,19 @@
           </li>
         </ul>
       </section>
-      <section class="smaller">
+      <section class="">
         <h3>In-Class Exercise 5</h3>
         <p>Building a clock.</p>
         <ul>
           <li>Continue from Ex 2 and 3 but instead of using a button to refresh update the the time
             automatically
           </li>
-          <li>Hint: see setInterval's usage</li>
+          <li>Hint: See setInterval's usage</li>
         </ul>
       </section>
       <section class="smaller">
         <h3>Bonus Exercise 6</h3>
-        <p>Add date and florishes to the clock.</p>
+        <p>Add day and florishes to the clock.</p>
         <ul>
           <li>Add day of the week to your clock.</li>
           <li>Style you clock using a digital font. Ex: https://www.1001fonts.com/digital+clock-fonts.html</li>
@@ -211,6 +219,121 @@
             }
           </code></pre>
           <img src="../lesson10/assets/clock.png">
+        </ul>
+      </section>
+
+      <style>
+        img.book {
+          max-height: 40vh;
+        }
+      </style>
+
+      <section>
+        <p>Let's say you want to sell books on your website.</p>
+        <ul>
+          <li class="fragment">
+            You start with one book only:<br>
+            <img class="book" src="https://cdn.ebaumsworld.com/mediaFiles/picture/2312884/83502525.jpg"><br>
+            <pre><code data-trim>
+              let book = "Zombie Raccoons & Killer Bunnies";
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li>You're selling lots of books! Time to add a second one!</li>
+          <li class="fragment">
+            <img class="book" src="https://cdn.ebaumsworld.com/mediaFiles/picture/2312884/83502525.jpg">
+            <img class="book" src="https://images-na.ssl-images-amazon.com/images/I/41K99%2BcInvL._SX326_BO1,204,203,200_.jpg">
+            <br>
+            <pre><code data-trim>
+              let book1 = "Zombie Raccoons & Killer Bunnies";
+              let book2 = "Twilight";
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li>Wow! Everyone loves your books! Time to add a third!</li>
+          <li class="fragment">
+            <img class="book" src="https://cdn.ebaumsworld.com/mediaFiles/picture/2312884/83502525.jpg">
+            <img class="book" src="https://images-na.ssl-images-amazon.com/images/I/41K99%2BcInvL._SX326_BO1,204,203,200_.jpg">
+            <img class="book" src="http://www.gdprice.com/j/04491.JPG">
+            <br>
+            <pre><code data-trim>
+              let book1 = "Zombie Raccoons & Killer Bunnies";
+              let book2 = "Twilight";
+              let book3 = "Tarzan the Terrible";
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li>Soon, you want to add 10 more books to your store...</li>
+          <li class="fragment">It's getting too hard to deal with...</li>
+          <li class="fragment">How can we deal with lists of stuff..?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>ARRAYS TO THE RESCUE!!</h4>
+        <ul>
+          <li>In JS and almost every other language, there are so-called arrays</li>
+          <li class="fragment">They represent lists of variables of the same type</li>
+          <li class="fragment">How would we define our list of books?</li>
+          <li class="fragment">
+            <pre><code data-trim>
+              let books = [
+                "Zombie Raccoons & Killer Bunnies",
+                "Twilight",
+                "Tarzan the Terrible"
+              ];
+
+              alert(books[1]);
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>ARRAYS</h4>
+        <pre><code data-trim>
+          let books = [
+            "Zombie Raccoons & Killer Bunnies",
+            "Twilight",
+            "Tarzan the Terrible"
+          ];
+        </code></pre>
+        <ul>
+          <li>You can access single elements with <code>[]</code></li>
+          <li class="fragment">Counting starts at zero!</li>
+          <li class="fragment">You can get the total length of your array with <code>books.length</code></li>
+        </ul>
+      </section>
+
+      <section class="smaller">
+        <pre><code data-trim>
+          let books = [
+            "Zombie Raccoons & Killer Bunnies",
+            "Twilight",
+            "Tarzan the Terrible"
+          ];
+
+          alert(books[1]);
+        </code></pre>
+        <br>
+
+        <h4>Exercise</h4>
+        <ul>
+          <li>Create an array of your favorite dishes.</li>
+          <li>Alert the first one</li>
+          <li class="emphasis">BONUS: Alert the last one using <code>.length</code></li>
         </ul>
       </section>
     </div>
