@@ -64,4 +64,10 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 ## [Lesson 11](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson11)
 
+- Mid-term
 - Clock example
+
+## [Lesson 12](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson12)
+
+- Objects
+- Arrays
