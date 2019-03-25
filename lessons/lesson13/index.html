@@ -1,0 +1,444 @@
+<html>
+
+<head>
+  <title>ReDI.js 13</title>
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+  <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+  <style>
+    .reveal pre {
+      margin: 0;
+    }
+
+    .monospace {
+      font-family: monospace !important;
+    }
+
+    .illustration {
+      border: 0px
+    }
+
+    .reveal li {
+      margin-bottom: 0.5em;
+    }
+
+    .reveal pre {
+      width: 100%;
+    }
+
+    .reveal pre code {
+      cursor: pointer;
+    }
+
+    .reveal li pre {
+      width: fit-content;
+    }
+
+    .emphasis,
+    .answer {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .logo {
+      position: fixed;
+      z-index: 2;
+    }
+
+    .figure {
+      border: 1px solid white
+    }
+
+    .reveal table td {
+      padding: 0.1em 0.25em 0.1em 0.25em;
+      font-size: 0.8em;
+    }
+
+    .reveal table td pre code {
+      max-height: none;
+    }
+
+    .reveal .slides section.smaller {
+      font-size: 90%;
+    }
+
+    .reveal .slides section.even.smaller {
+      font-size: 80%;
+    }
+
+    .reveal .slides section.smaller ul li {
+      font-size: 90%;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal .slides section .smaller {
+      font-size: 80% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Intro to JavaScript</h1>
+        <h3>🚀 Lesson 13 🚀</h3>
+      </section>
+
+      <section>
+        <h2>Let's split the class for today</h2>
+      </section>
+
+      <section>
+        <h2>Review</h2>
+      </section>
+
+      <section>
+        <h3>Objects</h3>
+        <pre><code data-trim>
+          let book = {
+            title: "Zombie Raccoons & Killer Bunnies",
+            image: "zombie_raccoons.jpg",
+            pageCount: 643,
+            price: "20 &euro;"
+          };
+
+          alert(book.title);
+        </code></pre>
+        <br>
+        <ul>
+          <li class="fragment">Objects consist of keys and values</li>
+          <li class="fragment">The key is like the name of the variable</li>
+          <li class="fragment">The value is like a variable itself</li>
+          <li class="fragment">You can access values with the dot</li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li class="">You can change values:</li>
+          <li>
+            <pre><code data-trim>
+              let person = {
+                name: "Karl",
+                age: 45,
+              };
+              person.age = 46; // Happy birthday!
+
+              alert(person.name + " is now " + person.age);
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li class="">And even add new keys:</li>
+          <li>
+            <pre><code data-trim>
+              let person = {
+                name: "Karl",
+                age: 45,
+              };
+              person.hobby = "skateboarding";
+
+              alert(person.name + "'s hobby is " + person.hobby);
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section class="smaller">
+        <pre><code data-trim>
+          let a = {
+            first: 'hey',
+            second: 'ho',
+            space: ' ',
+          };
+          alert(a.first); // 1
+          alert(a.first + a.space + a.second); // 2
+          a.third = '!!';
+          alert(a.first + a.space + a.second + a.third); // 3
+        </code></pre>
+      </section>
+
+      <section class="smaller">
+        <pre><code data-trim>
+          function lol(o, v) {
+            o.b = v;
+          };
+
+          let a = {
+            b: 1,
+          };
+
+          alert(a.b); // 1
+          lol(a, 2);
+          alert(a.b); // 2
+        </code></pre>
+      </section>
+
+      <section class="smaller">
+        <pre><code data-trim>
+          let a = {
+            n: 1,
+            lol: function() {
+              alert(this.n);
+            }
+          };
+          a.lol(); // 1
+          alert(a.n); // 2
+          a.n = 5;
+          a.lol(); // 3
+        </code></pre>
+      </section>
+
+      <section>
+        <h4>Arrays</h4>
+        <ul>
+          <li>In JS and almost every other language, there are so-called arrays</li>
+          <li class="fragment">They represent lists of variables</li>
+          <li class="fragment">How would we define our list of books?</li>
+          <li class="fragment">
+            <pre><code data-trim>
+              let books = [
+                "Zombie Raccoons & Killer Bunnies",
+                "Twilight",
+                "Onio"
+              ];
+
+              alert(books[1]);
+              alert(books.length);
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Arrays</h4>
+        <pre><code data-trim>
+          let books = [
+            "Zombie Raccoons & Killer Bunnies",
+            "Twilight",
+            "Onio"
+          ];
+        </code></pre>
+        <br>
+        <ul>
+          <li>You can access single elements with <code>[]</code></li>
+          <li class="fragment">Counting starts at zero!</li>
+          <li class="fragment">You can get the total length of your array with <code>books.length</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <p>You can add new values with <code>.push()</code>:</p>
+        <div class="fragment">
+          <pre><code data-trim>
+            let books = [
+              "Zombie Raccoons & Killer Bunnies",
+              "Twilight",
+              "Onio"
+            ];
+
+            books.push("The Midnight Cat Mystery Butler");
+
+            alert(books[3]);
+            alert(books.length);
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="smaller">
+        <pre><code data-trim>
+          let a = [];
+          alert(a.length); // 1
+          a.push(10);
+          alert(a.length); // 2
+          alert(a[0]); // 3
+          a.push("hello");
+          alert(a.length); // 4
+          alert(a[1]); // 5
+        </code></pre>
+      </section>
+
+      <section>
+        <p>Let's build a TV as a JS object!</p>
+        <ul>
+          <li class="fragment">First feature: Volume control!</li>
+          <li class="fragment">We need to keep the current volume as a number</li>
+          <li class="fragment">Also two functions: increaseVolume() and decreaseVolume()</li>
+          <li class="fragment">Let's limit the volume to the range 0 - 10</li>
+        </ul>
+      </section>
+
+      <section>
+        <p>Next, let's try TV channels:</p>
+        <ul>
+          <li class="fragment">Let's add an array of available channels</li>
+          <li class="fragment">Then, the current channel index</li>
+          <li class="fragment">Again two functions: increaseChannel() and decreaseChannel()</li>
+          <li class="fragment">When they reach the highest channel, wrap over!</li>
+        </ul>
+      </section>
+
+      <section>
+        <p>Let's allow adding channels</p>
+        <ul>
+          <li class="fragment">addChannel(channelName)</li>
+          <li class="fragment">getChannelCount()</li>
+          <li class="fragment">getChannel() (since channel is just an index)</li>
+        </ul>
+      </section>
+
+      <section>
+        <p>Now back to the homework!</p>
+      </section>
+
+      <section class="smaller">
+        <h4>Homework</h4>
+        <ul>
+          <li>Create a "library" object</li>
+          <li>It starts with: An empty list of books and "capacity" variable of 5</li>
+          <li>Now add a function to it called "addBook" that adds books. Each book consists of "title" and "pages"</li>
+          <li>Finally, alert an error if the capacity is full, i.e. there are already as many books as capacity inside</li>
+          <li>Try it out!</li>
+          <li class="emphasis">BONUS 1: Alert an error if the book is not an object and has no "title" and "pages"</li>
+          <li class="emphasis">BONUS 2: Add an "extend(n)" function that increases the capacity by n</li>
+        </ul>
+      </section>
+
+      <section class="smaller">
+        <h2>Final project</h2>
+        <h4>For everyone: Todo-List</h4>
+        <ul>
+          <li class="fragment">
+            Minimum features
+            <ul>
+              <li>Add new todo-items to a list</li>
+              <li>Allow marking as done / deleting</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            Ideas for additional features
+            <ul>
+              <li>Due dates</li>
+              <li>Sorting</li>
+              <li>etc</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="">
+        <h2>Todo-List</h2>
+        <ul>
+          <li>
+            Examples:
+            <ul>
+              <li><a href="https://redi-school.github.io/js-munich-2018-fall/project/mowlid/" target="_blank">Basic</a></li>
+              <li><a href="https://tkitti.github.io/todo-project/" target="_blank">Advanced</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="">
+        <h2>Todo-List</h2>
+        <h4>What are we missing?</h4>
+        <ul>
+          <li class="fragment">Work with input fields: Get text, clear, etc.</li>
+          <li class="fragment">Add new HTML elements to a page</li>
+        </ul>
+        <p class="emphasis fragment">We'll work on that in the next weeks!</p>
+      </section>
+
+      <style>
+        .input-example input, .input-example button {
+          padding: 0.5em 1em;
+          font-size: 15pt;
+          border-radius: 5px;
+        }
+        .input-example input {
+          width: 50vw;
+        }
+        .input-example button {
+          background-color: lightblue;
+        }
+      </style>
+
+      <section class="">
+        <h2>Step 1:</h2>
+        <h3>How to work with input elements?</h3>
+        <p class="fragment">Exercise: Build something similar to this in HTML:</p>
+        <div class="fragment input-example">
+          <input></input>
+          <button>Send</button>
+        </div>
+        <p class="fragment emphasis">Hint: Use &lt;input&gt; and &lt;button&gt;</p>
+      </section>
+
+      <section class="">
+        <h2>Quick quiz</h2>
+        <ul>
+          <li>In JS, how do you get an HTML element?</li>
+          <li class="smaller answer fragment"><code>let element = document.getElementById(...);</code></li>
+          <li class="fragment">How do you run a JS function when a button is clicked?</li>
+          <li class="smaller answer fragment"><code>&lt;button onclick="myFunction()"&gt;</code></li>
+        </ul>
+      </section>
+
+      <section class="">
+        <p>What if we want to alert the text inside the input when the button is pressed?</p>
+        <div class="input-example">
+          <input id="input-id"></input>
+          <button onclick="alert(document.getElementById('input-id').value)">Send</button>
+        </div>
+        <br>
+        <p class="fragment">You can access the text inside an input with <code class="emphasis">inputElement.value</code></p>
+      </section>
+
+      <section class="">
+        <h3>Exercise</h3>
+        <ul>
+          <li>Add a function that gets called when the button is clicked</li>
+          <li>It should alert the text inside the input</li>
+          <li class="emphasis">Hint: Use <code>element.value</code></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="../../jquery-3.3.1.slim.min.js"></script>
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      dependencies: [{
+        src: '../../reveal.js/plugin/highlight/highlight.js',
+        async: false,
+        callback: function () {
+          hljs.initHighlightingOnLoad();
+        }
+      }, ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+      $('code').click(function (event) {
+        console.info('Click!', $(this).text());
+        eval($(this).text());
+      });
+    });
+  </script>
+</body>
+
+</html>
