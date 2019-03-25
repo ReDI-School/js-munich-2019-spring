@@ -413,6 +413,16 @@
           <li class="emphasis">Hint: Use <code>element.value</code></li>
         </ul>
       </section>
+
+      <section class="">
+        <p>What if we want to clear the input after the button click?</p>
+        <div class="input-example">
+          <input id="input-id2"></input>
+          <button onclick="e = document.getElementById('input-id2'); alert(e.value); e.value = '';">Send</button>
+        </div>
+        <br>
+        <p class="fragment">You can use <code class="emphasis">inputElement.value</code> to change the input text!<br>Try it!</p>
+      </section>
     </div>
   </div>
 
