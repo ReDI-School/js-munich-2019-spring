@@ -75,4 +75,8 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 ## [Lesson 13](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson13)
 
 - Repeat objects and arrays
+
+## [Lesson 14](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson14)
+
 - Input .value
+- Introduced `while` statements
