@@ -1,0 +1,386 @@
+<html>
+
+<head>
+  <title>ReDI.js 14</title>
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+  <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+  <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+  <style>
+    .reveal pre {
+      margin: 0;
+    }
+
+    .monospace {
+      font-family: monospace !important;
+    }
+
+    .illustration {
+      border: 0px
+    }
+
+    .reveal li {
+      margin-bottom: 0.5em;
+    }
+
+    .reveal pre {
+      width: 100%;
+    }
+
+    .reveal pre code {
+      cursor: pointer;
+    }
+
+    .reveal li pre {
+      width: fit-content;
+    }
+
+    .emphasis,
+    .answer {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .logo {
+      position: fixed;
+      z-index: 2;
+    }
+
+    .figure {
+      border: 1px solid white
+    }
+
+    .reveal table td {
+      padding: 0.1em 0.25em 0.1em 0.25em;
+      font-size: 0.8em;
+    }
+
+    .reveal table td pre code {
+      max-height: none;
+    }
+
+    .reveal .slides section.smaller {
+      font-size: 90%;
+    }
+
+    .reveal .slides section.even.smaller {
+      font-size: 80%;
+    }
+
+    .reveal .slides section.smaller ul li {
+      font-size: 90%;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal .slides section .smaller {
+      font-size: 80% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Intro to JavaScript</h1>
+        <h3>🚀 Lesson 14 🚀</h3>
+      </section>
+
+      <section>
+        <h2>Working with Input Fields</h2>
+      </section>
+
+      <section>
+        <h2>Review</h2>
+      </section>
+
+      <section class="smaller">
+        <h3>Which one is better?</h3>
+        <pre><code data-trim>
+          let x = 5, y = 10;
+
+          function sum() {
+              alert(x + y);
+          }
+
+          sum();
+        </code></pre>
+        <p>or</p>
+        <pre><code data-trim>
+          function sum(x, y) {
+              return x + y;
+          }
+
+          alert(sum(5, 10));
+        </code></pre>
+      </section>
+
+      <section>
+        <h3><code data-trim>if (A) { B } else { C }</code></h3>
+        <ul>
+          <li class="fragment">
+            What is <code>A</code> for?<br>
+            <span class="answer fragment">Specifying the condition, e.g. <code data-trim>a > 10</code></span>
+          </li>
+          <li class="fragment">
+            What is <code>B</code> for?<br>
+            <span class="answer fragment">Defining the primary branch, if the condition is fulfilled</span>
+          </li>
+          <li class="fragment">
+            What is <code>C</code> for?<br>
+            <span class="answer fragment">Defining the alternate branch, if no other branch worked</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>How to you define ...</h3>
+        <ul>
+          <li class="fragment">
+            An empty array?<br>
+            <span class="answer fragment"><code>let myArray = [];</code></span>
+          </li>
+          <li class="fragment">
+            An empty object?<br>
+            <span class="answer fragment"><code>let myObject = {};</code></span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>A few questions ...</h3>
+        <ul>
+          <li class="fragment">
+            What can we store in an array?<br>
+            <span class="answer fragment">Any value (incl. an array).</span>
+          </li>
+          <li class="fragment">
+            What is a nested object?<br>
+            <span class="answer fragment">An object within an object.</span>
+          </li>
+          <li class="fragment">
+            What data type is an object?<br>
+            <span class="answer fragment">It's an object! (Hint: try <code>typeof</code>)</span>
+          </li>
+          <li class="fragment">
+            What data type is an array?<br>
+            <span class="answer fragment">Surprisingly, it is also an object!</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+          <h3>Find the flaws!</h3>
+          <ul>
+              <li class="fragment">
+                  <pre><code data-trim>
+                      var x = 10, y = 11;
+                      function add() {
+                          return x + y;
+                      }
+                  </code></pre>
+                  <span class="answer fragment">Avoid using global variables!</span>
+              </li>
+              <li class="fragment">
+                  <pre><code data-trim>
+                      function add() {
+                          let x = 10, y = 11;
+                          return x + y;
+                      }
+                  </code></pre>
+                  <span class="answer fragment">Should use arguments!</span>
+              </li>
+              <li class="fragment">
+                  <pre><code data-trim>
+                      function add(x, y) {
+                          alert(x, y);
+                      }
+                  </code></pre>
+                  <span class="answer fragment">Should use return!</span>
+              </li>
+          </ul>
+      </section>
+
+      <section>
+          <h3>Find the flaws!</h3>
+          <ul>
+              <li class="fragment">
+                  <pre><code data-trim>
+                      let status = '';
+                      function add(x, y) {
+                          status = 'adding...'
+                          return x + y;
+                      }
+                  </code></pre>
+                  <span class="answer fragment">Avoid changing global variables!</span>
+              </li>
+              <li class="fragment">
+                  <pre><code data-trim>
+                      function add(x, y) {
+                          return x, y;
+                      }
+                  </code></pre>
+                  <span class="answer fragment">Perfect! ✨</span>
+              </li>
+          </ul>
+      </section>
+
+      <section>
+        <h3><code>while</code> Statements</h3>
+        <ul>
+          <li>What if we want to repeat something?</li>
+          <li class="fragment"><code>while</code> we are at it ... 🤪</li>
+            <li class="fragment">It runs code only while some <b>condition</b> is fulfilled</li>
+            <li class="fragment">Syntax is like <code>if</code>, behavior is slightly different</li>
+          </ul>
+      </section>
+
+      <section>
+        <h3>How do you define a <code>while</code> statement?</h3>
+        <br><br>
+        <div class="answer fragment">
+          <pre><code data-trim>
+            while (condition) {
+              //conditional code here...
+            }
+          </code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Example: Iterating over an array</h3>
+        <br><br>
+        <div class="answer fragment">
+          <pre><code data-trim>
+            let inputs = [1, 3, 7, 11];
+            let index = 0;
+
+            while (index < inputs.length) {
+              alert("Current input is: " + inputs[index]);
+              index = index + 1;
+            }
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="">
+        <h2>Todo-List</h2>
+        <h4>What are we missing?</h4>
+        <ul>
+          <li class="fragment">Work with input fields: Get text, clear, etc.</li>
+          <li class="fragment">Add new HTML elements to a page</li>
+        </ul>
+        <p class="emphasis fragment">We'll work on that in the next weeks!</p>
+      </section>
+
+      <style>
+        .input-example input, .input-example button {
+          padding: 0.5em 1em;
+          font-size: 15pt;
+          border-radius: 5px;
+        }
+        .input-example input {
+          width: 50vw;
+        }
+        .input-example button {
+          background-color: lightblue;
+        }
+      </style>
+
+      <section class="">
+        <h2>Step 1:</h2>
+        <h3>How to work with input elements?</h3>
+        <p class="fragment">Exercise: Build something similar to this in HTML:</p>
+        <div class="fragment input-example">
+          <input></input>
+          <button>Send</button>
+        </div>
+        <p class="fragment emphasis">Hint: Use &lt;input&gt; and &lt;button&gt;</p>
+      </section>
+
+      <section class="">
+        <h2>Quick quiz</h2>
+        <ul>
+          <li>In JS, how do you get an HTML element?</li>
+          <li class="smaller answer fragment"><code>let element = document.getElementById(...);</code></li>
+          <li class="fragment">How do you run a JS function when a button is clicked?</li>
+          <li class="smaller answer fragment"><code>&lt;button onclick="myFunction()"&gt;</code></li>
+        </ul>
+      </section>
+
+      <section class="">
+        <p>What if we want to alert the text inside the input when the button is pressed?</p>
+        <div class="input-example">
+          <input id="input-id"></input>
+          <button onclick="alert(document.getElementById('input-id').value)">Send</button>
+        </div>
+        <br>
+        <p class="fragment">You can access the text inside an input with <code class="emphasis">inputElement.value</code></p>
+      </section>
+
+      <section class="">
+        <h3>Exercise</h3>
+        <ul>
+          <li>Add a function that gets called when the button is clicked</li>
+          <li>It should alert the text inside the input</li>
+          <li class="emphasis">Hint: Use <code>element.value</code></li>
+        </ul>
+      </section>
+
+      <section class="">
+        <p>What if we want to clear the input after the button click?</p>
+        <div class="input-example">
+          <input id="input-id2"></input>
+          <button onclick="e = document.getElementById('input-id2'); alert(e.value); e.value = '';">Send</button>
+        </div>
+        <br>
+        <p class="fragment">You can use <code class="emphasis">inputElement.value</code> to change the input text!<br>Try it!</p>
+      </section>
+
+      <section class="smaller">
+        <h4>Homework</h4>
+        <ul>
+          <li>Create a simple calculator</li>
+          <li>It starts with two input fields, a select field, and one output element</li>
+          <li>Now add a function to it called "calc" that takes the two input fields and calculates the output</li>
+          <li>The operation should be determined by the select box (options: "+" and "-")</li>
+          <li>Try it out!</li>
+          <li class="emphasis">BONUS 1: Implement more operations (e.g., "*")</li>
+          <li class="emphasis">BONUS 2: Do not show the result immediately, pretend to be "working" for some time</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="../../jquery-3.3.1.slim.min.js"></script>
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      dependencies: [{
+        src: '../../reveal.js/plugin/highlight/highlight.js',
+        async: false,
+        callback: function () {
+          hljs.initHighlightingOnLoad();
+        }
+      }, ]
+    });
+
+    // Make each code example executable by clicking it:
+    $(document).ready(function () {
+      $('code').click(function (event) {
+        console.info('Click!', $(this).text());
+        eval($(this).text());
+      });
+    });
+  </script>
+</body>
+
+</html>
