@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Item Demo</title>
+    <style>
+        .input-example input,
+        .input-example button {
+            padding: 0.5em 1em;
+            font-size: 15pt;
+            border-radius: 5px;
+        }
+
+        .input-example input {
+            width: 50vw;
+        }
+
+        .input-example button {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-example">
+        <input id="input-id"></input>
+        <button onclick="addItem()">Send</button>
+        <ul id="list">
+            
+        </ul>
+    </div>
+
+    <script>
+        function addItem() {
+            let ulEl = document.getElementById("list");
+            let itemEl = document.createElement("li");
+            itemEl.textContent = document.getElementById("input-id").value;
+            ulEl.appendChild(itemEl);
+        }
+    </script>
+</body>
+
+</html>

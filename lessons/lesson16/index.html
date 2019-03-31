@@ -1,71 +1,13 @@
 <html>
 
 <head>
-    <title>ReDI.js 16</title>
+    <title>ReDI.js 16 Spring 2019</title>
     <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
     <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
     <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
     <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
-    <style>
-        .reveal pre {
-            margin: 0;
-        }
-
-        .monospace {
-            font-family: monospace !important;
-        }
-
-        .illustration {
-            border: 0px
-        }
-
-        .reveal li {
-            margin-bottom: 0.5em;
-        }
-
-        .reveal pre {
-            width: 100%;
-        }
-
-        .reveal pre code {
-            cursor: pointer;
-        }
-
-        .reveal li pre {
-            width: fit-content;
-        }
-
-        .emphasis, .answer {
-            color: orange;
-            font-weight: bold;
-        }
-
-        .logo {
-            position: fixed;
-            /* Sit on top of the page content */
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-        }
-
-        .reveal table td {
-            padding: 0.1em 0.25em 0.1em 0.25em;
-            font-size: 0.8em;
-        }
-
-        .reveal table td pre code {
-            max-height: none;
-        }
-
-        .reveal .slides section.smaller {
-            font-size: 90%;
-        }
-
-        .reveal .slides section.smaller ul li {
-            font-size: 90%;
-            margin-bottom: 0.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="../../reveal.js/css/redi.css">
 </head>
 
 <body>
@@ -74,189 +16,99 @@
         <div class="slides">
             <section>
                 <h1>Intro to JavaScript</h1>
-                <h3>🚀 Lesson 20 🚀</h3>
+                <h3>🚀 Lesson 16 🚀</h3>
             </section>
-
             <section>
-                <h3>Remember query selectors?</h3>
+                <h3>Review Homework: Rainbow my World!</h3>
                 <ul>
-                    <li class="fragment">
-                        <p>Where did we use query selectors?</p>
-                        <p class="answer fragment">In CSS to style specific elements</p>
-                    </li>
-                    <li class="fragment">
-                        What does this select?
-                        <pre><code data-trim>
-                            .main p
-                        </code></pre>
-                        <p class="answer fragment">All paragraphs inside elements of class main</p>
-                    </li>
-                    <li class="fragment">
-                        What does this select?
-                        <pre><code data-trim>
-                            ul.infotable > li:last-child
-                        </code></pre>
-                        <p class="answer fragment">
-                            The last direct list item of every UL-element with class "infotable".
-                        </p>
-                    </li>
+                    <li>You have page with a button "Rainbow Me" and an unorder list of items.</li>
+                    <li>Press the button and the color of one of the item changes. When it reach the end, it starts from
+                        the beginning again </li>
+                    <li>BONUS: Make it change color every 5 seconds automatically without the button</li>
                 </ul>
             </section>
-
             <section>
-                <h3>Query selectors:</h3>
+                <h3>Review Bonus Homework: Rainbow my World and more!</h3>
                 <ul>
-                    <li class="fragment">
-                        are very powerful.
-                    </li>
-                    <li class="fragment">
-                        are great for finding specific elements in a HTML page.
-                    </li>
-                    <li class="fragment">
-                        Why not use them in JS?
-                    </li>
+                    <li>Add another button "Add Color"</li>
+                    <li>Press the "Add Color" button a new color is added.</li>
+                    <li>Look up <code>document.createElement(...)</code> and element.appendChild(...)</li>
                 </ul>
             </section>
-
             <section>
-                <p>
-                    <code>document.querySelector('#footer a')</code>
-                </p>
-                <p class="fragment">
-                    Returns <b>the first</b> link in the element with id "footer".
-                </p>
+                <section class="">
+                    <h5>How to create a new <code>&lt;p></code>-element in JS?</h5>
+                    <pre class="fragment"><code data-trim>
+                                let newEl = document.createElement("p");
+                            </code></pre>
+                    <br>
+                    <h5 class="fragment">How to set the text inside it?</h5>
+                    <pre class="fragment"><code data-trim>
+                                newEl.textContent = "Hello world!";
+                            </code></pre>
+                    <br>
+                    <h5 class="fragment">How to append it to an existing div?</h5>
+                    <pre class="fragment"><code data-trim>
+                                divEl = ...;
+                                divEl.appendChild(newEl);
+                            </code></pre>
+                </section>
+            </section>
+        
+            <style>
+                .input-example input,
+                .input-example button {
+                    padding: 0.5em 1em;
+                    font-size: 15pt;
+                    border-radius: 5px;
+                }
+
+                .input-example input {
+                    width: 50vw;
+                }
+
+                .input-example button {
+                    background-color: lightblue;
+                }
+            </style>
+            <section class="">
+                <p>Remember how to alert the text inside the input when the button is pressed?</p>
+                <div class="input-example">
+                    <input id="input-id"></input>
+                    <button onclick="alert(document.getElementById('input-id').value)">Send</button>
+                </div>
                 <br>
-                <p class="fragment">
-                    <code>document.querySelectorAll('#footer a')</code>
-                </p>
-                <p class="fragment">
-                    Returns <b>all</b> links in the element with id "footer".
-                </p>
+                <p class="fragment">You can access the text inside an input with <code
+                        class="emphasis">inputElement.value</code></p>
             </section>
-
             <section>
-                <h4>HTML:</h4>
-                <pre><code data-trim>
-                    &lt;div id="header">
-                        &lt;ul>
-                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
-                            &lt;li>
-                                Rules:
-                                &lt;ol>
-                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
-                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
-                                &lt;/ol>
-                            &lt;/li>
-                        &lt;/ul>
-                    &lt;/div>
-                </code></pre>
-                <p>What does this look like in the browser?</p>
-                <p class="answer fragment">A list in a list</p>
-            </section>
-
-            <section>
-                <h4>HTML:</h4>
-                <pre><code data-trim>
-                    &lt;div id="header">
-                        &lt;ul>
-                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
-                            &lt;li>
-                                Rules:
-                                &lt;ol>
-                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
-                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
-                                &lt;/ol>
-                            &lt;/li>
-                        &lt;/ul>
-                    &lt;/div>
-                </code></pre>
-                <p>How to select all links in the div?</p>
-                <p class="answer fragment"><code>#header a</code></p>
-            </section>
-
-            <section>
-                <h4>HTML:</h4>
-                <pre><code data-trim>
-                    &lt;div id="header">
-                        &lt;ul>
-                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
-                            &lt;li>
-                                Rules:
-                                &lt;ol>
-                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
-                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
-                                &lt;/ol>
-                            &lt;/li>
-                        &lt;/ul>
-                    &lt;/div>
-                </code></pre>
-                <p>How to select all links in the inner list ("rules")?</p>
-                <p class="answer fragment"><code>#header ul ol a</code></p>
-            </section>
-
-            <section>
-                <h4>HTML:</h4>
-                <pre><code data-trim>
-                    &lt;div id="header">
-                        &lt;ul>
-                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
-                            &lt;li>
-                                Rules:
-                                &lt;ol>
-                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
-                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
-                                &lt;/ol>
-                            &lt;/li>
-                        &lt;/ul>
-                    &lt;/div>
-                </code></pre>
-                <p>How to select all links in the outer list?</p>
-                <p class="answer fragment"><code>#header > ul > li > a</code></p>
-            </section>
-
-            <section>
-                <h3>What if a function returns multiple results?</h3>
                 <ul>
-                    <li class="fragment">
-                        They are basically an array!
+                    <li>Now instead of alert add the value of the input and add it as an element to an unordered list.
                     </li>
-                    <li class="fragment">
-                        Applying functions to them will change every item in the list!
-                    </li>
+                    <li>see addItemDemo</li>
                 </ul>
             </section>
-
             <section>
-                <h3>Mini Project: 🦉 Twitter Clone</h3>
-                <ul>
-                    <li>
-                        We'll build it together!
-                    </li>
-                    <li>
-                        Will help you with your Todo Project
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Today: New tweet input with counter</h3>
-                <ul>
-                    <li>
-                        See Demo
-                    </li>
-                </ul>
-            </section>
-
+                    <h3>Mini Project: 🦉 Twitter Clone</h3>
+                    <ul>
+                        <li>
+                            We'll build it together!
+                        </li>
+                        <li>
+                            Will help you with your Todo Project
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Today: Add new tweet when the "Tweet" button is clicked</h3>
+                    <ul>
+                        <li>
+                            See Demo
+                        </li>
+                    </ul>
+                </section>
             <section class="smaller">
-                <h3>Features</h3>
+                <h3>Twitter Features: For the future</h3>
                 <ul>
                     <li class="fragment"><b>Clicking</b> the button <b>adds</b> the new tweet to the list</li>
                     <li class="fragment">When <b>no tweet</b> added yet, display <b>info message</b></li>
@@ -281,16 +133,15 @@
             dependencies: [{
                 src: '../../reveal.js/plugin/highlight/highlight.js',
                 async: true,
-                callback: function() {
+                callback: function () {
                     hljs.initHighlightingOnLoad();
                 }
-            }, ]
+            },]
         });
 
         // Make each code example executable by clicking it:
-        $(document).ready(function() {
-            $('code').click(function(event) {
-                //                console.info('Click!', $(this).text());
+        $(document).ready(function () {
+            $('code').click(function (event) {
                 eval($(this).text());
             });
         });
