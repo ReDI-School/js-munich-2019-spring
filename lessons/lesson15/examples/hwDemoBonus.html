@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="hwDemo.css">
+</head>
+
+<body>
+    <button onclick="changeColors()">Rainbow Me</button>
+    <button onclick="addColor()">Add a color</button>
+    <ul id="lines">
+        <li class="box red"></li>
+        <li class="box orange"></li>
+        <li class="box yellow"></li>
+        <li class="box green"></li>
+        <li class="box blue"></li>
+        <li class="box purple"></li>
+    </ul></code></pre>
+
+    <script>
+        let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        
+        function changeColors() {
+            let colorCounter = getRandomInt(colors.length);
+            let listEl = document.getElementById("lines");
+            let counter = 0;
+            while (counter < listEl.childElementCount) {
+                listEl.children[counter].className = "box " + colors[colorCounter]; 
+                counter++;
+                colorCounter++;
+
+                //wrap around when we reach the end
+                if(colorCounter >= colors.length) {
+                    colorCounter = 0;
+                }
+            }
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        function addColor(){
+            let listEl = document.getElementById("lines");
+            let newEl = document.createElement("li");
+            listEl.appendChild(newEl);
+            changeColors();
+        }
+        
+    </script>
+</body>
+
+
+</html>

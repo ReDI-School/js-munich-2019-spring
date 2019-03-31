@@ -1,0 +1,300 @@
+<html>
+
+<head>
+    <title>ReDI.js 16</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+    <style>
+        .reveal pre {
+            margin: 0;
+        }
+
+        .monospace {
+            font-family: monospace !important;
+        }
+
+        .illustration {
+            border: 0px
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+
+        .reveal pre {
+            width: 100%;
+        }
+
+        .reveal pre code {
+            cursor: pointer;
+        }
+
+        .reveal li pre {
+            width: fit-content;
+        }
+
+        .emphasis, .answer {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .logo {
+            position: fixed;
+            /* Sit on top of the page content */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+        }
+
+        .reveal table td {
+            padding: 0.1em 0.25em 0.1em 0.25em;
+            font-size: 0.8em;
+        }
+
+        .reveal table td pre code {
+            max-height: none;
+        }
+
+        .reveal .slides section.smaller {
+            font-size: 90%;
+        }
+
+        .reveal .slides section.smaller ul li {
+            font-size: 90%;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Intro to JavaScript</h1>
+                <h3>🚀 Lesson 20 🚀</h3>
+            </section>
+
+            <section>
+                <h3>Remember query selectors?</h3>
+                <ul>
+                    <li class="fragment">
+                        <p>Where did we use query selectors?</p>
+                        <p class="answer fragment">In CSS to style specific elements</p>
+                    </li>
+                    <li class="fragment">
+                        What does this select?
+                        <pre><code data-trim>
+                            .main p
+                        </code></pre>
+                        <p class="answer fragment">All paragraphs inside elements of class main</p>
+                    </li>
+                    <li class="fragment">
+                        What does this select?
+                        <pre><code data-trim>
+                            ul.infotable > li:last-child
+                        </code></pre>
+                        <p class="answer fragment">
+                            The last direct list item of every UL-element with class "infotable".
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Query selectors:</h3>
+                <ul>
+                    <li class="fragment">
+                        are very powerful.
+                    </li>
+                    <li class="fragment">
+                        are great for finding specific elements in a HTML page.
+                    </li>
+                    <li class="fragment">
+                        Why not use them in JS?
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <p>
+                    <code>document.querySelector('#footer a')</code>
+                </p>
+                <p class="fragment">
+                    Returns <b>the first</b> link in the element with id "footer".
+                </p>
+                <br>
+                <p class="fragment">
+                    <code>document.querySelectorAll('#footer a')</code>
+                </p>
+                <p class="fragment">
+                    Returns <b>all</b> links in the element with id "footer".
+                </p>
+            </section>
+
+            <section>
+                <h4>HTML:</h4>
+                <pre><code data-trim>
+                    &lt;div id="header">
+                        &lt;ul>
+                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
+                            &lt;li>
+                                Rules:
+                                &lt;ol>
+                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
+                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
+                                &lt;/ol>
+                            &lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </code></pre>
+                <p>What does this look like in the browser?</p>
+                <p class="answer fragment">A list in a list</p>
+            </section>
+
+            <section>
+                <h4>HTML:</h4>
+                <pre><code data-trim>
+                    &lt;div id="header">
+                        &lt;ul>
+                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
+                            &lt;li>
+                                Rules:
+                                &lt;ol>
+                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
+                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
+                                &lt;/ol>
+                            &lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </code></pre>
+                <p>How to select all links in the div?</p>
+                <p class="answer fragment"><code>#header a</code></p>
+            </section>
+
+            <section>
+                <h4>HTML:</h4>
+                <pre><code data-trim>
+                    &lt;div id="header">
+                        &lt;ul>
+                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
+                            &lt;li>
+                                Rules:
+                                &lt;ol>
+                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
+                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
+                                &lt;/ol>
+                            &lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </code></pre>
+                <p>How to select all links in the inner list ("rules")?</p>
+                <p class="answer fragment"><code>#header ul ol a</code></p>
+            </section>
+
+            <section>
+                <h4>HTML:</h4>
+                <pre><code data-trim>
+                    &lt;div id="header">
+                        &lt;ul>
+                            &lt;li>&lt;a href="...">About us&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Careers&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="...">Privacy&lt;/a>&lt;/li>
+                            &lt;li>
+                                Rules:
+                                &lt;ol>
+                                    &lt;li>&lt;a href="...">Always be nice&lt;/a&lt;/li>
+                                    &lt;li>&lt;a href="...">Never be mean&lt;/a&lt;/li>
+                                &lt;/ol>
+                            &lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </code></pre>
+                <p>How to select all links in the outer list?</p>
+                <p class="answer fragment"><code>#header > ul > li > a</code></p>
+            </section>
+
+            <section>
+                <h3>What if a function returns multiple results?</h3>
+                <ul>
+                    <li class="fragment">
+                        They are basically an array!
+                    </li>
+                    <li class="fragment">
+                        Applying functions to them will change every item in the list!
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Mini Project: 🦉 Twitter Clone</h3>
+                <ul>
+                    <li>
+                        We'll build it together!
+                    </li>
+                    <li>
+                        Will help you with your Todo Project
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Today: New tweet input with counter</h3>
+                <ul>
+                    <li>
+                        See Demo
+                    </li>
+                </ul>
+            </section>
+
+            <section class="smaller">
+                <h3>Features</h3>
+                <ul>
+                    <li class="fragment"><b>Clicking</b> the button <b>adds</b> the new tweet to the list</li>
+                    <li class="fragment">When <b>no tweet</b> added yet, display <b>info message</b></li>
+                    <li class="fragment">Input is <b>emptied</b> when tweet is added</li>
+                    <li class="fragment"><b>Counter</b> that counts how many characters are left</li>
+                    <li class="fragment">Counter turns <b>red</b> when too many characters</li>
+                    <li class="fragment">Button is only <b>enabled</b> when length is between 1 and 80</li>
+                    <li class="fragment">Button turns <b>red</b> when disabled</li>
+                    <li class="fragment">Hitting <b>enter</b> in the input is the same as clicking the button</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="../../jquery-3.3.1.slim.min.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            slideNumber: true,
+            dependencies: [{
+                src: '../../reveal.js/plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, ]
+        });
+
+        // Make each code example executable by clicking it:
+        $(document).ready(function() {
+            $('code').click(function(event) {
+                //                console.info('Click!', $(this).text());
+                eval($(this).text());
+            });
+        });
+    </script>
+</body>
+
+</html>
