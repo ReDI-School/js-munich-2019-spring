@@ -80,3 +80,8 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 - Input .value
 - Introduced `while` statements
+
+## [Lesson 15](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson15)
+
+- review of `while`
+- DOM traversal
