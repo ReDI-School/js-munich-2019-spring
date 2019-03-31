@@ -20,7 +20,7 @@
             </section>
 
             <section>
-                <h3 class="fragment">The "while" loop</h3>
+                <h3 class="">The "while" loop</h3>
             </section>
             <section>
                 <p>While the <code data-trim>condition</code> is <code data-trim>true</code>, the <code
@@ -37,7 +37,7 @@
                     let i = 0;
                     while (i < 3) { // shows 0, then 1, then 2
                         alert(i);
-                        i+=1;
+                        i += 1;
                     }
                 </code></pre>
             </section>
@@ -45,12 +45,13 @@
                 <p>Try this out.</p>
                 <p>Ask the user for a name and then alert it 3 times using a while loop </p>
                 <pre class="fragment"><code data-trim>
-                    let name prompt("What's your name?");
+                    let name = prompt("What's your name?");
                     let i = 0;
                     while (i < 3) {
                         alert(name);
-                        i+=1;
-                    }</code></pre>
+                        i += 1;
+                    }
+                </code></pre>
             </section>
             <section>
                 <h3>Exercise 15.1 : while-loop</h3>
@@ -91,8 +92,7 @@
             <section>
                 <h3 class="small">Exercise 15.3: Array and while loop</h3>
                 <ul>
-                    <li>Write a function summation(n) an array of numbers then return the sum of the numbers. Alert the
-                        result.</li>
+                    <li>Write a function summation(a) that takes an array of numbers and returns the sum of the numbers.</li>
                     <li>Ex: summation([4, 5, 1]) -> 4 + 5 + 1 = 10</li>
                     <li>Ex: summation([100, 2, 3, 15, 0, 6]) -> 100 + 2 + 3 + 15 + 0 + 6 = 126</li>
                     <li>Ex: summation([-1, 2, 33, -3]) -> -1 + 2 + 33 + (-3) = 31</li>
@@ -106,13 +106,13 @@
                     </code></pre>
             </section>
             <section>
-                <h3>Hint: Remember iterating over an array</h3>
+                <h3>Hint: Remember iterating over an array?</h3>
                 <br><br>
                 <div class="answer fragment">
                     <pre><code data-trim>
                     let inputs = [1, 3, 7, 11];
                     let index = 0;
-        
+
                     while (index < inputs.length) {
                       alert("Current input is: " + inputs[index]);
                       index = index + 1;
@@ -153,13 +153,13 @@
             <section>
                 <h3>window</h3>
                 <p class="fragment">Root of the DOM</p>
-                <p class="fragment">deal with the browser window</p>
+                <p class="fragment">deals with the browser window</p>
                 <img class="fragment" src="assets/window.png" alt="dom tree">
             </section>
             <section>
                 <h3>window</h3>
                 <ul>
-                    <li class="fragment">deal with the browser window</li>
+                    <li class="fragment">deals with the browser window</li>
                     <li class="fragment">accessing current URL</li>
                     <li class="fragment">using local storage</li>
                     <li class="fragment">setting status text</li>
@@ -167,11 +167,11 @@
             </section>
             <section>
                 <h3>We all know and love <span class="emphasis">document</span object></h3>
-                <p class="fragment">Document has to do with everything inside in your document</p>
+                <p class="fragment">Document has to do with everything inside your document</p>
                 <img class="fragment" src="assets/document.png" alt="dom tree">
             </section>
             <section>
-                <h3>What are something we can do with document?</h3>
+                <h3>What can we do with document?</h3>
                 <ul>
                     <li class="fragment">read element</li>
                     <li class="fragment">modify element</li>
@@ -195,84 +195,88 @@
                 <img src="assets/domtraverse2.png" style="width:70%" alt="dom parent children">
             </section>
             <section>
-                <h3>Example 1: getting the first child element</h3>
-                html:
+                <h3>Example 1: Getting the first child element</h3>
+                HTML:
                 <pre><code data-trim>
-                <ul id="shoppingList">
-                     <li>Milk</li>
-                     <li>Eggs</li>
-                     <li>Carrots</li>
-                </ul></code></pre>
-                javascript:
+                    <ul id="shoppingList">
+                        <li>Milk</li>
+                        <li>Eggs</li>
+                        <li>Carrots</li>
+                    </ul>
+                </code></pre>
+                JS:
                 <pre><code data-trim>
                     let listEl = document.getElementById("shoppingList");
                     alert(listEl.firstElementChild.textContent)
                 </code></pre>
             </section>
             <section>
-                <h3>Example 2: getting the count of children</h3>
-                html:
+                <h3>Example 2: Getting the number of children</h3>
+                HTML:
                 <pre><code data-trim>
                     <ul id="shoppingList">
-                         <li>Milk</li>
-                         <li>Eggs</li>
-                         <li>Carrots</li>
+                        <li>Milk</li>
+                        <li>Eggs</li>
+                        <li>Carrots</li>
                     </ul></code></pre>
-                javascript:
+                JS:
                 <pre><code data-trim>
-                        let listEl = document.getElementById("shoppingList");
-                        alert(listEl.childElementCount)
-                    </code></pre>
+                    let listEl = document.getElementById("shoppingList");
+                    alert(listEl.childElementCount)
+                </code></pre>
             </section>
             <section>
-                <h3>Example 2: getting the children's count</h3>
-                html:
+                <h3>Example 2: Getting the number of children</h3>
+                HTML:
                 <pre><code data-trim>
-                        <ul id="shoppingList">
-                             <li>Milk</li>
-                             <li>Eggs</li>
-                             <li>Carrots</li>
-                        </ul></code></pre>
-                javascript:
+                    <ul id="shoppingList">
+                        <li>Milk</li>
+                        <li>Eggs</li>
+                        <li>Carrots</li>
+                    </ul>
+                </code></pre>
+                JS:
                 <pre><code data-trim>
-                            let listEl = document.getElementById("shoppingList");
-                            alert(listEl.childElementCount)
-                    </code></pre>
+                    let listEl = document.getElementById("shoppingList");
+                    alert(listEl.childElementCount)
+                </code></pre>
                 <ul>
                     <li>Try adding a few more items, does the count reflect the number of items?</li>
                     <li>What happens when there are no children?</li>
                 </ul>
             </section>
             <section>
-                <h3>Example 3: accessing all the children</h3>
-                html:
+                <h3>Example 3: Accessing all the children</h3>
+                HTML:
                 <pre><code data-trim>
-                        <ul id="shoppingList">
-                             <li>Milk</li>
-                             <li>Eggs</li>
-                             <li>Carrots</li>
-                        </ul></code></pre>
-                javascript:
+                    <ul id="shoppingList">
+                        <li>Milk</li>
+                        <li>Eggs</li>
+                        <li>Carrots</li>
+                    </ul>
+                </code></pre>
+                JS:
                 <pre><code data-trim>
-                            let listEl = document.getElementById("shoppingList");
-                            alert(listEl.children)
-                    </code></pre>
+                    let listEl = document.getElementById("shoppingList");
+                    alert(listEl.children)
+                </code></pre>
                 What happened?
             </section>
             <section>
                 <h3>Example 4: Children returns an array!</h3>
-                html:
+                HTML:
                 <pre><code data-trim>
-                            <ul id="shoppingList">
-                                 <li>Milk</li>
-                                 <li>Eggs</li>
-                                 <li>Carrots</li>
-                            </ul></code></pre>
-                javascript:
+                    <ul id="shoppingList">
+                        <li>Milk</li>
+                        <li>Eggs</li>
+                        <li>Carrots</li>
+                    </ul>
+                </code></pre>
+                JS:
                 <pre><code data-trim>
-                                let listEl = document.getElementById("shoppingList");
-                                alert(listEl.children)
-                    </code></pre>
+                    let listEl = document.getElementById("shoppingList");
+                    alert(listEl.children)
+                </code></pre>
                 How do we loop through an array?
             </section>
             <section>
@@ -282,22 +286,22 @@
                     <li class="fragment">while loop!</li>
                     <li class="fragment">
                         <pre><code data-trim>
-                        let listEl = document.getElementById("shoppingList");
-                        let counter = 0;
-                        while(counter < listEl.childElementCount) {
-                            alert(listEl.children[counter].textContent);
-                            counter+=1;
-                        }
-                    </code></pre>
+                            let listEl = document.getElementById("shoppingList");
+                            let counter = 0;
+                            while(counter < listEl.childElementCount) {
+                                alert(listEl.children[counter].textContent);
+                                counter+=1;
+                            }
+                        </code></pre>
                     </li>
                 </ul>
             </section>
             <section>
                 <h3>Homework: Rainbow my World!</h3>
                 <ul>
-                    <li>You have page with a button "Rainbow Me" and an unorder list of items.</li>
-                    <li>Press the button and the color of one of the item changes. When it reach the end, it starts from
-                        the beginning again </li>
+                    <li>You have a page with a button "Rainbow Me" and an unorder list of items that are block of colors.</li>
+                    <li>Press the button and the color of all the color blocks changes to different color.</li>
+                    <li>See demo</li>
                     <li>BONUS: Make it change color every 5 seconds automatically without the button</li>
                 </ul>
             </section>
@@ -305,7 +309,7 @@
                 <h3>Bonus Homework: Rainbow my World and more!</h3>
                 <ul>
                     <li>Add another button "Add Color"</li>
-                    <li>Press the "Add Color" button a new color is added.</li>
+                    <li>When pressing the "Add Color" button, a new list item is added.</li>
                     <li>Look up <code>document.createElement(...)</code> and element.appendChild(...)</li>
                 </ul>
             </section>
