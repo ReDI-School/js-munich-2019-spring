@@ -37,9 +37,20 @@
                     let i = 0;
                     while (i < 3) { // shows 0, then 1, then 2
                         alert(i);
-                        i++;
+                        i+=1;
                     }
                 </code></pre>
+            </section>
+            <section>
+                <p>Try this out.</p>
+                <p>Ask the user for a name and then alert it 3 times using a while loop </p>
+                <pre class="fragment"><code data-trim>
+                    let name prompt("What"s your name?");
+                    let i = 0;
+                    while (i < 3) {
+                        alert(name);
+                        i+=1;
+                    }</code></pre>
             </section>
             <section>
                 <h3>Exercise 15.1 : while-loop</h3>
@@ -275,7 +286,7 @@
                         let counter = 0;
                         while(counter < listEl.childElementCount) {
                             alert(listEl.children[counter].textContent);
-                            counter++;
+                            counter+=1;
                         }
                     </code></pre>
                     </li>
