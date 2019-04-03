@@ -19,23 +19,6 @@
                 <h3>🚀 Lesson 16 🚀</h3>
             </section>
             <section>
-                <h3>Review Homework: Rainbow my World!</h3>
-                <ul>
-                    <li>You have page with a button "Rainbow Me" and an unorder list of items.</li>
-                    <li>Press the button and the color of one of the item changes. When it reach the end, it starts from
-                        the beginning again </li>
-                    <li>BONUS: Make it change color every 5 seconds automatically without the button</li>
-                </ul>
-            </section>
-            <section>
-                <h3>Review Bonus Homework: Rainbow my World and more!</h3>
-                <ul>
-                    <li>Add another button "Add Color"</li>
-                    <li>Press the "Add Color" button a new color is added.</li>
-                    <li>Look up <code>document.createElement(...)</code> and element.appendChild(...)</li>
-                </ul>
-            </section>
-            <section>
                 <section class="">
                     <h5>How to create a new <code>&lt;p></code>-element in JS?</h5>
                     <pre class="fragment"><code data-trim>
@@ -71,23 +54,16 @@
                     background-color: lightblue;
                 }
             </style>
-            <section class="">
-                <p>Remember how to alert the text inside the input when the button is pressed?</p>
-                <div class="input-example">
-                    <input id="input-id"></input>
-                    <button onclick="alert(document.getElementById('input-id').value)">Send</button>
-                </div>
-                <br>
-                <p class="fragment">You can access the text inside an input with <code
-                        class="emphasis">inputElement.value</code></p>
-            </section>
+
             <section>
+                <h3>Continued: Rainbow my World and more!</h3>
                 <ul>
-                    <li>Now instead of alert add the value of the input and add it as an element to an unordered list.
-                    </li>
-                    <li>see addItemDemo</li>
+                    <li>Add another button "Add Color"</li>
+                    <li>When pressing the "Add Color" button, a new color is added.</li>
+                    <li>Use <code>document.createElement(...)</code> and element.appendChild(...)</li>
                 </ul>
             </section>
+
             <section>
                     <h3>Mini Project: 🦉 Twitter Clone</h3>
                     <ul>
@@ -95,16 +71,28 @@
                             We'll build it together!
                         </li>
                         <li>
-                            Will help you with your Todo Project
+                            Will help you with your Final Project
                         </li>
                     </ul>
                 </section>
+
+                <section class="">
+                        <p>Remember how to alert the text inside the input when the button is pressed?</p>
+                        <div class="input-example">
+                            <input id="input-id"></input>
+                            <button onclick="alert(document.getElementById('input-id').value)">Send</button>
+                        </div>
+                        <br>
+                        <p class="fragment">You can access the text inside an input with <code
+                                class="emphasis">inputElement.value</code></p>
+                    </section>
                 <section>
                     <h3>Today: Add new tweet when the "Tweet" button is clicked</h3>
                     <ul>
-                        <li>
-                            See Demo
-                        </li>
+                        <li class="fragment">Using <code>input.value</code></li>
+                        <li class="fragment">...and <code>document.createElement</code></li>
+                        <li class="fragment">...and <code>appendChild</code></li>
+                        <li class="fragment">See Demo</li>
                     </ul>
                 </section>
             <section class="smaller">
@@ -114,6 +102,12 @@
                     <li class="fragment">When <b>no tweet</b> added yet, display <b>info message</b></li>
                     <li class="fragment">Input is <b>emptied</b> when tweet is added</li>
                     <li class="fragment"><b>Counter</b> that counts how many characters are left</li>
+                </ul>
+            </section>
+
+            <section class="smaller">
+                <h3>Twitter Features: For the future</h3>
+                <ul>
                     <li class="fragment">Counter turns <b>red</b> when too many characters</li>
                     <li class="fragment">Button is only <b>enabled</b> when length is between 1 and 80</li>
                     <li class="fragment">Button turns <b>red</b> when disabled</li>

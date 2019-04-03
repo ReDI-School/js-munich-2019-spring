@@ -205,7 +205,7 @@
                     </ul>
                 </code></pre>
                 JS:
-                <pre><code data-trim>
+                <pre class="fragment"><code data-trim>
                     let listEl = document.getElementById("shoppingList");
                     alert(listEl.firstElementChild.textContent)
                 </code></pre>
@@ -220,7 +220,7 @@
                         <li>Carrots</li>
                     </ul></code></pre>
                 JS:
-                <pre><code data-trim>
+                <pre class="fragment"><code data-trim>
                     let listEl = document.getElementById("shoppingList");
                     alert(listEl.childElementCount)
                 </code></pre>
@@ -262,23 +262,7 @@
                 </code></pre>
                 What happened?
             </section>
-            <section>
-                <h3>Example 4: Children returns an array!</h3>
-                HTML:
-                <pre><code data-trim>
-                    <ul id="shoppingList">
-                        <li>Milk</li>
-                        <li>Eggs</li>
-                        <li>Carrots</li>
-                    </ul>
-                </code></pre>
-                JS:
-                <pre><code data-trim>
-                    let listEl = document.getElementById("shoppingList");
-                    alert(listEl.children)
-                </code></pre>
-                How do we loop through an array?
-            </section>
+
             <section>
                 <h3>Children returns an array!</h3>
                 <p>How do we loop through an array?</p>
@@ -296,21 +280,22 @@
                     </li>
                 </ul>
             </section>
-            <section>
-                <h3>Homework: Rainbow my World!</h3>
+            <section class="small">
+                <h3>Exercise: Rainbow my World!</h3>
                 <ul>
                     <li>You have a page with a button "Rainbow Me" and an unorder list of items that are block of colors. (Use CSS width and background to create a rectangle)</li>
-                    <li>Press the button and the color of each color block changes to different color.</li>
-                    <li>See demo</li>
-                    <li>BONUS: Make it change color every 5 seconds automatically without the button</li>
+                    <li>Press the button and the color of each color block changes to a different color.</li>
+                    <li>First use a while loop to set every box to a random color (from the color array).</li>
+                    <li>Your available colors are stored in an array of strings. Use your own function to get a random index inside the array.</li>
                 </ul>
             </section>
-            <section>
-                <h3>Bonus Homework: Rainbow my World and more!</h3>
+
+            <section class="small">
+                <h3>Exercise: Rainbow my World!</h3>
                 <ul>
-                    <li>Add another button "Add Color"</li>
-                    <li>When pressing the "Add Color" button, a new list item is added.</li>
-                    <li>Look up <code>document.createElement(...)</code> and element.appendChild(...)</li>
+                    <li>Now use a random index for the "start color" of the rainbow.</li>
+                    <li>Increment the color index in the loop to get the other bocx colors. Wrap over if it is outside the available colors array.</li>
+                    <li class="fragment">Later: How to add more color boxes?</li>
                 </ul>
             </section>
         </div>
