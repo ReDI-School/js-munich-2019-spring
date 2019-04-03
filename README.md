@@ -86,6 +86,6 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 - review of `while`
 - DOM traversal
 
-## [Lesson 16](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson15)
+## [Lesson 16](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson16)
 
 - Rainbow exercise
