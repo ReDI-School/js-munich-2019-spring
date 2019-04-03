@@ -18,6 +18,24 @@
                 <h1>Intro to JavaScript</h1>
                 <h3>🚀 Lesson 16 🚀</h3>
             </section>
+            <section class="small">
+                <h3>Exercise: Rainbow my World!</h3>
+                <ul>
+                    <li>You have a page with a button "Rainbow Me" and an unorder list of items that are block of colors. (Use CSS width and background to create a rectangle)</li>
+                    <li>Press the button and the color of each color block changes to a different color.</li>
+                    <li>First use a while loop to set every box to a random color (from the color array).</li>
+                    <li>Your available colors are stored in an array of strings. Use your own function to get a random index inside the array.</li>
+                </ul>
+            </section>
+
+            <section class="small">
+                <h3>Homework: Rainbow my World!</h3>
+                <ul>
+                    <li>Now use another counter and set it to a random "start index" for the rainbow colors.</li>
+                    <li>In the loop, instead of a random color index use the color counter to access your color array.</li>
+                    <li>Increment the color counter in the loop to get the other box colors. Wrap over if it is outside the available colors array.</li>
+                </ul>
+            </section>
             <section>
                 <section class="">
                     <h5>How to create a new <code>&lt;p></code>-element in JS?</h5>
@@ -56,62 +74,11 @@
             </style>
 
             <section>
-                <h3>Continued: Rainbow my World and more!</h3>
+                <h3>Homework: Rainbow my World and more!</h3>
                 <ul>
                     <li>Add another button "Add Color"</li>
-                    <li>When pressing the "Add Color" button, a new color is added.</li>
-                    <li>Use <code>document.createElement(...)</code> and element.appendChild(...)</li>
-                </ul>
-            </section>
-
-            <section>
-                    <h3>Mini Project: 🦉 Twitter Clone</h3>
-                    <ul>
-                        <li>
-                            We'll build it together!
-                        </li>
-                        <li>
-                            Will help you with your Final Project
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="">
-                        <p>Remember how to alert the text inside the input when the button is pressed?</p>
-                        <div class="input-example">
-                            <input id="input-id"></input>
-                            <button onclick="alert(document.getElementById('input-id').value)">Send</button>
-                        </div>
-                        <br>
-                        <p class="fragment">You can access the text inside an input with <code
-                                class="emphasis">inputElement.value</code></p>
-                    </section>
-                <section>
-                    <h3>Today: Add new tweet when the "Tweet" button is clicked</h3>
-                    <ul>
-                        <li class="fragment">Using <code>input.value</code></li>
-                        <li class="fragment">...and <code>document.createElement</code></li>
-                        <li class="fragment">...and <code>appendChild</code></li>
-                        <li class="fragment">See Demo</li>
-                    </ul>
-                </section>
-            <section class="smaller">
-                <h3>Twitter Features: For the future</h3>
-                <ul>
-                    <li class="fragment"><b>Clicking</b> the button <b>adds</b> the new tweet to the list</li>
-                    <li class="fragment">When <b>no tweet</b> added yet, display <b>info message</b></li>
-                    <li class="fragment">Input is <b>emptied</b> when tweet is added</li>
-                    <li class="fragment"><b>Counter</b> that counts how many characters are left</li>
-                </ul>
-            </section>
-
-            <section class="smaller">
-                <h3>Twitter Features: For the future</h3>
-                <ul>
-                    <li class="fragment">Counter turns <b>red</b> when too many characters</li>
-                    <li class="fragment">Button is only <b>enabled</b> when length is between 1 and 80</li>
-                    <li class="fragment">Button turns <b>red</b> when disabled</li>
-                    <li class="fragment">Hitting <b>enter</b> in the input is the same as clicking the button</li>
+                    <li>When pressing the "Add Color" button, a new color box is added.</li>
+                    <li>Use <code>document.createElement(...)</code> and <code>element.appendChild(...)</code></li>
                 </ul>
             </section>
         </div>
