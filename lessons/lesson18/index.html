@@ -130,6 +130,73 @@
                 </ul>
             </section>
 
+            <section>
+                <h3>Let's start with our HTML</h3>
+                <h4 class="fragment">What elements do we need?</h4>
+                <ul>
+                    <li class="fragment">Input</li>
+                    <li class="fragment">Button</li>
+                    <li class="fragment">Tag for the counter</li>
+                    <li class="fragment">List of tweets</li>
+                    <li class="fragment">Let's do it (10 minutes)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Let's start with the input, button and counter</h3>
+                <pre><code class="html"><div id="main">
+    <div class="newTweet">
+        <input name="text"
+        class="newTweetInput"
+placeholder="Your tweet...">
+        <button class="newTweetButton" disabled>Tweet</button>
+        <div class="counter"></div>
+    </div>
+</div></code></pre>
+            </section>
+
+            <section>
+                <h3>Let's select our elements</h3>
+                <h4 class="fragment">How can we do that?</h4>
+                <ul>
+                    <li class="fragment">What's the difference?</li>
+                    <li class="fragment">
+                        <code class="emphasis">document.getElementById("id");</code><br/>
+                        and<br />
+                        <code class="emphasis">document.querySelector("#id");</code><br />
+                        ?
+                    </li>
+                    <li class="fragment">Same!</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Let's select our elements</h3>
+                <h4 class="fragment">What elements do we have to select?</h4>
+<pre class="fragment"><code class="js">let newTweetInput = document.querySelector(".newTweet .newTweetInput");
+let newTweetButton = document.querySelector(".newTweet .newTweetButton");
+let counter = document.querySelector(".newTweet .counter");</code></pre>
+                <ul>
+                    <li class="fragment">What happens if we remove <code class="emphasis">.newTweet</code> from the code above?</li>
+                    <li class="fragment">Nothing!</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>What to do next?</h3>
+                <h4 class="fragment">Add the event listener to the button</h4>
+                <ul>
+                    <li class="fragment">What's the difference?</li>
+                </ul>
+<span class="fragment">
+    <pre><code class="js">newTweetButton.addEventListener("click", onAddClick);</code></pre>
+    <pre><code class="html"><button class="newTweetButton" disabled onclick="onAddClick()">Tweet</button></code></pre>
+</span>
+
+            </section>
+
+
+
             <!-- <section>
                 <h3>Remember query selectors?</h3>
                 <ul>
