@@ -89,3 +89,13 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 ## [Lesson 16](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson16)
 
 - Rainbow exercise
+
+## [Lesson 17](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson17)
+
+- Finishing Rainbow exercise
+- Starting query selectors
+- Starting twitter clone
+
+## [Lesson 18](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson18)
+
+- Finishing twitter clone
