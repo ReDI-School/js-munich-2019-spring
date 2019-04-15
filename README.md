@@ -83,7 +83,7 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 ## [Lesson 15](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson15)
 
-- review of `while`
+- Review of `while`
 - DOM traversal
 
 ## [Lesson 16](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson16)
@@ -92,10 +92,14 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 
 ## [Lesson 17](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson17)
 
-- Finishing Rainbow exercise
+- Finishing rainbow exercise
 - Starting query selectors
-- Starting twitter clone
+- Starting Twitter clone
 
 ## [Lesson 18](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson18)
 
-- Finishing twitter clone
+- Finishing Twitter clone
+
+## [Lesson 19](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson19)
+
+- Recap and preparation of project

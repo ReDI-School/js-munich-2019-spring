@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>ReDI.js 19 Spring 2019</title>
+    <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/marked.js">
+    <link rel="JavaScript" href="../../reveal.js/plugin/markdown/markdown.js">
+    <style>
+        .reveal pre {
+            margin: 0;
+        }
+
+        .monospace {
+            font-family: monospace !important;
+        }
+
+        .illustration {
+            border: 0px
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+
+        .reveal pre {
+            width: 100%;
+        }
+
+        .reveal pre code {
+            cursor: pointer;
+        }
+
+        .reveal li pre {
+            width: fit-content;
+        }
+
+        .emphasis, .answer {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .logo {
+            position: fixed;
+            /* Sit on top of the page content */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+        }
+
+        .reveal table td {
+            padding: 0.1em 0.25em 0.1em 0.25em;
+            font-size: 0.8em;
+        }
+
+        .reveal table td pre code {
+            max-height: none;
+        }
+
+        .reveal .slides section.smaller {
+            font-size: 90%;
+        }
+
+        .reveal .slides section.smaller ul li {
+            font-size: 90%;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.redi-school.org/"><img src="../../redi-school-logo.jpg" class="logo" /></a>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Intro to JavaScript</h1>
+                <h3>🚀 Lesson 19 🚀</h3>
+            </section>
+
+            <section>
+                <h3>Today: 🦉 Freestyle Recap!</h3>
+            </section>
+        </div>
+    </div>
+
+    <script src="../../jquery-3.3.1.slim.min.js"></script>
+    <script src="../../reveal.js/lib/js/head.min.js"></script>
+    <script src="../../reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            slideNumber: true,
+            dependencies: [{
+                src: '../../reveal.js/plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, ]
+        });
+
+        // Make each code example executable by clicking it:
+        $(document).ready(function() {
+            $('code').click(function(event) {
+                //                console.info('Click!', $(this).text());
+                eval($(this).text());
+            });
+        });
+    </script>
+</body>
+
+</html>
