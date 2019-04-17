@@ -103,3 +103,8 @@ This repo contains teaching material and assignments for ReDI School in Munich J
 ## [Lesson 19](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson19)
 
 - Recap and preparation of project
+
+## [Lesson 20](https://redi-school.github.io/js-munich-2019-spring/lessons/lesson20)
+
+- Start of final project
+- Work item list and homework
