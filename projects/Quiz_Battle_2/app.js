@@ -1,4 +1,147 @@
+/*
+let collection = document.querySelector(".collection");
 
+let questions = [{
+    question: "what is current country you live?",
+    answers: ["Egypt", "Germany", "Japan", "Brazil"],
+    correctAnswerIndex: 1
+}, {
+    question: "what is currency of egypt?",
+    answers: ["Euro", "Pound", "Yen", "Real"],
+    correctAnswerIndex: 1
+
+}, {
+    question: "what is best football team in the world?",
+    answers: ["Japan", "Germany", "Brazil", "Egypt"],
+    correctAnswerIndex: 2
+}];
+let score = 0;
+
+let startIndex = 0;
+//getRandomNumber(0,questions.length);
+
+
+window.addEventListener('DOMContentLoaded', getQuestion);
+
+function getQuestion() {
+
+    let questionUI = document.querySelector(".question");
+
+
+    questionUI.textContent = questions[startIndex].question;
+
+    let i = startIndex;
+
+    questions[i].answers.forEach(function (singleAnswers) {
+
+
+        let list = document.createElement("li");
+
+        list.classList.add("collection-item");
+
+        list.innerHTML = "<button>" + singleAnswers + "</button>";
+        collection.appendChild(list);
+
+    });
+
+    scoreNumber.textContent = score + "/" + (questions.length);
+}
+
+
+
+collection.addEventListener("click", selectAnswer);
+
+function selectAnswer(e) {
+    let correctSolutionIndex = questions[startIndex].correctAnswerIndex,
+        correctAnswer = questions[startIndex].answers[correctSolutionIndex],
+        collectionChildren = Array.from(collection.children);
+
+    if (e.target.textContent === correctAnswer) {
+
+        score++;
+
+        e.target.classList.add("correct");
+
+        collectionChildren.forEach(function (singleChildList) {
+
+            singleChildList.querySelector("button").setAttribute("disabled", "true");
+
+        });
+
+    } else {
+        collectionChildren.forEach(function (singleChildList) {
+
+            singleChildList.querySelector("button").setAttribute("disabled", "true");
+
+        });
+
+        e.target.classList.add("wrong");
+
+    };
+
+    let scoreNumber = document.querySelector("#scoreNumber");
+
+    scoreNumber.textContent = score + "/" + (questions.length);
+}
+
+// next question
+
+
+let nextQuestionBtn = document.querySelector(".nextQuestionBtn");
+nextQuestionBtn.addEventListener("click", nextQuestion);
+function nextQuestion() {
+
+    startIndex++;
+
+    if (startIndex >= (questions.length - 1)) {
+        nextQuestionBtn.setAttribute("disabled", "true");
+
+    }
+    previousQuestionBtn.removeAttribute("disabled");
+    let questionUI = document.querySelector(".question");
+
+    questionUI.textContent = questions[startIndex].question;
+    collection.innerHTML = "";
+    getQuestion();
+
+}
+
+
+
+// previous Question
+
+
+let previousQuestionBtn = document.querySelector(".previousQuestionBtn");
+previousQuestionBtn.addEventListener("click", previousQuestion);
+function previousQuestion() {
+
+    startIndex--;
+    score --;
+    if (startIndex <= 0) {
+        score = 0;
+        startIndex = 0;
+        previousQuestionBtn.setAttribute("disabled", "true");
+    }
+    nextQuestionBtn.removeAttribute("disabled");
+    let questionUI = document.querySelector(".question");
+
+    
+    questionUI.textContent = questions[startIndex].question;
+    collection.innerHTML = "";
+    getQuestion();
+    
+    
+
+}
+
+
+
+// get random number
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+*/
 
 // questions object
 
@@ -91,44 +234,16 @@ let questions = [{
 
 // get UI Elements and start question point
 
-let gameLogin = document.querySelector(".gameLogin"),
-    startPlay = document.querySelector("#startPlay"),
-    card = document.querySelector(".mainCard"),
-    progress = document.querySelector(".progress"),
-    finalScore = document.querySelector("#finalScore"),
-    userName= document.querySelector("#userName"),
-    questionTitle = document.querySelector(".questionTitle"),
+let questionTitle = document.querySelector(".questionTitle"),
     questionsAnswers = document.querySelector(".questionsAnswers"),
     score = document.querySelector(".score"),
     scoreNumber = document.querySelector("#scoreNumber"),
-    selectCountdown = document.querySelector("#selectCountdown"),
-    progressBar = document.querySelector(".progress-bar"),
-    cardContent = document.querySelector(".card-content"),
     startScore = 0,
     startQuestion = 0;
 
-    gameLogin.querySelector("h2").classList.add('animated', 'bounce')
-//start Play 
-
-startPlay.addEventListener("click",startPlayGame);
-
-function startPlayGame(){
-    
-    displayQuestion();
-    intervalCountdown();
-
-}
 // display question and build UI
-
+displayQuestion();
 function displayQuestion(){
-
-    // show questions card
-    card.classList.add("show");
-
-    // show progress
-    progress.classList.add("show");
-    // hide login page
-    gameLogin.classList.add("hide");
 
     // display question title
     questionTitle.textContent = questions[startQuestion].question;
@@ -166,32 +281,18 @@ function selectAnswer(e){
 
     let questionRightAnswer = questions[startQuestion].rightSolutionIndex;
     let clickedElement = e.target;
-   
-    console.log('selectAnswer');
+
+    
     //check if text inside clicked list is the same with answer
-    if(clickedElement.textContent === 
-        questions[startQuestion].answers[questionRightAnswer]){
+    if(clickedElement.textContent === questions[startQuestion].answers[questionRightAnswer]){
 
         clickedElement.classList.add("correct");
         // score result
         getScore();
     }else{
 
-        let i = 0;
-
-        while(i< questionsAnswers.childElementCount){
-             if(questionsAnswers.children[i].textContent === 
-                  questions[startQuestion].answers[questionRightAnswer]){
-                
-                
-                    questionsAnswers.children[i].classList.add("correct");
-               }
-              i++;
-        }
-       
-
         clickedElement.classList.add("wrong");
-    };
+    }
 
     let listElements = document.querySelectorAll(".questionsAnswers li button");
     
@@ -201,8 +302,6 @@ function selectAnswer(e){
 
     });
 
-    clearInterval(interval);
-   
 }
 
 // get Score
@@ -222,53 +321,39 @@ nextQuestionBtn.addEventListener("click",nextQuestion);
 function nextQuestion(){
 
  if(startQuestion < (questions.length-1)){
-    clearInterval(interval);
+
     startQuestion++;
     countdown = 10;
     displayQuestion();
-    calcProgress();
-
-    intervalCountdown();
+   
  }else{
 
+
     finalResult();
+
  }
  
 }
 
-
-function calcProgress(){
-
-    
-    //calculate progressbar
-    
-    progressBar.style.width = ((startQuestion / (questions.length-1)) * 100) + "%";
-    
-    progressBar.textContent = startQuestion + " of " + (questions.length-1);
-}
 
 function finalResult(){
     countdownContainer.classList.add("hide");
     questionTitle.classList.add("hide");
     nextQuestionBtn.classList.add("hide");
     questionsAnswers.classList.add("hide");    
-    cardContent.classList.add("hide");
-    score.classList.add("hide");     
-    progress.classList.add("hide");
-
-    card.classList.add("finalResult");
-    
 
     startPlayAgain.classList.add("show");
 
-    finalScore.innerHTML = userName.value + " Your Final Result : " + startScore;
+    score.children[0].innerHTML = "Your Final Result : " + startScore;
 
-    score.children[0].classList.add("newFontSize")
+   
 
 }
 
 
+// timer to go to next question after 10 seconds.
 
+setInterval(nextQuestion,10000);
 
 // play Againg
 let startPlayAgain = document.querySelector(".startPlayAgain"),
@@ -279,6 +364,7 @@ let startPlayAgain = document.querySelector(".startPlayAgain"),
 function playAgain(){
 
         document.location.reload(true);
+
 }
 
 // counter
@@ -287,22 +373,11 @@ let countdownNumberEl = document.getElementById('countdown-number'),
  countdown = 10,
  countdownContainer = document.querySelector("#countdown");
 
-countdownNumberEl.textContent = countdown;
-let interval;
-function intervalCountdown(){
-    interval = setInterval(function() {
-
-       
-        countdown = --countdown < 0 ? 10 : countdown;
-      
-        countdownNumberEl.textContent = countdown;
-
-        if(countdown === 0){
-
-            nextQuestion();
-        }
-        
-      }, 1000);
-}
+countdownNumberEl.textContent = countdown + "Seconds";
 
 
+setInterval(function() {
+  countdown = --countdown <= 0 ? 10 : countdown;
+
+  countdownNumberEl.textContent = countdown + "Seconds";
+}, 1000);

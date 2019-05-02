@@ -3,8 +3,6 @@ let circleElement= document.getElementById("circle");
 let cursor = document.getElementById("pointer");
 let pointsElement=document.getElementById("points");
 let timerElement=document.getElementById("timer");
-let resultElement=document.getElementsByClassName("result")
-let restartElement=document.getElementById("restart");
 
 //to track cursor movement and place cat image in cursor position
 function trackCursorMove(e){
@@ -12,48 +10,32 @@ function trackCursorMove(e){
   if(e.clientX > (boardElement.clientWidth) || e.clientY >(boardElement.clientHeight)){
     
   } else{
-    cursor.setAttribute("style", "top: "+(e.clientY-60)+"px; left: "+(e.clientX-60)+"px;")
+    cursor.setAttribute("style", "top: "+(e.clientY-50)+"px; left: "+(e.clientX-50)+"px;")
   }
 
 }
-function randomizeVelocity(v){
-  let angle = 2 * Math.PI * Math.random();
 
-  return{
-    x: v * Math.cos(angle),
-    y: v * Math.sin(angle),
-  };
-}
 //to move cute mouse to some random position
 let h = boardElement.clientHeight - 40;
 let w = boardElement.clientWidth - 40;
+let posX=40;
+let posY=40;
 
-
-function moveImage() {
-  posX += v.x;
-  posY += v.y;
-
-  if (posX >= w) {
-    //posX -= w;
-    v.x=-v.x;
-  } else if (posX <= 0) {
-    //posX += w;
-    v.x=-v.x;
+function moveImage(){
+  let nh = Math.floor(Math.random() * h)/100;
+  let nw = Math.floor(Math.random() * w)/100;
+  if(posX>=w || posY>=h ){
+    posX=Math.floor(Math.random() * w);
+    posY=Math.floor(Math.random() * h);
+  }else{
+    posX+=nw;
+    posY+=nh;
   }
-  
-  if (posY >= h) {
-   // posY -= h;
-   v.y=-v.y;
-  } else if (posY <= 0) {
-    //posY += h;
-    v.y=-v.y;
-  }
-
   circleElement.setAttribute("style","top:"+posY +"px;left:"+posX+"px");
 }
 
 //calculate the number of clicks on cute mouse
-let circleCounter;
+let circleCounter=0;
 function onCircleClick(){ 
   circleCounter+=1;
   let cNote = document.getElementById("cAudio");
@@ -75,14 +57,15 @@ function playBackgroundMusic(){
 }
 
 function displayResult(){
+  let resultElement=document.getElementsByClassName("result")
   for(i=0;i<resultElement.length;i++){
     resultElement[i].style.visibility="visible";
   }
   let resultData=document.getElementById("result_data");
   let resultScore=document.getElementById("result_score");
-  if(circleCounter>5){
+  if(circleCounter>8){
     resultData.innerHTML="Wow Congratulations " + userName + "!!!!You are really super fast and accurate!!!!.";
-  }else if(circleCounter>0 && circleCounter<=5){
+  }else if(circleCounter>0 && circleCounter<=8){
     resultData.innerHTML="Congratulations " + userName + "!!!!! You Won!!!";
   }else{
     resultData.innerHTML="Sorry " + userName + "!!! Better luck next time";
@@ -91,7 +74,7 @@ function displayResult(){
  }
 
 let userName;
-function getUserName(){
+function startGame(){
   userName=prompt("Enter your name:");
   if(userName!=null){
     userName=userName.trim();
@@ -99,23 +82,9 @@ function getUserName(){
   if(userName ==="" || userName===null){
     userName="Anonymous";
   }
-}
-let posX;
-let posY;
-let v;
-function startGame(){
-  circleCounter=0;
-  pointsElement.textContent=circleCounter;
-  for(i=0;i<resultElement.length;i++){
-    resultElement[i].style.visibility="hidden";
-  }
-  posX = 400;
-  posY = 250;
-  v = randomizeVelocity(Math.random()*(10-1)+1);
-  let imageMoveId=setInterval(moveImage,1000/60);
+  let imageMoveId=setInterval(moveImage,50);
   //count down timer
-  let timer=0;
-  timerElement.textContent = timer;
+  let timer=Number(timerElement.textContent);
   let countdown = setInterval(function() {
     timer++;
     timerElement.textContent = timer;
@@ -128,9 +97,7 @@ function startGame(){
   }, 1000);
 }
 
+startGame();
 //document.addEventListener("DOMContentLoaded", playBackgroundMusic);
-document.addEventListener("DOMContentLoaded",getUserName);
 circleElement.addEventListener("click",onCircleClick);
 boardElement.addEventListener("click",trackCursorMove);
-restartElement.addEventListener("click",startGame);
-startGame();

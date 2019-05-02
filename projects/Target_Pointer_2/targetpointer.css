@@ -66,29 +66,6 @@ button{
     margin:5px;
 }
 
-.help{
-    position: relative;
-    display:inline-block;
-    border-bottom: 1px dotted black;
-    margin:5px;
-}
-
-.help .helpText{
-    visibility: hidden;
-    width:180px;
-    background-color: black;
-    color:#fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    margin-left: -90px;
-    bottom: 100%;
-    position: absolute;
-    z-index: 1;
-}
-.help:hover .helpText{
-    visibility: visible;
-}
 #resultframe{
     position: absolute;
     top: 0;
