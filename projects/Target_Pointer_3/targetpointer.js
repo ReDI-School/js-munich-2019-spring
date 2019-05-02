@@ -112,7 +112,7 @@ function startGame(){
   posX = 400;
   posY = 250;
   v = randomizeVelocity(Math.random()*(10-1)+1);
-  let imageMoveId=setInterval(moveImage,50);
+  let imageMoveId=setInterval(moveImage,1000/60);
   //count down timer
   let timer=0;
   timerElement.textContent = timer;
